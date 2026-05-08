@@ -8,7 +8,8 @@ From the repository root:
 
 ```bash
 cp .env.example .env
-# Edit `.env` — at minimum keep or set `POSTGRES_PASSWORD` to a local-only value.
+# Edit `.env` — at minimum set `POSTGRES_PASSWORD` and keep `DATABASE_URL` in sync
+# with `POSTGRES_*` (see `.env.example`).
 docker compose up -d db backend
 ```
 
@@ -50,6 +51,20 @@ docker compose exec db psql -U "${POSTGRES_USER:-cbt_app}" -d "${POSTGRES_DB:-co
 ```
 
 (Replace with values from your `.env` if they differ.)
+
+### Run Alembic migrations (`backend` container)
+
+From the repo root (with `db` and `backend` up):
+
+```bash
+docker compose exec backend alembic upgrade head
+```
+
+Rollback all migrations:
+
+```bash
+docker compose exec backend alembic downgrade base
+```
 
 ### Remove containers **and** the Postgres volume (destructive)
 

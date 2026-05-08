@@ -14,7 +14,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\""]
+      # Default db name for pg_isready must match POSTGRES_DB (not the username).
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -27,6 +28,9 @@ services:
     env_file:
       - path: .env
         required: false
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL must be set (use .env from .env.example)}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-5}
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     depends_on:

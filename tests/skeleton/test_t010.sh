@@ -47,7 +47,7 @@ for token in \
   "docker compose" \
   "doc/project-progress/spec.md" \
   "doc/project-progress/roadmap.md" \
-  "MIT" \
+  "GNU General Public License" \
   "Quick start" \
   "backend/" \
   "frontend/"

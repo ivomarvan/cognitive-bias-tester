@@ -17,7 +17,8 @@ RUN apt-get update \
 COPY --from=builder /install /usr/local
 COPY pyproject.toml ./
 COPY src ./src
-# Dev-only tooling (lint, types, tests). Alembic lands in T040.
+COPY alembic.ini ./
+COPY alembic ./alembic
 RUN pip install --no-cache-dir ".[dev]"
 EXPOSE 8000
 
@@ -30,6 +31,8 @@ RUN apt-get update \
 COPY --from=builder /install /usr/local
 RUN useradd --create-home --shell /bin/bash appuser
 USER appuser
+COPY --chown=appuser:appuser alembic.ini ./
+COPY --chown=appuser:appuser alembic ./alembic
 COPY --chown=appuser:appuser src/ ./src/
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
