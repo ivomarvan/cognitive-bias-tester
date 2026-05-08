@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cognitive-bias-tester-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Cognitive Bias Tester — FastAPI backend (E010 skeleton)"
+dependencies = [
+    # HTTP API framework with automatic OpenAPI (project standard, ADR-aligned).
+    "fastapi==0.115.4",
+    # ASGI server with sensible defaults for local and container runs.
+    "uvicorn[standard]==0.32.0",
+    # Request/response validation aligned with FastAPI 0.115.
+    "pydantic==2.9.2",
+    # 12-factor settings from environment / .env (single config source).
+    "pydantic-settings==2.6.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.3",
+    "pytest-asyncio==0.24.0",
+    "httpx==0.27.2",
+    "ruff==0.7.2",
+    "mypy==1.13.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: fast, no external I/O",
+    "integration: requires Docker services or network",
+    "slow: longer than 5s",
+]
+addopts = "-q --strict-markers"
+pythonpath = ["."]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"

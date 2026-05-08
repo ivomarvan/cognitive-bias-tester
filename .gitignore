@@ -1,0 +1,63 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Personal convention — local runtime data (see nogit_data/.gitkeep; use git add -f for first add)
+nogit_data/
+
+# Generic logs and temp files
+*.log
+*.tmp
+
+# Python (see .cursor/rules/10-python.mdc)
+__pycache__
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache
+.mypy_cache/
+.ruff_cache
+.ruff_cache/
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+.coverage
+htmlcov/
+
+# Node / frontend (see .cursor/rules/11-vuejs-vite-tailwind.mdc when present)
+node_modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm
+.pnpm-store/
+dist
+.vite/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Generated documentation
+site/
+_build/
+.sphinx/
