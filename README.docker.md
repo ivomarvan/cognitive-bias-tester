@@ -1,6 +1,6 @@
 # Docker usage — Cognitive Bias Tester
 
-Infrastructure and application containers for local development and parity with production-style PostgreSQL.
+Infrastructure and application containers for local development. Production-oriented image targets exist for **`backend`** and **`frontend`**; Compose uses the **`dev`** targets by default with bind mounts for hot reload.
 
 ## Quick start
 
@@ -10,12 +10,14 @@ From the repository root:
 cp .env.example .env
 # Edit `.env` — at minimum set `POSTGRES_PASSWORD` and keep `DATABASE_URL` in sync
 # with `POSTGRES_*` (see `.env.example`).
-docker compose up -d db backend frontend
+docker compose up -d
 ```
 
-Wait until `docker compose ps` shows **`db`**, **`backend`**, and (if started) **`frontend`** as `healthy`, then open the UI, API, or database (see **Common tasks**).
+Wait until `docker compose ps` shows **`db`**, **`backend`**, and **`frontend`** as `healthy`, then use the URLs from the root [README.md](README.md) or the tasks below.
 
-To stop:
+**Startup order:** `backend` waits until `db` is healthy; `frontend` waits until `backend` is healthy (see `depends_on` in `docker-compose.yml`).
+
+To stop containers (default named volumes are kept):
 
 ```bash
 docker compose down
@@ -23,19 +25,42 @@ docker compose down
 
 ## Services
 
-| Service | Port (host) | Image / build | Description |
-|---------|---------------|---------------|-------------|
-| `db` | `${POSTGRES_PORT}` → `5432` in container (default host map **5433**) | `postgres:16.2-alpine` | PostgreSQL; data in named volume `postgres_data`. |
-| `backend` | `${BACKEND_PORT}` → `8000` (default **8000**) | `./backend` (`target: **dev**`) | FastAPI + Uvicorn with `--reload`; source bind-mounted. |
-| `frontend` | `${FRONTEND_PORT}` → `5173` (default **5173**) | `./frontend` (`target: **dev**`) | Vue 3 + Vite dev server; `src/` bind-mounted for HMR. |
+Host ports come from `.env` (`POSTGRES_PORT`, `BACKEND_PORT`, `FRONTEND_PORT`). Defaults below match `.env.example`.
 
-**Note:** **`backend`** is introduced in T030 (FastAPI skeleton). **`frontend`** in T050 (Vue + Vite skeleton). You can run `frontend` alone with `docker compose up frontend` for static UI work.
+| Service | Port (host) | Description | Healthcheck |
+|---------|-------------|-------------|-------------|
+| `db` | `${POSTGRES_PORT:-5433}` → `5432` in container | PostgreSQL **16.2** (`postgres:16.2-alpine`); data in volume `postgres_data`. | `pg_isready -U $POSTGRES_USER -d $POSTGRES_DB` |
+| `backend` | `${BACKEND_PORT:-8000}` → `8000` | FastAPI + Uvicorn (`./backend`, target **dev** by default). | `curl -f http://localhost:8000/v1/health` |
+| `frontend` | `${FRONTEND_PORT:-5173}` → `5173` | Vue 3 + Vite dev server (`./frontend`, target **dev**); `src/` bind-mounted. | `wget -q --spider http://localhost:5173/` |
+
+All services use `restart: unless-stopped` and read configuration from `.env` / Compose variable substitution. There is no custom `networks:` block; the default Compose network is used.
+
+## Development vs production images
+
+Compose builds **dev** images so you can edit code on the host with reload/HMR.
+
+To build **production** images explicitly (no Compose service defined for these targets — run for release checks or external orchestration):
+
+```bash
+# Backend: lean image, non-root user, embedded app (no bind mounts)
+docker compose build backend --target production
+
+# Frontend: static `dist/` served by nginx (non-root, listens on 8080 in image)
+docker compose build frontend --target production
+```
+
+Default **dev** builds (what `docker compose build` uses given `target: dev` in `docker-compose.yml`):
+
+```bash
+docker compose build backend
+docker compose build frontend
+```
 
 ## Troubleshooting
 
 ### `Bind for 0.0.0.0:5432 failed: port is already allocated`
 
-Something on the host is already using **5432** (often a system PostgreSQL). Set **`POSTGRES_PORT`** in `.env` to a free port (the repo default in `.env.example` is **5433**), then `docker compose up -d db backend` again. Containers still talk to Postgres on hostname **`db`**, port **5432** inside the Docker network; only the host mapping changes.
+Something on the host may already use a port. Set **`POSTGRES_PORT`**, **`BACKEND_PORT`**, or **`FRONTEND_PORT`** in `.env` to free host ports. Inside the stack, services still reach Postgres at host **`db`**, port **5432**.
 
 ## Common tasks
 
@@ -47,11 +72,7 @@ curl -s "http://127.0.0.1:${BACKEND_PORT:-8000}/v1/health"
 
 ### Open the Vite dev UI (landing page)
 
-With `frontend` up:
-
-```bash
-# Opens in browser: http://127.0.0.1:${FRONTEND_PORT:-5173}/
-```
+Browser: `http://127.0.0.1:${FRONTEND_PORT:-5173}/`
 
 ### Open `psql` inside the database container
 
@@ -61,9 +82,17 @@ docker compose exec db psql -U "${POSTGRES_USER:-cbt_app}" -d "${POSTGRES_DB:-co
 
 (Replace with values from your `.env` if they differ.)
 
-### Run Alembic migrations (`backend` container)
+### Run backend tests
 
-From the repo root (with `db` and `backend` up):
+With `db` and `backend` up (or using a one-off run that has DB access):
+
+```bash
+docker compose exec backend pytest
+docker compose exec backend pytest -m unit
+docker compose exec backend pytest -m integration tests/test_db.py
+```
+
+### Run Alembic migrations (`backend` container)
 
 ```bash
 docker compose exec backend alembic upgrade head
@@ -74,6 +103,18 @@ Rollback all migrations:
 ```bash
 docker compose exec backend alembic downgrade base
 ```
+
+### Add a frontend npm dependency
+
+Rebuild after changing `package.json` / lockfile:
+
+```bash
+docker compose exec frontend npm install <package-name>
+docker compose build frontend
+docker compose up -d frontend
+```
+
+Or edit `frontend/package.json` on the host, then `docker compose build frontend && docker compose up -d frontend`.
 
 ### Remove containers **and** the Postgres volume (destructive)
 

@@ -59,6 +59,9 @@ services:
       context: ./frontend
       target: dev
     restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
     ports:
       - "${FRONTEND_PORT:-5173}:5173"
     volumes:

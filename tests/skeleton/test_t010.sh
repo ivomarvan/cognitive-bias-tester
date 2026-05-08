@@ -29,7 +29,9 @@ require_dir "backend"
 if [[ ! -f "$ROOT/backend/.gitkeep" && ! -f "$ROOT/backend/pyproject.toml" ]]; then
   die "missing backend scaffold (expected .gitkeep from T010 or pyproject.toml from T030+)"
 fi
-require_file "frontend/.gitkeep"
+if [[ ! -f "$ROOT/frontend/package.json" && ! -f "$ROOT/frontend/.gitkeep" ]]; then
+  die "missing frontend scaffold (expected package.json from T050+ or .gitkeep from T010)"
+fi
 require_dir "doc/architecture/decisions"
 require_file "doc/guides/.gitkeep"
 require_file "doc/external/.gitkeep"
