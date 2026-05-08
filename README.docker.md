@@ -10,10 +10,10 @@ From the repository root:
 cp .env.example .env
 # Edit `.env` — at minimum set `POSTGRES_PASSWORD` and keep `DATABASE_URL` in sync
 # with `POSTGRES_*` (see `.env.example`).
-docker compose up -d db backend
+docker compose up -d db backend frontend
 ```
 
-Wait until `docker compose ps` shows **`db`** (and **`backend`**) as `healthy`, then open the API or database (see **Common tasks**).
+Wait until `docker compose ps` shows **`db`**, **`backend`**, and (if started) **`frontend`** as `healthy`, then open the UI, API, or database (see **Common tasks**).
 
 To stop:
 
@@ -27,8 +27,9 @@ docker compose down
 |---------|---------------|---------------|-------------|
 | `db` | `${POSTGRES_PORT}` → `5432` in container (default host map **5433**) | `postgres:16.2-alpine` | PostgreSQL; data in named volume `postgres_data`. |
 | `backend` | `${BACKEND_PORT}` → `8000` (default **8000**) | `./backend` (`target: **dev**`) | FastAPI + Uvicorn with `--reload`; source bind-mounted. |
+| `frontend` | `${FRONTEND_PORT}` → `5173` (default **5173**) | `./frontend` (`target: **dev**`) | Vue 3 + Vite dev server; `src/` bind-mounted for HMR. |
 
-**Note:** **frontend** service arrives in task T050. **`backend`** is introduced in T030 (FastAPI skeleton).
+**Note:** **`backend`** is introduced in T030 (FastAPI skeleton). **`frontend`** in T050 (Vue + Vite skeleton). You can run `frontend` alone with `docker compose up frontend` for static UI work.
 
 ## Troubleshooting
 
@@ -42,6 +43,14 @@ Something on the host is already using **5432** (often a system PostgreSQL). Set
 
 ```bash
 curl -s "http://127.0.0.1:${BACKEND_PORT:-8000}/v1/health"
+```
+
+### Open the Vite dev UI (landing page)
+
+With `frontend` up:
+
+```bash
+# Opens in browser: http://127.0.0.1:${FRONTEND_PORT:-5173}/
 ```
 
 ### Open `psql` inside the database container
