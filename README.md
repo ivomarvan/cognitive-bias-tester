@@ -25,16 +25,16 @@ For container details, ports, migrations, and cleanup, see **[README.docker.md](
 
 ## Project structure
 
-| Path | Purpose |
-|------|---------|
-| `backend/` | Python / FastAPI API service (async SQLAlchemy, Alembic). |
-| `frontend/` | Vue 3 + Vite + TypeScript + Tailwind SPA. |
-| `doc/` | Documentation: architecture (incl. ADRs), guides, external references, project progress. |
-| `doc/architecture/decisions/` | Architecture Decision Records (ADRs). |
-| `doc/project-progress/` | APM brief, specification, roadmap, epics, tasks. |
-| `experiments/` | Spikes and prototypes not part of production. |
-| `nogit_data/` | Local runtime outputs—never commit contents (see `.gitignore`). |
-| `tests/` | Tests; `tests/skeleton/` holds shell smoke checks for scaffolding tasks. |
+| Path                          | Purpose                                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------------------- |
+| `backend/`                    | Python / FastAPI API service (async SQLAlchemy, Alembic).                                |
+| `frontend/`                   | Vue 3 + Vite + TypeScript + Tailwind SPA.                                                |
+| `doc/`                        | Documentation: architecture (incl. ADRs), guides, external references, project progress. |
+| `doc/architecture/decisions/` | Architecture Decision Records (ADRs).                                                    |
+| `doc/project-progress/`       | APM brief, specification, roadmap, epics, tasks.                                         |
+| `experiments/`                | Spikes and prototypes not part of production.                                            |
+| `nogit_data/`                 | Local runtime outputs—never commit contents (see `.gitignore`).                          |
+| `tests/`                      | Tests; `tests/skeleton/` holds shell smoke checks for scaffolding tasks.                 |
 
 ## Documentation
 
@@ -54,4 +54,5 @@ Agentic project management and task flow for this repo: [.cursor/README.project_
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0**; see [`LICENSE`](LICENSE) at the repository root.
+Copyright (c) 2026 Ivo Marvan. All rights reserved.
+This software is proprietary and confidential — see [`LICENSE`](LICENSE) for details.
