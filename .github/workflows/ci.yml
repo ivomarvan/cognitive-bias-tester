@@ -1,0 +1,163 @@
+# Cognitive Bias Tester — CI (E010.T070). No deploy steps.
+# Triggers: push to main / feature branches, PRs into main, manual dispatch.
+
+name: CI
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backend-quality:
+    name: Backend quality
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: backend/pyproject.toml
+
+      - name: Install backend (editable, dev extras)
+        run: pip install -e "./backend[dev]"
+
+      - name: Ruff check
+        working-directory: backend
+        run: ruff check .
+
+      - name: Ruff format
+        working-directory: backend
+        run: ruff format --check .
+
+      - name: Mypy (strict)
+        working-directory: backend
+        run: mypy src/ --strict
+
+      - name: Pytest (unit only)
+        working-directory: backend
+        run: pytest -m "not integration" -q
+
+  backend-integration:
+    name: Backend integration
+    runs-on: ubuntu-24.04
+    needs: backend-quality
+    env:
+      DATABASE_URL: postgresql+asyncpg://test:test@localhost:5432/test
+    services:
+      postgres:
+        image: postgres:16.2-alpine
+        env:
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U test -d test"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: backend/pyproject.toml
+
+      - name: Install backend (editable, dev extras)
+        run: pip install -e "./backend[dev]"
+
+      - name: Alembic upgrade
+        working-directory: backend
+        run: alembic upgrade head
+
+      - name: Pytest (integration)
+        working-directory: backend
+        run: pytest -m integration -q
+
+  frontend-quality:
+    name: Frontend quality
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["22"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: ESLint
+        working-directory: frontend
+        run: npx eslint src/
+
+      - name: vue-tsc
+        working-directory: frontend
+        run: npx vue-tsc --noEmit
+
+      - name: Vitest
+        working-directory: frontend
+        run: npx vitest run
+
+      - name: Production build
+        working-directory: frontend
+        run: npm run build
+
+  docker-build:
+    name: Docker Compose build
+    runs-on: ubuntu-24.04
+    needs:
+      - backend-quality
+      - backend-integration
+      - frontend-quality
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ hashFiles('docker-compose.yml', 'backend/Dockerfile', 'frontend/Dockerfile', 'backend/pyproject.toml', 'frontend/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: docker compose build
+        env:
+          DOCKER_BUILDKIT: 1
+          COMPOSE_DOCKER_CLI_BUILD: 1
+          POSTGRES_PASSWORD: ci-compose-not-a-secret
+          DATABASE_URL: postgresql+asyncpg://cbt_app:ci-compose-not-a-secret@db:5432/cognitive_bias_tester
+        run: docker compose -f docker-compose.yml build
