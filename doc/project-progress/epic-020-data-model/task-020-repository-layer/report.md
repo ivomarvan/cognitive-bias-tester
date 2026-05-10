@@ -13,31 +13,35 @@ updated_at: 2026-05-10
 
 ## Co bylo implementováno
 
-Přidán adresář `backend/src/db/repositories/` s generickou bází `Repository[ModelT]` (CRUD přes `get_by_id`, `list`, `add`, `delete` s `flush`, bez `commit`) a devíti konkrétními repozitáři dle `plan.md` § T020. `UiStringRepository` obsahuje `get_all_with_translation` s `outerjoin`, `upsert_translation` přes `sqlalchemy.dialects.postgresql.insert` a `on_conflict_do_update`. `CaseRepository.update_rating` používá jeden `update()` s atomickým přičtením k `rating_sum` / `rating_count` a `updated_at=func.now()`. Unit testy mockují `AsyncSession` v `backend/tests/db/test_repositories.py`.
+Generická báze `Repository[ModelT]` s `add`/`delete` používajícími `flush()` (transakce na volajícím). Deset souborů repozitářů pro entity včetně `UiStringRepository` s `LEFT OUTER JOIN` pro překlady a `INSERT ... ON CONFLICT` pro upsert překladu. `CaseRepository.update_rating()` atomicky přes jeden `UPDATE`.
 
 ## Vstupy a výstupy
 
-- **Přečteno:** `task-020-repository-layer/spec.md`, `dod.md`, `epic-020-data-model/plan.md` § T020, modely T010, `session.py`.
-- **Vytvořeno:** `backend/src/db/repositories/*.py` (10 souborů), `backend/tests/db/test_repositories.py`, tento `report.md`.
-- **Změněno:** `doc/.../task-020-repository-layer/dod.md` (zaškrtnutí).
+- **Přečteno:** `task-020-repository-layer/spec.md`, existující modely a `AsyncSession`
+- **Vytvořeno:** `backend/src/db/repositories/*.py` (10 modulů včetně `base.py`)
+- **Změněno:** `backend/src/db/repositories/__init__.py`, `backend/tests/db/test_repositories.py`
 
 ## Použité metody a rozhodnutí
 
-- **`model_cls`:** každá podtřída definuje `ClassVar[type[...]]` kvůli `session.get()` / `select()`; u generické báze `get_by_id` / `list` používají `cast` kvůli striktnímu mypy u `DeclarativeBase` vs konkrétní model.
-- **`get_all_with_translation`:** návratová hodnota sestavena jako `[(row[0], row[1]) for row in result.all()]` kvůli typům joinu (outer join → `None` u překladu).
-- **API vrstva:** endpointy ani `Depends` factory v `spec` nejsou — pouze datová vrstva.
+- Repozitáře přijímají `AsyncSession` v konstruktoru (bez globální session).
+- Unit testy používají `AsyncMock(spec=AsyncSession)` — bez živé databáze.
+- DRY: společná logika v `Repository` base třídě.
+
+## Odchylky od spec.md
+
+—
 
 ## Reference do kódu
 
-- `backend/src/db/repositories/base.py` — generický Repository
-- `backend/src/db/repositories/ui_string.py` — outer join + PostgreSQL upsert
-- `backend/src/db/repositories/case.py` — `update_rating`
-- `backend/tests/db/test_repositories.py` — mocked AsyncSession testy
+- `backend/src/db/repositories/base.py` — abstraktní `Repository[ModelT]`
+- `backend/src/db/repositories/ui_string.py` — join a PostgreSQL upsert překladů
+- `backend/src/db/repositories/case.py` — `update_rating` jedním SQL příkazem
+- `backend/tests/db/test_repositories.py` — pokrytí happy path a edge cases pro veřejné metody
 
 ## Výsledek regresního testu
 
-✅ `ruff check`, `ruff format --check`, `mypy src/ --strict`, `pytest -m "not integration"` — v kontejneru backend OK.
+✅ `pytest -m "not integration" -q` — všechny unit testy zelené (ověřeno při dokončení E020.T020 a regresi v E020.T060).
 
 ## Definition of Done
 
-Viz [dod.md](dod.md) — všechna kritéria ✅.
+Viz [dod.md](dod.md).

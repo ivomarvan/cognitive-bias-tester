@@ -13,29 +13,35 @@ updated_at: 2026-05-10
 
 ## Co bylo implementováno
 
-JSON fixtury: přesně 5 typů zkreslení (`bias_types.json`), 25 gold-standard scénářů (`cases.json`, 5× variant 0–4 na slug, parametrické placeholdery v každém případu), rozšířené UI řetězce včetně mapování z `frontend/src/locales/en.json` (`app`→`app_title`, `home`→`home_heading`) a dalšího MVP chrome (`ui_strings.json`). `seed.py` načítá fixtury z adresáře modulu, v jedné transakci (`async_session` + `session.begin()`) volá `run_seed_with_repos` s T020 repozitáři: bias podle `get_by_slug`, case podle `(bias_type_id, variant)` mezi aktivními řádky, `UiString` podle textového PK. `source_hash` pro `UiString` = SHA-256 z `key|title|description`, pro `CaseTranslation` z kanonického JSON obsahu. Logování INFO se součty inserted/skipped.
+JSON fixtury (`bias_types.json`, `cases.json`, `ui_strings.json`) a skript `python -m src.db.seed.seed` načítající data přes repozitáře s idempotentními kontrolami (přítomnost záznamu → přeskočení). `compute_source_hash` / `compute_case_translation_hash` počítají SHA-256 za běhu. Logování statistik insert vs skip na úrovni INFO.
 
 ## Vstupy a výstupy
 
-- **Přečteno:** `task-030-seed-data/spec.md`, `plan.md` § T030, `frontend/src/locales/en.json`.
-- **Vytvořeno:** `backend/src/db/seed/__init__.py`, `bias_types.json`, `cases.json`, `ui_strings.json`, `seed.py`, `backend/tests/db/test_seed.py`, `report.md`.
-- **Změněno:** `doc/.../task-030-seed-data/dod.md`.
+- **Přečteno:** `task-030-seed-data/spec.md`, `frontend/src/locales/en.json` (klíče UI)
+- **Vytvořeno:** `backend/src/db/seed/*.json`, `backend/src/db/seed/seed.py`, `backend/tests/db/test_seed.py`
+- **Změněno:** případné propojení v `src.main` nebo CLI dle integračního nastavení projektu
 
 ## Použité metody a rozhodnutí
 
-- **Idempotence:** primárně existence před `add` (ne `IntegrityError` per řádek), aby zůstala jedna transakce bez savepointů.
-- **CaseTranslation:** hash z `title`, `question`, `options`, `correct_option`, `explanation`, `locale` — stabilní při opakovaném seedu stejného obsahu.
+- Idempotence přes dotazy do repozitářů před `add`, žádné duplicity při opakovaném běhu.
+- Cases: 25 scénářů (5× slug biasu), každý s 4 možnostmi a vysvětlením.
+- Distribuce `correct_option` byla později upřesněna v E020.T060 (rovnoměrnější rozložení indexů 0–3).
+
+## Odchylky od spec.md
+
+—
 
 ## Reference do kódu
 
-- `backend/src/db/seed/seed.py` — `run_seed_with_repos`, `compute_source_hash`, `seed()`
-- `backend/src/db/seed/cases.json` — 25 scénářů
-- `backend/tests/db/test_seed.py` — mockované repozitáře
+- `backend/src/db/seed/seed.py:44-84` — hash funkce a kanonický obsah case záznamu
+- `backend/src/db/seed/seed.py` — `run_seed_with_repos`, `load_fixtures`
+- `backend/src/db/seed/cases.json` — 25 case záznamů (po T060 s rozložením `correct_option`)
+- `backend/tests/db/test_seed.py` — první běh, skip biasů, 25 cases, `source_hash`
 
 ## Výsledek regresního testu
 
-✅ `ruff check`, `ruff format --check`, `mypy src/ --strict`, `pytest -m "not integration"` — OK.
+✅ `pytest -m "not integration" -q`; integrační smoke API po seedu v CI (`GET /v1/i18n/en`).
 
 ## Definition of Done
 
-Viz [dod.md](dod.md) — všechna kritéria ✅.
+Viz [dod.md](dod.md).

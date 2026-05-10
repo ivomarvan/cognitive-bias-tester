@@ -14,11 +14,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Offer exactly {currency_amount_small} € below the sticker"
+        "text": "Gather independent market comps, then negotiate from data"
       },
       {
         "label": "B",
-        "text": "Gather independent market comps, then negotiate from data"
+        "text": "Offer exactly {currency_amount_small} € below the sticker"
       },
       {
         "label": "C",
@@ -29,7 +29,7 @@
         "text": "Avoid research for {timeframe_days} days to save time"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "The sticker is a classic anchor; unbiased choice is independent valuation before any number is treated as meaningful (anchoring bias)."
   },
   {
@@ -82,18 +82,18 @@
       },
       {
         "label": "B",
-        "text": "Re-estimate from tasks and risk, ignoring the old timeline as an anchor"
+        "text": "Promise {percentage}% buffer verbally but keep the old dates internally"
       },
       {
         "label": "C",
-        "text": "Promise {percentage}% buffer verbally but keep the old dates internally"
+        "text": "Re-estimate from tasks and risk, ignoring the old timeline as an anchor"
       },
       {
         "label": "D",
         "text": "Skip estimation to avoid conflict"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 2,
     "explanation": "Past timelines anchor planning; rational PMs recompute from scope (anchoring bias)."
   },
   {
@@ -114,18 +114,18 @@
       },
       {
         "label": "B",
-        "text": "Compare credentials, outcomes, and inclusions independent of order of quotes"
-      },
-      {
-        "label": "C",
         "text": "Split the difference between {currency_amount_small} and {currency_amount_large}"
       },
       {
-        "label": "D",
+        "label": "C",
         "text": "Avoid both because prices differ"
+      },
+      {
+        "label": "D",
+        "text": "Compare credentials, outcomes, and inclusions independent of order of quotes"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 3,
     "explanation": "First or highest prices anchor quality judgments; evidence should drive the choice (anchoring)."
   },
   {
@@ -142,11 +142,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Always pick the middle number shown"
+        "text": "Decide based on your budget and impact research, not the preset amounts"
       },
       {
         "label": "B",
-        "text": "Decide based on your budget and impact research, not the preset amounts"
+        "text": "Always pick the middle number shown"
       },
       {
         "label": "C",
@@ -157,7 +157,7 @@
         "text": "Donate zero because menus manipulate people"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "Suggested amounts anchor generosity; a planned donation avoids the nudge (anchoring bias)."
   },
   {
@@ -210,18 +210,18 @@
       },
       {
         "label": "B",
-        "text": "Annualize total cost and cancellation rules before deciding"
+        "text": "Assume {currency_amount_large} € will never be charged"
       },
       {
         "label": "C",
-        "text": "Assume {currency_amount_large} € will never be charged"
+        "text": "Annualize total cost and cancellation rules before deciding"
       },
       {
         "label": "D",
         "text": "Pick randomly between offers"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 2,
     "explanation": "Highlighting a small today fee hides long-term cost; normalize to totals (framing effect)."
   },
   {
@@ -241,18 +241,18 @@
       },
       {
         "label": "B",
-        "text": "Present both percent and absolute figures with the same baseline"
-      },
-      {
-        "label": "C",
         "text": "Drop numbers entirely to avoid bias"
       },
       {
-        "label": "D",
+        "label": "C",
         "text": "Show only the positive slide"
+      },
+      {
+        "label": "D",
+        "text": "Present both percent and absolute figures with the same baseline"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 3,
     "explanation": "Identical performance looks different by frame; pair metrics (framing effect)."
   },
   {
@@ -268,11 +268,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Pay immediately to avoid the loss frame"
+        "text": "Evaluate features versus free alternatives independent of fear copy"
       },
       {
         "label": "B",
-        "text": "Evaluate features versus free alternatives independent of fear copy"
+        "text": "Pay immediately to avoid the loss frame"
       },
       {
         "label": "C",
@@ -283,7 +283,7 @@
         "text": "Never pay because scare tactics are unfair"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "Loss-framed marketing exploits feelings; judge product value on needs (framing)."
   },
   {
@@ -335,18 +335,18 @@
       },
       {
         "label": "B",
-        "text": "Weigh the utility of both outcomes; equal EV means indifference for risk-neutral agents"
+        "text": "Reject both because any risk is bad"
       },
       {
         "label": "C",
-        "text": "Reject both because any risk is bad"
+        "text": "Weigh the utility of both outcomes; equal EV means indifference for risk-neutral agents"
       },
       {
         "label": "D",
         "text": "Flip a coin emotionally"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 2,
     "explanation": "Loss aversion overweights avoiding a loss versus gaining the same amount; EV analysis helps."
   },
   {
@@ -366,18 +366,18 @@
       },
       {
         "label": "B",
-        "text": "Model likelihoods with a clinician and decide given priors and costs"
-      },
-      {
-        "label": "C",
         "text": "Assume {percentage}% always means useless"
       },
       {
-        "label": "D",
+        "label": "C",
         "text": "Test daily to eliminate uncertainty"
+      },
+      {
+        "label": "D",
+        "text": "Model likelihoods with a clinician and decide given priors and costs"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 3,
     "explanation": "Fearing diagnosis more than information reflects loss aversion; expect value of info matters."
   },
   {
@@ -394,11 +394,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Buy every rider offered"
+        "text": "Compare premium to expected payout using real probabilities"
       },
       {
         "label": "B",
-        "text": "Compare premium to expected payout using real probabilities"
+        "text": "Buy every rider offered"
       },
       {
         "label": "C",
@@ -409,7 +409,7 @@
         "text": "Choose based on advertising fear alone"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "Loss aversion inflates willingness to overpay for thin coverage; compare price to EV."
   },
   {
@@ -460,18 +460,18 @@
       },
       {
         "label": "B",
-        "text": "Treat spent credits as sunk; choose food for health now"
+        "text": "Hoard credits though they expire"
       },
       {
         "label": "C",
-        "text": "Hoard credits though they expire"
+        "text": "Treat spent credits as sunk; choose food for health now"
       },
       {
         "label": "D",
         "text": "Buy random items to maximize spending"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 2,
     "explanation": "Fear of 'losing' credit makes people overpay in calories—loss aversion toward waste."
   },
   {
@@ -491,18 +491,18 @@
       },
       {
         "label": "B",
-        "text": "Actively seek disconfirming evidence and best opposing arguments"
-      },
-      {
-        "label": "C",
         "text": "Trust any headline matching prior beliefs"
       },
       {
-        "label": "D",
+        "label": "C",
         "text": "Assume all media is equally biased so ignore it all"
+      },
+      {
+        "label": "D",
+        "text": "Actively seek disconfirming evidence and best opposing arguments"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 3,
     "explanation": "Confirmation bias filters evidence; steelmanning the other side counteracts it."
   },
   {
@@ -518,11 +518,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Rely on latest impressions only"
+        "text": "Use structured criteria and notes across the whole cycle"
       },
       {
         "label": "B",
-        "text": "Use structured criteria and notes across the whole cycle"
+        "text": "Rely on latest impressions only"
       },
       {
         "label": "C",
@@ -533,7 +533,7 @@
         "text": "Rate entirely from memory"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "Cherry-picking recent supportive facts confirms preconceptions; structure counters it."
   },
   {
@@ -584,18 +584,18 @@
       },
       {
         "label": "B",
-        "text": "Read methods, sample size, replication, and conflicts of interest"
+        "text": "Dismiss if social media likes are high"
       },
       {
         "label": "C",
-        "text": "Dismiss if social media likes are high"
+        "text": "Read methods, sample size, replication, and conflicts of interest"
       },
       {
         "label": "D",
         "text": "Trust because the number is above half"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 2,
     "explanation": "Alignment with prior belief raises confirmation risk; methodology checks matter."
   },
   {
@@ -614,18 +614,18 @@
       },
       {
         "label": "B",
-        "text": "Weight blinded work samples and consistent rubrics higher"
-      },
-      {
-        "label": "C",
         "text": "Ask only friendly references supplied by the candidate"
       },
       {
-        "label": "D",
+        "label": "C",
         "text": "Assume chemistry predicts performance"
+      },
+      {
+        "label": "D",
+        "text": "Weight blinded work samples and consistent rubrics higher"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 3,
     "explanation": "Affinity confirms likability hypotheses; structured evidence reduces confirmation bias."
   },
   {
@@ -642,11 +642,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Finish solely because of past spend"
+        "text": "Compare future value of finishing versus switching paths, ignoring spent money"
       },
       {
         "label": "B",
-        "text": "Compare future value of finishing versus switching paths, ignoring spent money"
+        "text": "Finish solely because of past spend"
       },
       {
         "label": "C",
@@ -657,7 +657,7 @@
         "text": "Double time to justify the old spend faster"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "Past tuition is sunk; only forward costs and benefits should decide (sunk cost fallacy)."
   },
   {
@@ -708,18 +708,18 @@
       },
       {
         "label": "B",
-        "text": "Estimate incremental return versus pivoting; ignore spent funds"
+        "text": "Hide metrics to protect morale"
       },
       {
         "label": "C",
-        "text": "Hide metrics to protect morale"
+        "text": "Estimate incremental return versus pivoting; ignore spent funds"
       },
       {
         "label": "D",
         "text": "Fire everyone immediately"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 2,
     "explanation": "Throwing good money after bad honors sunk costs; marginal analysis guides pivots."
   },
   {
@@ -740,18 +740,18 @@
       },
       {
         "label": "B",
-        "text": "Decide renewal from expected future use, not past underuse"
-      },
-      {
-        "label": "C",
         "text": "Cancel out of guilt without a plan"
       },
       {
-        "label": "D",
+        "label": "C",
         "text": "Buy a yearly lock-in to force discipline"
+      },
+      {
+        "label": "D",
+        "text": "Decide renewal from expected future use, not past underuse"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 3,
     "explanation": "Averaging past payments confuses sunk membership with future motivation."
   },
   {
@@ -767,11 +767,11 @@
     "options": [
       {
         "label": "A",
-        "text": "Stay to honor past integration expense"
+        "text": "Model switching costs versus lifetime savings including migration"
       },
       {
         "label": "B",
-        "text": "Model switching costs versus lifetime savings including migration"
+        "text": "Stay to honor past integration expense"
       },
       {
         "label": "C",
@@ -782,7 +782,7 @@
         "text": "Blame procurement and stall"
       }
     ],
-    "correct_option": 1,
+    "correct_option": 0,
     "explanation": "Integration spend is sunk; compare forward totals including cutover costs."
   }
 ]

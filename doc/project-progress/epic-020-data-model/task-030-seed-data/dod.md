@@ -38,7 +38,7 @@ updated_at: 2026-05-10
 
 - [x] ✅ `ruff check .` exits 0
 - [x] ✅ `ruff format --check .` exits 0
-- [x] ✅ `mypy src/ --strict` exits 0
+- [x] ✅ `mypy src/ alembic/env.py --strict` exits 0
 - [x] ✅ No `TODO` / `FIXME` in committed code
 - [x] ✅ JSON files are UTF-8, 2-space indented, valid JSON (parseable by `json.loads`)
 

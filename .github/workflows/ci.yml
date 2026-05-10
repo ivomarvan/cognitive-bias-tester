@@ -50,7 +50,7 @@ jobs:
 
       - name: Mypy (strict)
         working-directory: backend
-        run: mypy src/ --strict
+        run: mypy src/ alembic/env.py --strict
 
       - name: Pytest (unit only)
         working-directory: backend
