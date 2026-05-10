@@ -1,9 +1,23 @@
-"""ORM models package — import concrete model modules here for Alembic autogenerate.
+"""ORM models package — imports register mappers on ``Base.metadata`` for Alembic."""
 
-When adding entities, use one module per domain (``Mapped``, ``mapped_column`` per
-``16-sqlalchemy``) and import them below so ``Base.metadata`` is populated before
-``alembic revision --autogenerate`` runs.
-"""
+from src.db.models.answer_event import AnswerEvent
+from src.db.models.bias_type import BiasType
+from src.db.models.case import Case
+from src.db.models.case_translation import CaseTranslation
+from src.db.models.rating import Rating
+from src.db.models.subscription import Subscription
+from src.db.models.ui_string import UiString
+from src.db.models.ui_string_translation import UiStringTranslation
+from src.db.models.user import User
 
-# Example (uncomment when models exist):
-# from src.db.models.example import Example  # noqa: F401
+__all__ = [
+    "AnswerEvent",
+    "BiasType",
+    "Case",
+    "CaseTranslation",
+    "Rating",
+    "Subscription",
+    "UiString",
+    "UiStringTranslation",
+    "User",
+]
