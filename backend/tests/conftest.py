@@ -7,6 +7,7 @@ that SQLAlchemy can build an engine object; the actual network connection is
 never opened during unit tests (ASGITransport in httpx does not trigger the
 ASGI lifespan, and model-only tests never touch the session).
 """
+
 import os
 
 os.environ.setdefault(
