@@ -1,0 +1,330 @@
+{
+  "_metadata": {
+    "model": "GPT-4",
+    "generated_at": "2023-10-01 12:00:00"
+  },
+  "anchoring": [
+    {
+      "id": "anchoring-textbook-01",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "nákup",
+      "difficulty": 2,
+      "question": "Při nakupování hotelu je uvedeno, že běžná cena je 200 dolarů za noc, ale nyní je zlevněná na 150 dolarů. Máte pocit, že se jedná o výhodnou nabídku?",
+      "options": [
+        {
+          "answer": "Ano, protože sleva 50 dolarů je významná.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože jste ovlivněni původní vyšší cenou."
+        },
+        {
+          "answer": "Ne, cena je stále příliš vysoká pro váš rozpočet.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vycházíte ze svého rozpočtu, ne z původní ceny."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-textbook-02",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "aukce",
+      "difficulty": 3,
+      "question": "Na aukci začne aukčnědrážební cena obrazu na 1 milion dolarů. Jaký odhadujete konečnou cenu?",
+      "options": [
+        {
+          "answer": "Pod 1 milion dolarů",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože konečná cena může být nižší než původně stanovená zákl."
+        },
+        {
+          "answer": "Nad 1 milion dolarů",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože jste ovlivněni počáteční cenou."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-textbook-03",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "osobní finance",
+      "difficulty": 3,
+      "question": "V rozhovoru o pozici se mluví o nabídkovém mínimálním platu 80 000 dolarů. Jakou výši platu očekáváte?",
+      "options": [
+        {
+          "answer": "O něco vyšší než 80 000 dolarů",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože očekávání začíná na počáteční nabídce."
+        },
+        {
+          "answer": "Na základě vašich schopností by to mělo být kolem 90 000 dolarů",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože je založena na hodnocení schopností, ne pouze na ukotvení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-01",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "cestování",
+      "difficulty": 1,
+      "question": "Na webu letecké společnosti vidíte, že první třída je za 3 000 dolarů, zatímco ekonomie je za 500 dolarů. Kterou třídu si zvolíte?",
+      "options": [
+        {
+          "answer": "Ekonomickou třídu.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se silně fixujete na velký cenový rozdíl."
+        },
+        {
+          "answer": "První třídu, pokud oceníte dodatečný komfort.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vychází z vaší potřeby pohodlí."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-02",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "real estate",
+      "difficulty": 5,
+      "question": "Prodejce stanovuje počáteční cenu domu na 800 000 dolarů. Na jakou hodnotu byste dům ocenili po posouzení stavu?",
+      "options": [
+        {
+          "answer": "800 000 dolarů",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože jste fixováni na původní kotvu."
+        },
+        {
+          "answer": "700 000 dolarů kvůli nutným rekonstrukcím.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože jste ocenili skutečný stav nemovitosti."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-03",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "práce",
+      "difficulty": 4,
+      "question": "Firmě byla kontrastně nabídnuta cena externích služeb 5 000 a 15 000 dolarů. Měla by vybrat levnější nabídku?",
+      "options": [
+        {
+          "answer": "Levnější nabídka je výhodnější pouze, pokud jsou služby srovnatelné.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože jste se zaměřili na srovnání kvality nabídek."
+        },
+        {
+          "answer": "Ano, levnější cena znamená úsporu.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, jelikož spoléháte jen na cenovou kotvu."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-04",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "vzdělání",
+      "difficulty": 2,
+      "question": "Učebnice obvykle stojí 50 dolarů, ale tato se nabízí za 30 dolarů. Je to dobrý obchod?",
+      "options": [
+        {
+          "answer": "Ano, je to dobrý obchod.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se fixujete na běžnou cenu."
+        },
+        {
+          "answer": "Záleží na obsahu učebnice.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože zohledňujete poměr kvality a ceny."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-05",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Lékař říká, že operace má úspěšnost 95 %. Jaké riziko vidíte ve výsledku operace?",
+      "options": [
+        {
+          "answer": "Zbývá 5 % riziko komplikací.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se zaměřujete jen na uvedenou úspěšnost."
+        },
+        {
+          "answer": "Mělo by být zváženo celé zdraví pacienta.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože berete v úvahu více faktorů."
+        }
+      ]
+    }
+  ],
+  "framing": [
+    {
+      "id": "framing-textbook-01",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Představte si, že nemoc má 90% úspěšnost léčby. Jak vnímáte šanci na uzdravení?",
+      "options": [
+        {
+          "answer": "Uzdravení je téměř jisté.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože jste ovlivněni pozitivním rámováním."
+        },
+        {
+          "answer": "Existuje 10% riziko neúspěchu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože plně zohledňujete možnost neúspěchu."
+        }
+      ]
+    },
+    {
+      "id": "framing-textbook-02",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "marketing",
+      "difficulty": 2,
+      "question": "Výrobek tvrdí, že 95 % zákazníků je spokojeno. Jak vnímáte produkt?",
+      "options": [
+        {
+          "answer": "Produkt je velmi kvalitní.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože jste ovlivněni pozitivním rámováním."
+        },
+        {
+          "answer": "Je třeba zvážit i stížnosti 5 % zákazníků.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože berete v úvahu obě strany hodnocení."
+        }
+      ]
+    },
+    {
+      "id": "framing-textbook-03",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "ekonomika",
+      "difficulty": 4,
+      "question": "Ve zprávě se uvádí, že ekonomika má 80% pravděpodobnost růstu. Jak hodnotíte budoucí ekonomické vyhlídky?",
+      "options": [
+        {
+          "answer": "Vyhlídky jsou pozitivní s velkým růstovým potenciálem.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se soustředíte na optimistické vyhlídky."
+        },
+        {
+          "answer": "Stále existuje 20% možnost stagnace nebo poklesu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože zohledňujete i rizika stagnace."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-01",
+      "bias": "framing",
+      "source": "own",
+      "domain": "cestování",
+      "difficulty": 1,
+      "question": "Nabídka zájezdu uvádí, že 80 % dní budete mít slunečné počasí. Jak vnímáte podmínky pro dovolenou?",
+      "options": [
+        {
+          "answer": "Počasí bude většinou perfektní.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se soustředíte na pozitivně zarámovanou část."
+        },
+        {
+          "answer": "Měli byste být připraveni na 20 % deštivých dní.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože počítáte i s méně příznivými podmínkami."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-02",
+      "bias": "framing",
+      "source": "own",
+      "domain": "strava",
+      "difficulty": 5,
+      "question": "Etiketa potraviny tvrdí, že 90 % ingrediencí je organických. Jak hodnotíte kvalitu potravin?",
+      "options": [
+        {
+          "answer": "Potravina je převážně organická a zdravá.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení rámování, protože ignorujete těch 10 % neorganických."
+        },
+        {
+          "answer": "Musí se prověřit ostatní výrobní postupy.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože zohledňujete kompletní pohled na ingredience."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-03",
+      "bias": "framing",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Léčba má 95% úspěšnost přežití. Jak vnímáte tento léčebný zásah?",
+      "options": [
+        {
+          "answer": "Zásah je bezpečný a efektivní.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se soustředíte na vysokou úspěšnost."
+        },
+        {
+          "answer": "Existuje stále 5% riziko úmrtí.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože zohledňujete riziko i přes vysokou úspěšnost."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-04",
+      "bias": "framing",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 4,
+      "question": "Investiční portfólio má 85% šanci na zisk. Jaké kroky podniknete?",
+      "options": [
+        {
+          "answer": "Investovat ihned pro vysokou šanci zisku.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože přeceňujete pozitivní stránku."
+        },
+        {
+          "answer": "Analyzovat dalších 15 % rizik.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože studujete možná rizika."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-05",
+      "bias": "framing",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 2,
+      "question": "Cvičební plán slibuje 80% úspěch, pokud se dodržuje. Jak zhodnotíte účinnost plánu?",
+      "options": [
+        {
+          "answer": "Je velmi efektivní.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se zaměřujete jen na úspěchy."
+        },
+        {
+          "answer": "Je třeba zálohovat plán na případ neúspěchu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože zvažujete i možnost neúspěchu."
+        }
+      ]
+    }
+  ]
+}

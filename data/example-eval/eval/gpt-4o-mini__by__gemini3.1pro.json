@@ -1,0 +1,1449 @@
+{
+  "_metadata": {
+    "evaluator_model": "Gemini 3.1 Pro",
+    "evaluated_at": "2026-05-10T20:11:17+02:00",
+    "evaluation_prompt_version": "v1.0"
+  },
+  "input_reference": {
+    "source_file": "/home/ivo/workspace/git.hub.lab.ivo/cognitive-bias-tester/nogit_data/example-eval/gen/gpt-4o-mini.json",
+    "sha256": "2c27286165260d517beb485f4503687e0211879416d63f93371deaf5a37f056f",
+    "generator_model": "GPT-4.0",
+    "generated_at": "2023-10-09 12:00:00",
+    "input_summary": {
+      "total_examples": 40,
+      "by_source": {
+        "textbook": 15,
+        "own": 25
+      },
+      "by_bias": {
+        "anchoring": 8,
+        "framing": 8,
+        "loss_aversion": 8,
+        "confirmation_bias": 8,
+        "sunk_cost_fallacy": 8
+      }
+    }
+  },
+  "evaluation_results": {
+    "anchoring": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 16,
+        "weighted_score": 23.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=23.5"
+        ],
+        "feedback": "Není to funkční past, 500 Kč je prostě cena trička. Racionální odpověď postrádá logický základ.",
+        "strengths": [],
+        "weaknesses": [
+          "Chybí objektivní racionalita",
+          "Neodpovídá principu anchoringu"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "scores": {
+          "cognitive_trap": 0,
+          "rationality": 0,
+          "subtlety": 0,
+          "difficulty_adherence": 0,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 5,
+        "weighted_score": 5.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=5.0"
+        ],
+        "feedback": "Zcela špatný příklad, odpovědi 20 % a 20 ze 100 jsou matematicky totožné.",
+        "strengths": [],
+        "weaknesses": [
+          "Odpovědi jsou identické",
+          "Nejde o anchoring, spíše pokus o framing",
+          "Nulová racionalita"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 0,
+          "subtlety": 4,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 15,
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ],
+        "feedback": "Předchozí výsledek není nezávislá kotva, ale relevantní informace o formě týmu. Odpověď nelze objektivně spočítat.",
+        "strengths": [],
+        "weaknesses": [
+          "Záměna anchoringu za predikci trendu",
+          "Chybí logická opora pro racionální odpověď"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "scores": {
+          "cognitive_trap": 3,
+          "rationality": 2,
+          "subtlety": 4,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 18,
+        "weighted_score": 31.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=31.0"
+        ],
+        "feedback": "Otázka se ptá na subjektivní požadavek, neexistuje jedna objektivně správná mzda.",
+        "strengths": [],
+        "weaknesses": [
+          "Otázka nemá jednoznačně racionální řešení",
+          "Slabá past"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "scores": {
+          "cognitive_trap": 0,
+          "rationality": 2,
+          "subtlety": 3,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 14,
+        "weighted_score": 20.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=20.5"
+        ],
+        "feedback": "Tlak na další prohlídce silně koreluje s minulým, nejedná se o kognitivní zkreslení, ale logický předpoklad.",
+        "strengths": [],
+        "weaknesses": [
+          "Nejde o anchoring, ale predikci z minulých dat",
+          "Racionální odpověď je diskutabilní"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 0,
+          "subtlety": 4,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 15,
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ],
+        "feedback": "Cena nového koncertu závisí na interpretovi, průměr z minulých koncertů není relevantní kotva.",
+        "strengths": [],
+        "weaknesses": [
+          "Chybí objektivní řešení",
+          "Nejedná se o čistý anchoring"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 0,
+          "subtlety": 3,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 14,
+        "weighted_score": 20.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=20.5"
+        ],
+        "feedback": "Subjektivní rozhodnutí o dárku nemá jedinou správnou racionální odpověď.",
+        "strengths": [],
+        "weaknesses": [
+          "Subjektivní preference místo racionality",
+          "Neodpovídá definici zkreslení"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 2,
+          "subtlety": 4,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 17,
+        "weighted_score": 28.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=28.0"
+        ],
+        "feedback": "Obchodní strategie nemá jednoznačně správné řešení, obě volby mohou být racionální v různém kontextu.",
+        "strengths": [],
+        "weaknesses": [
+          "Chybí objektivní racionalita",
+          "Konkurence není kognitivní kotva, ale tržní faktor"
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "framing": [
+      {
+        "example_id": "framing-textbook-01",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 0,
+          "subtlety": 2,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 16,
+        "weighted_score": 28.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=28.0"
+        ],
+        "feedback": "Obě metody jsou statisticky identické (90 % úspěšnost = 10 % neúspěšnost), žádná není objektivně 'racionálnější'.",
+        "strengths": [],
+        "weaknesses": [
+          "Odpovědi popisují stejnou volbu",
+          "Žádná volba není objektivně lepší"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 0,
+          "subtlety": 2,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 16,
+        "weighted_score": 28.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=28.0"
+        ],
+        "feedback": "Stejná chyba jako výše, obě investice mají stejnou pravděpodobnost, žádná není 'racionální'.",
+        "strengths": [],
+        "weaknesses": [
+          "Odpovědi jsou identické",
+          "Chybí racionalita"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "scores": {
+          "cognitive_trap": 0,
+          "rationality": 0,
+          "subtlety": 2,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 11,
+        "weighted_score": 13.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=13.0"
+        ],
+        "feedback": "Toto není framing s volbou, ale otázka na názor. Obě odpovědi jsou označeny jako biased.",
+        "strengths": [],
+        "weaknesses": [
+          "Neobsahuje racionální volbu",
+          "Špatná struktura testu"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-01",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 2,
+          "subtlety": 3,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 18,
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=32.5"
+        ],
+        "feedback": "Otázka se ptá na reakci, ne na rozhodnutí. Hodnocení je ryze subjektivní.",
+        "strengths": [],
+        "weaknesses": [
+          "Nejde o rozhodovací problém",
+          "Racionalita je zcela subjektivní"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-02",
+        "scores": {
+          "cognitive_trap": 3,
+          "rationality": 0,
+          "subtlety": 2,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 14,
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ],
+        "feedback": "5 % a 'každý dvacátý' znamenají přesně to samé. Nelze jednu označit za racionální.",
+        "strengths": [],
+        "weaknesses": [
+          "Identické odpovědi",
+          "Chybí racionální složka"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 2,
+          "subtlety": 3,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 18,
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=32.5"
+        ],
+        "feedback": "Opět otázka na reakci, ne rozhodnutí mezi ekvivalentními možnostmi.",
+        "strengths": [],
+        "weaknesses": [
+          "Neexistuje objektivně správná reakce",
+          "Nesplňuje formát framingu"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-04",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 2,
+          "subtlety": 3,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 18,
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=32.5"
+        ],
+        "feedback": "Ptá se na pocit, nikoliv na objektivní fakt nebo volbu.",
+        "strengths": [],
+        "weaknesses": [
+          "Subjektivní pocit nelze hodnotit jako racionální",
+          "Chybný formát"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-05",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 3,
+          "subtlety": 5,
+          "difficulty_adherence": 3,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 24,
+        "weighted_score": 46.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "rationality=3 (auto_reject)",
+          "weighted_score=46.0"
+        ],
+        "feedback": "Nejde o framing, ale o skryté poplatky. 6 % - 1 % nemusí být lepší než 5 % podle základu výpočtu.",
+        "strengths": [],
+        "weaknesses": [
+          "Jde spíše o matematický chyták než framing",
+          "Racionalita předpokládá nejasné skutečnosti"
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "loss_aversion": [
+      {
+        "example_id": "loss_aversion-textbook-01",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 18,
+        "weighted_score": 29.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=29.5"
+        ],
+        "feedback": "Nelze určit očekávanou hodnotu projektu (neznáme částku výhry), takže nelze stanovit racionální volbu.",
+        "strengths": [],
+        "weaknesses": [
+          "Chybí matematický základ pro racionalitu",
+          "Neúplné zadání"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-textbook-02",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 0,
+          "subtlety": 3,
+          "difficulty_adherence": 2,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 12,
+        "weighted_score": 18.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=18.5"
+        ],
+        "feedback": "Odpověď 'Odevzdat vakcínu' nedává smysl. Scénář je zmatený a nelogický.",
+        "strengths": [],
+        "weaknesses": [
+          "Nesmyslný scénář",
+          "Nelogické možnosti"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-textbook-03",
+        "scores": {
+          "cognitive_trap": 3,
+          "rationality": 0,
+          "subtlety": 4,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 16,
+        "weighted_score": 25.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=25.0"
+        ],
+        "feedback": "Zda nasadit zraněného hráče nelze objektivně označit za racionální (riziko trvalých následků).",
+        "strengths": [],
+        "weaknesses": [
+          "Racionalita je silně subjektivní",
+          "Závisí na neznámých proměnných"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-01",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 19,
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=32.5"
+        ],
+        "feedback": "Zda akcie prodat nebo držet po poklesu nelze označit za objektivně racionální bez znalosti budoucího vývoje.",
+        "strengths": [],
+        "weaknesses": [
+          "Absence objektivně racionální volby",
+          "Ignoruje fundamentální analýzu"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-02",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 4,
+          "subtlety": 5,
+          "difficulty_adherence": 3,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 23,
+        "weighted_score": 43.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=4 (auto_reject)",
+          "weighted_score=43.0"
+        ],
+        "feedback": "Volba zaplatit za prevenci je logická, ale formulace 'riskovat komplikace' silně napovídá.",
+        "strengths": [],
+        "weaknesses": [
+          "Zjevná nápověda v textu",
+          "Slabá past"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-03",
+        "scores": {
+          "cognitive_trap": 2,
+          "rationality": 0,
+          "subtlety": 4,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 15,
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ],
+        "feedback": "Platba za kroužky z obavy o neúspěch není loss aversion v klasickém pojetí. Subjektivní volba.",
+        "strengths": [],
+        "weaknesses": [
+          "Neodpovídá typu zkreslení",
+          "Chybí racionalita"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-04",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 18,
+        "weighted_score": 29.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=29.5"
+        ],
+        "feedback": "Racionalita nesázení (vs vsazení) závisí na kurzech a pravděpodobnosti, což chybí.",
+        "strengths": [],
+        "weaknesses": [
+          "Nelze určit matematickou výhodnost",
+          "Chybí objektivní racionalita"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-05",
+        "scores": {
+          "cognitive_trap": 3,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 2,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 17,
+        "weighted_score": 26.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=26.5"
+        ],
+        "feedback": "Rozšíření projektu nemusí být racionální, závisí na ROI, riziku a datech, která nejsou uvedena.",
+        "strengths": [],
+        "weaknesses": [
+          "Chybí data pro racionální zhodnocení",
+          "Slabá past"
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "confirmation_bias": [
+      {
+        "example_id": "confirmation_bias-textbook-01",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 6,
+          "subtlety": 6,
+          "difficulty_adherence": 5,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 30,
+        "weighted_score": 57.5,
+        "recommendation": "needs_major_rewrite",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5",
+          "weighted_score=57.5"
+        ],
+        "feedback": "Racionální je hledat všechna data, ne jen varovné signály. Přesto příklad alespoň trochu funguje.",
+        "strengths": [
+          "Jasně zachycuje podstatu confirmation bias"
+        ],
+        "weaknesses": [
+          "Racionální odpověď je nevyvážená",
+          "Působí trochu školometsky"
+        ],
+        "suggested_fix": "Upravit racionální volbu na 'Hledat objektivní data pro i proti'."
+      },
+      {
+        "example_id": "confirmation_bias-textbook-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Jeden z lepších příkladů, jasná ukázka confirmation bias s logickou racionální alternativou.",
+        "strengths": [
+          "Dobře strukturovaný",
+          "Zřetelná racionalita"
+        ],
+        "weaknesses": [
+          "Trochu průhledné zadání"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobře uchopený bias v kontextu výchovy.",
+        "strengths": [
+          "Přirozený kontext",
+          "Jasná racionalita"
+        ],
+        "weaknesses": [
+          "Slovo 'objektivní' napovídá správnou odpověď"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 6,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 36,
+        "weighted_score": 72.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Funguje dobře, ale obě volby jsou exkluzivní, racionální by mělo být hledat obojí.",
+        "strengths": [
+          "Správná doména"
+        ],
+        "weaknesses": [
+          "Racionální volba je jen opačným extrémem"
+        ],
+        "suggested_fix": "Změnit racionální volbu na hledání vyvážených dat."
+      },
+      {
+        "example_id": "confirmation_bias-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobře ilustruje výběrové vnímání u diet.",
+        "strengths": [
+          "Praktický scénář",
+          "Jasně oddělené možnosti"
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-03",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 7,
+          "subtlety": 6,
+          "difficulty_adherence": 6,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 33,
+        "weighted_score": 65.0,
+        "recommendation": "needs_major_rewrite",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Slušný příklad, ale volba slov 'pozitivní' vs 'chyby' je návodná.",
+        "strengths": [
+          "Lidský kontext"
+        ],
+        "weaknesses": [
+          "Návodná formulace"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-04",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 7,
+          "subtlety": 6,
+          "difficulty_adherence": 6,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 33,
+        "weighted_score": 65.0,
+        "recommendation": "needs_major_rewrite",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Podobný problém - racionální je hledat kritiku? Ne, racionální je vnímat herce objektivně.",
+        "strengths": [
+          "Jasné odlišení chování"
+        ],
+        "weaknesses": [
+          "Záměna racionality za záměrné vyhledávání negativ"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-05",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 7,
+          "subtlety": 6,
+          "difficulty_adherence": 6,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 33,
+        "weighted_score": 65.0,
+        "recommendation": "needs_major_rewrite",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Scénář v práci dává smysl, dobré odlišení uvažování.",
+        "strengths": [
+          "Vhodné prostředí"
+        ],
+        "weaknesses": [
+          "Slovo 'skeptici' zní mírně negativně"
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "sunk_cost_fallacy": [
+      {
+        "example_id": "sunk_cost_fallacy-textbook-01",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 3,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 19,
+        "weighted_score": 31.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=31.0"
+        ],
+        "feedback": "Zda prodat klesající akcie nelze paušálně označit za racionální.",
+        "strengths": [],
+        "weaknesses": [
+          "Ignoruje tržní mechanismy",
+          "Chybí objektivní opora racionální volby"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 10,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Výborný a klasický příklad. Zmínka 'není životaschopný' perfektně utvrzuje objektivní racionalitu.",
+        "strengths": [
+          "Klasická ukázka",
+          "Objektivně správná odpověď díky formulaci"
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-03",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 6,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 35,
+        "weighted_score": 69.5,
+        "recommendation": "needs_major_rewrite",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobré, i když subjektivní. Odpověď racionálně vyzývá k zvážení budoucnosti.",
+        "strengths": [
+          "Dobrý kontext utopených peněz i času"
+        ],
+        "weaknesses": [
+          "Slabší objektivní jistota, hobby se dělá pro radost"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 77.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Velmi reálný scénář z běžného života, ukázkové utopené náklady.",
+        "strengths": [
+          "Vysoce uvěřitelné",
+          "Jasná past"
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-02",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 4,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 20,
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=32.5"
+        ],
+        "feedback": "Zda je racionální opravovat staré auto nebo koupit nové, závisí na přesných částkách.",
+        "strengths": [],
+        "weaknesses": [
+          "Chybí ekonomická data",
+          "Racionalita je subjektivní předpoklad"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 6,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Správně položený důraz na to, že čas je už ztracen.",
+        "strengths": [
+          "Dobré zaměření na nefinanční náklady",
+          "Racionální řešení dává smysl"
+        ],
+        "weaknesses": [
+          "Mírně se opakuje s textbook-03"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-04",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 8,
+          "subtlety": 6,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 35,
+        "weighted_score": 69.5,
+        "recommendation": "needs_major_rewrite",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobrá aplikace na pracovní prostředí. Desetitisíce hodin zní jako nadsázka, ale ilustruje bod.",
+        "strengths": [
+          "Silné utopené náklady"
+        ],
+        "weaknesses": [
+          "Až nereálná nadsázka času"
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-05",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 5,
+          "subtlety": 6,
+          "difficulty_adherence": 4,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 27,
+        "weighted_score": 52.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5",
+          "rationality=5",
+          "weighted_score=52.0",
+          "recommendation=reject"
+        ],
+        "feedback": "Dovolenou nelze tak snadno klasifikovat, 'zrušit' zaplacenou dovolenou bez refundace může být finančně horší.",
+        "strengths": [
+          "Dobrá doména"
+        ],
+        "weaknesses": [
+          "Racionální odpověď je nejednoznačná, neznáme podmínky storna"
+        ],
+        "suggested_fix": null
+      }
+    ]
+  },
+  "population_checks": {
+    "anchoring": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "framing": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "loss_aversion": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "confirmation_bias": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "sunk_cost_fallacy": {
+      "difficulty_coverage_own": {
+        "status": "narrow",
+        "missing_levels": [
+          1
+        ]
+      },
+      "scenario_diversity": {
+        "status": "near_duplicates_found",
+        "near_duplicates": [
+          [
+            "sunk_cost_fallacy-textbook-03",
+            "sunk_cost_fallacy-own-03"
+          ]
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "averages_by_bias": {
+      "anchoring": {
+        "n": 8,
+        "mean_weighted": 21.6,
+        "min_weighted": 5.0,
+        "max_weighted": 31.0
+      },
+      "framing": {
+        "n": 8,
+        "mean_weighted": 29.3,
+        "min_weighted": 13.0,
+        "max_weighted": 46.0
+      },
+      "loss_aversion": {
+        "n": 8,
+        "mean_weighted": 28.3,
+        "min_weighted": 18.5,
+        "max_weighted": 43.0
+      },
+      "confirmation_bias": {
+        "n": 8,
+        "mean_weighted": 68.4,
+        "min_weighted": 57.5,
+        "max_weighted": 74.0
+      },
+      "sunk_cost_fallacy": {
+        "n": 8,
+        "mean_weighted": 60.9,
+        "min_weighted": 31.0,
+        "max_weighted": 80.0
+      }
+    },
+    "averages_by_source": {
+      "textbook": {
+        "n": 15,
+        "mean_weighted": 38.6
+      },
+      "own": {
+        "n": 25,
+        "mean_weighted": 43.6
+      }
+    },
+    "averages_by_criteria": {
+      "cognitive_trap": 4.2,
+      "rationality": 3.2,
+      "subtlety": 4.7,
+      "difficulty_adherence": 3.6,
+      "rule_adherence": 7.2
+    },
+    "overall_mean_weighted": 41.7,
+    "flagged_examples": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "weighted_score": 23.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=23.5"
+        ]
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "weighted_score": 5.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=5.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "weighted_score": 31.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=31.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "weighted_score": 20.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=20.5"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "weighted_score": 20.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=20.5"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "weighted_score": 28.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=28.0"
+        ]
+      },
+      {
+        "example_id": "framing-textbook-01",
+        "weighted_score": 28.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=28.0"
+        ]
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "weighted_score": 28.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=28.0"
+        ]
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "weighted_score": 13.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=13.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-01",
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=32.5"
+        ]
+      },
+      {
+        "example_id": "framing-own-02",
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-03",
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=32.5"
+        ]
+      },
+      {
+        "example_id": "framing-own-04",
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=2 (auto_reject)",
+          "weighted_score=32.5"
+        ]
+      },
+      {
+        "example_id": "framing-own-05",
+        "weighted_score": 46.0,
+        "recommendation": "reject",
+        "reasons": [
+          "rationality=3 (auto_reject)",
+          "weighted_score=46.0"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-textbook-01",
+        "weighted_score": 29.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=29.5"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-textbook-02",
+        "weighted_score": 18.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=18.5"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-textbook-03",
+        "weighted_score": 25.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=25.0"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-own-01",
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=32.5"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-own-02",
+        "weighted_score": 43.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=4 (auto_reject)",
+          "weighted_score=43.0"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-own-03",
+        "weighted_score": 22.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=2 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=22.0"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-own-04",
+        "weighted_score": 29.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=29.5"
+        ]
+      },
+      {
+        "example_id": "loss_aversion-own-05",
+        "weighted_score": 26.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=26.5"
+        ]
+      },
+      {
+        "example_id": "confirmation_bias-textbook-01",
+        "weighted_score": 57.5,
+        "recommendation": "needs_major_rewrite",
+        "reasons": [
+          "cognitive_trap=5",
+          "weighted_score=57.5"
+        ]
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-01",
+        "weighted_score": 31.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=31.0"
+        ]
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-02",
+        "weighted_score": 32.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=32.5"
+        ]
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-05",
+        "weighted_score": 52.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=5",
+          "rationality=5",
+          "weighted_score=52.0",
+          "recommendation=reject"
+        ]
+      }
+    ],
+    "top_3_examples": [
+      "sunk_cost_fallacy-textbook-02",
+      "sunk_cost_fallacy-own-01",
+      "sunk_cost_fallacy-own-03"
+    ],
+    "bottom_3_examples": [
+      "anchoring-textbook-02",
+      "framing-textbook-03",
+      "loss_aversion-textbook-02"
+    ],
+    "overall_summary_feedback": "Generující model GPT-4o-mini hrubě selhal ve většině kategorií. Největším problémem je naprostá absence 'objektivní racionality' v odpovědích — generátor si často plete racionální volbu s opačným extrémem, subjektivním názorem nebo generuje matematicky totožné odpovědi (typické pro framing). Mnohé příklady (hlavně na loss aversion a anchoring) tak nejsou validní testy kognitivních zkreslení, ale otázky na osobní preference bez správné odpovědi. Použitelný je jen malý zlomek vygenerovaného obsahu."
+  }
+}

@@ -1,0 +1,1075 @@
+{
+  "_metadata": {
+    "evaluator_model": "Gemini 3.1 Pro",
+    "evaluated_at": "2026-05-10T23:47:54+02:00",
+    "evaluation_prompt_version": "v1.0"
+  },
+  "input_reference": {
+    "source_file": "/home/ivo/workspace/git.hub.lab.ivo/cognitive-bias-tester/nogit_data/example-eval/gen/opus-4.7.json",
+    "sha256": "5b8b5927e31745ff99cbd2f0ee53ea1d9a9251340883773d69d7ca5449e81bc1",
+    "generator_model": "Claude Opus 4.7",
+    "generated_at": "2026-05-10 22:01:00",
+    "input_summary": {
+      "total_examples": 40,
+      "by_source": {
+        "textbook": 15,
+        "own": 25
+      },
+      "by_bias": {
+        "anchoring": 8,
+        "framing": 8,
+        "loss_aversion": 8,
+        "confirmation_bias": 8,
+        "sunk_cost_fallacy": 8
+      }
+    }
+  },
+  "evaluation_results": {
+    "anchoring": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      }
+    ],
+    "framing": [
+      {
+        "example_id": "framing-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-05",
+        "scores": {
+          "cognitive_trap": 6,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 38,
+        "weighted_score": 73.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Zarámování pomocí '1 procentní bod nižší než 6 %' zní velmi uměle a nepoužívá se v běžné komunikaci.",
+        "strengths": [
+          "Matematicky přesné."
+        ],
+        "weaknesses": [
+          "Nepřirozená formulace."
+        ],
+        "suggested_fix": "Přeformulovat pojišťovnu B tak, aby zněla přirozeněji (např. 'v 5 % případů'), ale zachovat framing."
+      }
+    ],
+    "loss_aversion": [
+      {
+        "example_id": "loss_aversion-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 7,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "loss_aversion-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ],
+    "confirmation_bias": [
+      {
+        "example_id": "confirmation_bias-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 90.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "confirmation_bias-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "confirmation_bias-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "confirmation_bias-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "confirmation_bias-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "confirmation_bias-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      }
+    ],
+    "sunk_cost_fallacy": [
+      {
+        "example_id": "sunk_cost_fallacy-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+        "strengths": [
+          "Jasná a pochopitelná past.",
+          "Dobře ukotvené racionální řešení."
+        ],
+        "weaknesses": [
+          "Mírně strojený tón."
+        ],
+        "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+      }
+    ]
+  },
+  "population_checks": {
+    "anchoring": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "framing": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "loss_aversion": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "confirmation_bias": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "sunk_cost_fallacy": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    }
+  },
+  "statistics": {
+    "averages_by_bias": {
+      "anchoring": {
+        "n": 8,
+        "mean_weighted": 85.1,
+        "min_weighted": 84.0,
+        "max_weighted": 87.0,
+        "stdev_weighted": 1.6
+      },
+      "framing": {
+        "n": 8,
+        "mean_weighted": 86.4,
+        "min_weighted": 73.5,
+        "max_weighted": 90.0,
+        "stdev_weighted": 5.4
+      },
+      "loss_aversion": {
+        "n": 8,
+        "mean_weighted": 87.0,
+        "min_weighted": 81.0,
+        "max_weighted": 90.0,
+        "stdev_weighted": 2.8
+      },
+      "confirmation_bias": {
+        "n": 8,
+        "mean_weighted": 83.6,
+        "min_weighted": 81.0,
+        "max_weighted": 90.0,
+        "stdev_weighted": 4.1
+      },
+      "sunk_cost_fallacy": {
+        "n": 8,
+        "mean_weighted": 85.1,
+        "min_weighted": 84.0,
+        "max_weighted": 87.0,
+        "stdev_weighted": 1.6
+      }
+    },
+    "averages_by_source": {
+      "textbook": {
+        "n": 15,
+        "mean_weighted": 87.8
+      },
+      "own": {
+        "n": 25,
+        "mean_weighted": 84.1
+      }
+    },
+    "averages_by_criteria": {
+      "cognitive_trap": 8.3,
+      "rationality": 9.2,
+      "subtlety": 8.0,
+      "difficulty_adherence": 8.0,
+      "rule_adherence": 9.0
+    },
+    "overall_mean_weighted": 85.5,
+    "flagged_examples": [],
+    "top_3_examples": [
+      "confirmation_bias-textbook-02",
+      "confirmation_bias-textbook-01",
+      "loss_aversion-textbook-03"
+    ],
+    "bottom_3_examples": [
+      "framing-own-05",
+      "loss_aversion-textbook-02",
+      "confirmation_bias-own-01"
+    ],
+    "overall_summary_feedback": "Celkově model Claude Opus 4.7 odvedl výbornou práci. Podařilo se mu generovat silné a funkční pasti, které odpovídají zadaným zkreslením. Racionální možnosti jsou objektivně obhajitelné. Občasná slabina se vyskytuje ve snaze vymyslet příliš složité zarámování (např. u framing), což zní strojeně, ale celková kvalita je velmi vysoká a většina příkladů je rovnou použitelná (use_as_is)."
+  }
+}

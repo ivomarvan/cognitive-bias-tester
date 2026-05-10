@@ -1,0 +1,801 @@
+{
+  "_metadata": {
+    "model": "GPT-4",
+    "generated_at": "2023-10-11 14:45:00"
+  },
+  "anchoring": [
+    {
+      "id": "anchoring-textbook-01",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "nákup",
+      "difficulty": 2,
+      "question": "Kolik byste byli ochotni zaplatit za oběd v restauraci, pokud bylo uvedeno, že oběd obvykle stojí 30 €?",
+      "options": [
+        {
+          "answer": "27 €",
+          "verdict": "biased",
+          "explanation": "Tato volba je ovlivněna kotvou 30 €, která vytváří očekávání."
+        },
+        {
+          "answer": "25 €",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože nezohledňuje kotvu 30 €."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-textbook-02",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "finance",
+      "difficulty": 3,
+      "question": "Pokud jste viděli záznam akcie, která začínala na 50 $, jakou cenu byste předpokládali pro investici na konci roku?",
+      "options": [
+        {
+          "answer": "65 $",
+          "verdict": "biased",
+          "explanation": "Volba 65 $ odráží původní kotvu 50 $, což může ovlivnit vaše očekávání."
+        },
+        {
+          "answer": "60 $",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože nezávisí na prvotní ceně akcií."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-textbook-03",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "volný čas",
+      "difficulty": 4,
+      "question": "Kolik byste ochotni zaplatit za lístek na koncert, pokud jste slyšeli, že lístky se většinou prodávají za 80 €?",
+      "options": [
+        {
+          "answer": "75 €",
+          "verdict": "biased",
+          "explanation": "Tato volba evokuje kotvu 80 €, což zkresluje vaše vnímání hodnoty."
+        },
+        {
+          "answer": "70 €",
+          "verdict": "rational",
+          "explanation": "Volba 70 € lépe reflektuje vaši osobní hodnotu koncertu, bez vlivu kotvy."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-01",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "sport",
+      "difficulty": 1,
+      "question": "Kolik bodů byste odhadovali, že váš oblíbený tým získá v příštím zápase, pokud hodně mluví o tom, že v předchozím zápase dal 100 bodů?",
+      "options": [
+        {
+          "answer": "95 bodů",
+          "verdict": "biased",
+          "explanation": "Tato odpověď ukazuje vliv předchozího výkonu jako kotvy."
+        },
+        {
+          "answer": "85 bodů",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální a méně ovlivněná předchozím výkonem."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-02",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "rodina",
+      "difficulty": 3,
+      "question": "Jaký rozpočet byste nastavili na rodinnou dovolenou, pokud jste slyšeli, že průměrné náklady jsou 1500 €?",
+      "options": [
+        {
+          "answer": "1600 €",
+          "verdict": "biased",
+          "explanation": "Tato volba je ovlivněna průměrnými náklady jako kotvou."
+        },
+        {
+          "answer": "1400 €",
+          "verdict": "rational",
+          "explanation": "Tato volba odráží vaši skutečnou dostupnost bez vlivu průměru."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-03",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "pracovní pohovor",
+      "difficulty": 4,
+      "question": "Jakou mzdu byste požadovali při pracovním pohovoru, pokud víte, že vaše kamarádi říkali, že dostávají kolem 3000 €?",
+      "options": [
+        {
+          "answer": "3200 €",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje ovlivnění vaším okolím a jejich očekáváním."
+        },
+        {
+          "answer": "2800 €",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální a nezávisí na externím tlaku."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-04",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 5,
+      "question": "Jakou částku byste byli ochotni investovat do zdravého životního stylu, pokud víte, že průměrný člověk vydává kolem 400 € měsíčně na zdravou výživu?",
+      "options": [
+        {
+          "answer": "450 €",
+          "verdict": "biased",
+          "explanation": "Tato volba je ovlivněna předešlým průměrem, což zkresluje vaše vyčerpání."
+        },
+        {
+          "answer": "350 €",
+          "verdict": "rational",
+          "explanation": "Tato volba je realistická a nezávisí na průměru."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-05",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 2,
+      "question": "Jaké procento příjmu byste byli ochotni ušetřit, pokud víte, že většina lidí šetří kolem 20 %?",
+      "options": [
+        {
+          "answer": "22 %",
+          "verdict": "biased",
+          "explanation": "Tato volba je ovlivněna průměrnou hodnotou 20 %, což zvyšuje vaše očekávání."
+        },
+        {
+          "answer": "15 %",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální a reflektuje vaše skutečné schopnosti šetřit."
+        }
+      ]
+    }
+  ],
+  "framing": [
+    {
+      "id": "framing-textbook-01",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "zdraví",
+      "difficulty": 2,
+      "question": "Pokud jedno léčebné řešení má 90% úspěšnost, zatímco jiné má 10% selhání, co byste si vybrali?",
+      "options": [
+        {
+          "answer": "Léčebné řešení s 90% úspěšností.",
+          "verdict": "rational",
+          "explanation": "Objektivně zvolené, založené na úspěšnosti."
+        },
+        {
+          "answer": "Léčebné řešení s 10% selháním.",
+          "verdict": "biased",
+          "explanation": "Tato volba ilustruje zaujato při výběru na základě formulace."
+        }
+      ]
+    },
+    {
+      "id": "framing-textbook-02",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "finance",
+      "difficulty": 3,
+      "question": "Máte možnost investovat do portfolia, které má 70% pravděpodobnost zisku, nebo do portfolia s 30% pravděpodobností ztráty. Jakou variantu zvolíte?",
+      "options": [
+        {
+          "answer": "Portfolio s 70% pravděpodobností zisku.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, zvyšuje vaše šance na úspěch."
+        },
+        {
+          "answer": "Portfolio s 30% pravděpodobností ztráty.",
+          "verdict": "biased",
+          "explanation": "Výběr je ovlivněn negativním vyjádřením 30% ztráty, což je iracionální."
+        }
+      ]
+    },
+    {
+      "id": "framing-textbook-03",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "rodina",
+      "difficulty": 4,
+      "question": "Pokud byste měli ušetřit 1000 Kč za měsíc na dovolenou, máte dvě možnosti: buď snížit měsíční výdaje o 10 %, nebo se vzdát jedné večeře měsíčně. Co si zvolíte?",
+      "options": [
+        {
+          "answer": "Snížení měsíčních výdajů o 10%.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje preferenci zisku díky pozitivnímu vyjádření snížení výdajů."
+        },
+        {
+          "answer": "Vzdát se jedné večeře měsíčně.",
+          "verdict": "rational",
+          "explanation": "Volba vychází z praktického zhodnocení nákladů a přínosů."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-01",
+      "bias": "framing",
+      "source": "own",
+      "domain": "volný čas",
+      "difficulty": 2,
+      "question": "Máte možnost jít na film, kde je 90% spokojenost diváků, nebo film s 10% nespojenými diváky. Co si vyberete?",
+      "options": [
+        {
+          "answer": "Film s 90% spokojeností.",
+          "verdict": "rational",
+          "explanation": "Tato volba je rozumná na základě větší spokojenosti diváků."
+        },
+        {
+          "answer": "Film s 10% nespokojenými diváky.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje na negativní zkreslení při porovnání."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-02",
+      "bias": "framing",
+      "source": "own",
+      "domain": "sport",
+      "difficulty": 3,
+      "question": "Pokud máte šanci vyhrát 1 000 € s pravděpodobností 50%, nebo ztratit 500 € s pravděpodobností 50%, co byste si vybrali?",
+      "options": [
+        {
+          "answer": "Vyhrát 1 000 € s 50% pravděpodobností.",
+          "verdict": "biased",
+          "explanation": "Tato volba může být ovlivněna formou vyjádření šance na vítězství."
+        },
+        {
+          "answer": "Ztratit 500 € s 50% pravděpodobností.",
+          "verdict": "rational",
+          "explanation": "Objektivní rozhodnutí, které se zaměřuje na minimální ztrátu."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-03",
+      "bias": "framing",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 4,
+      "question": "Jak byste hodnotili investici, která nese 5% výnos, oproti investici, která ztrácí 5% ročně, co si vyberete?",
+      "options": [
+        {
+          "answer": "Investice s 5% výnosem.",
+          "verdict": "biased",
+          "explanation": "Volba zohledňuje pozitivní rámec 5% výnosu a ignoruje ztrátu."
+        },
+        {
+          "answer": "Investice se ztrátou 5%.",
+          "verdict": "rational",
+          "explanation": "Tato volba se zaměřuje na objektivní hodnotu a ztráty."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-04",
+      "bias": "framing",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 5,
+      "question": "Máte možnost zvolit operaci s 80% šancí na přežití nebo čekat na léčbu, která má 20% šanci na úspěch. Jaká volba je lepší?",
+      "options": [
+        {
+          "answer": "Operace s 80% šancí na přežití.",
+          "verdict": "rational",
+          "explanation": "Volba vychází z pozitivní formulace úspěšnosti operace."
+        },
+        {
+          "answer": "Léčba s 20% šancí na úspěch.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje na vliv negativního rámce na rozhodování."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-05",
+      "bias": "framing",
+      "source": "own",
+      "domain": "pracovní pohovor",
+      "difficulty": 3,
+      "question": "Pokud máte možnost získat zaměstnání s 70% šancí na postup nebo 30% šancí na neúspěch. Co si vyberete?",
+      "options": [
+        {
+          "answer": "Zaměstnání s 70% šancí na postup.",
+          "verdict": "rational",
+          "explanation": "Tato volba jasně ukazuje na racionální preferenci úspěchu."
+        },
+        {
+          "answer": "Zaměstnání s 30% šancí na neúspěch.",
+          "verdict": "biased",
+          "explanation": "Tato volba demonstruje averzi k negativnímu vyjádření šance na strategii."
+        }
+      ]
+    }
+  ],
+  "loss_aversion": [
+    {
+      "id": "loss_aversion-textbook-01",
+      "bias": "loss_aversion",
+      "source": "textbook",
+      "domain": "finance",
+      "difficulty": 2,
+      "question": "Máte možnost investovat 100€ s pravděpodobností 80% na zisk 200€ nebo riskovat ztrátu 20€. Co byste si vybrali?",
+      "options": [
+        {
+          "answer": "Investice s 80% pravděpodobností na zisk.",
+          "verdict": "rational",
+          "explanation": "Tato volba je založena na větší hodnotě očekávaného zisku."
+        },
+        {
+          "answer": "Riskování ztráty 20€.",
+          "verdict": "biased",
+          "explanation": "Tato volba preferuje vyhnutí se ztrátě před možným ziskem."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-textbook-02",
+      "bias": "loss_aversion",
+      "source": "textbook",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Pokud je vám nabízena šance na onemocnění s 2% pravděpodobností a proti tomu preventivní léčba s 98% šancí na úspěch, jak se rozhodnete?",
+      "options": [
+        {
+          "answer": "Preventivní léčba s 98% pravděpodobností.",
+          "verdict": "rational",
+          "explanation": "Tato volba je založena na výhodě ochrany před nemocí."
+        },
+        {
+          "answer": "Nedělat nic a riskovat nemoc.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje averzi k možným ztrátám spojeným s léčbou."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-textbook-03",
+      "bias": "loss_aversion",
+      "source": "textbook",
+      "domain": "sport",
+      "difficulty": 4,
+      "question": "Běžíte závod a máte šanci na výhru 100€, ale pokud nevyhrajete, ztrácíte 20€. Jakou volbu uděláte?",
+      "options": [
+        {
+          "answer": "Zúčastním se závodu pro šanci na 100€.",
+          "verdict": "biased",
+          "explanation": "Zde je rozhodnutí ovlivněno strachem ze ztráty 20€."
+        },
+        {
+          "answer": "Nevzít si sázku.",
+          "verdict": "rational",
+          "explanation": "Tato volba se reflektuje na ztrátě, která převládá nad potenciálním ziskem."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-01",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 1,
+      "question": "Pokud máte možnost koupit akcii za 50€, která má šanci na vzestup na 70€, nebo ztratit 5!. Jaká volba je nejlepší?",
+      "options": [
+        {
+          "answer": "Koupit akcii za 50€.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje averzi k ztrátě spojené s koupí akcie."
+        },
+        {
+          "answer": "Nekoupit akcii.",
+          "verdict": "rational",
+          "explanation": "Tato volba reflektuje, že ztráta zisky převažuje."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-02",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "rodina",
+      "difficulty": 2,
+      "question": "Máte šanci vyhrát 250€ v tombole, ale musíte utratit 50€ na vstupné. Jak si vyberete?",
+      "options": [
+        {
+          "answer": "Koupím lístek a pokusím se vyhrát 250€.",
+          "verdict": "biased",
+          "explanation": "Zde máte tendenci riskovat ztrátu 50€, i když mohou být větší zisky."
+        },
+        {
+          "answer": "Nekoupím lístek.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože ztráta 50€ je vyšší než možný výhru."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-03",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Pokud nabídnete lék, který může pomoci 90% pacientů, ale 10% nezabrání nemocem. Jakou volbu uděláte?",
+      "options": [
+        {
+          "answer": "Zvolím lék.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje averzi k potenciální ztrátě a neúspěchu spojené s lékem."
+        },
+        {
+          "answer": "Zvolím jiný lék.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože nezahrnuje averzi k ztrátám."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-04",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "sport",
+      "difficulty": 4,
+      "question": "Pokud se rozhodujete mezi dvěma sportovními sázkami: jedna nabízí 80% šanci na výhru 100€, nebo 20% šanci na ztrátu 30€. Co zvolíte?",
+      "options": [
+        {
+          "answer": "Vyberu 80% šanci na výhru 100€.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje strach ze ztráty 30€, což ovlivňuje vaše rozhodnutí."
+        },
+        {
+          "answer": "Nevyberu žádnou z nich.",
+          "verdict": "rational",
+          "explanation": "Racionální rozhodnutí, které se neozývá strachu ze ztrát."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-05",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "finanční plánování",
+      "difficulty": 5,
+      "question": "Pokud máte zdroj na investice, kde riziko ztráty může být až 50% a získat pouze 30%. Jakou volbu uskutečňujete?",
+      "options": [
+        {
+          "answer": "Investuji a pokusím se o zisk 30%.",
+          "verdict": "biased",
+          "explanation": "Volba znázorňuje averzi k ztrátě, i když zisk vypadá atraktivně."
+        },
+        {
+          "answer": "Nedělám nic a vyhnu se riziku.",
+          "verdict": "rational",
+          "explanation": "Odvracení se od rizika ztráty 50% je racionální."
+        }
+      ]
+    }
+  ],
+  "confirmation_bias": [
+    {
+      "id": "confirmation_bias-textbook-01",
+      "bias": "confirmation_bias",
+      "source": "textbook",
+      "domain": "pracovní pohovor",
+      "difficulty": 1,
+      "question": "Pokud doufáte, že uspějete v pohovoru a dostanete práci, jak byste se dívali na hodnocení firmy?",
+      "options": [
+        {
+          "answer": "Budete se zaměřovat na pozitivní recenze firmy.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje sklon hledat potvrzení svých očekávání."
+        },
+        {
+          "answer": "Zohledníte také negativní recenze.",
+          "verdict": "rational",
+          "explanation": "Tato volba odráží objektivní přístup k informacím."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-textbook-02",
+      "bias": "confirmation_bias",
+      "source": "textbook",
+      "domain": "sport",
+      "difficulty": 2,
+      "question": "Když jste hrdí na tým, za který fandíte, co uděláte, když slyšíte o jejich úspěších?",
+      "options": [
+        {
+          "answer": "Věnujete pozornost jen pozitivním zprávám o týmu.",
+          "verdict": "biased",
+          "explanation": "Tato volba ilustruje konfirmaci vlastních přesvědčení."
+        },
+        {
+          "answer": "Sledujete také negativní zprávy.",
+          "verdict": "rational",
+          "explanation": "Tato volba je objektivní, protože zahrnuje všechny zprávy."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-textbook-03",
+      "bias": "confirmation_bias",
+      "source": "textbook",
+      "domain": "finanční plánování",
+      "difficulty": 3,
+      "question": "Pokud plánujete investici, jaké informace budete vyhledávat?",
+      "options": [
+        {
+          "answer": "Hledat pozitivní názory o investici.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje sklon hledat potvrzení svých očekávání."
+        },
+        {
+          "answer": "Hledáte obě strany investice, pozitivní i negativní.",
+          "verdict": "rational",
+          "explanation": "Tato volba je jakkoli objektivní a zohledňuje všechny aspekty."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-01",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "rodina",
+      "difficulty": 1,
+      "question": "Pokud si myslíte, že vaše děti jsou výjimečné, co uděláte, když dostanete pochvalu od učitelů?",
+      "options": [
+        {
+          "answer": "Zaměříte se jen na pozitivní zpětnou vazbu.",
+          "verdict": "biased",
+          "explanation": "Tato volba ilustruje konfirmaci vlastního přesvědčení o dětech."
+        },
+        {
+          "answer": "Zvážíte také negativní zpětnou vazbu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální a objektivně hodnotí situaci."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-02",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "volný čas",
+      "difficulty": 2,
+      "question": "Pokud máte oblíbeného autora, co uděláte s recenzemi jeho knih?",
+      "options": [
+        {
+          "answer": "Budete vyhledávat pouze pozitivní recenze.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje sklon k potvrzení preferencí."
+        },
+        {
+          "answer": "Zohledníte všechny recenze, pozitivní i negativní.",
+          "verdict": "rational",
+          "explanation": "Tato volba je objektivní a bere v úvahu celé spektrum názorů."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-03",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Pokud máte obavy o své zdraví, jaké informace o lékařských postupech hledáte?",
+      "options": [
+        {
+          "answer": "Hledáte pouze pozitivní výsledky procedur.",
+          "verdict": "biased",
+          "explanation": "Toto ukazuje na sklony k potvrzení vašich vlastních názorů."
+        },
+        {
+          "answer": "Zvážíte také negativní informace.",
+          "verdict": "rational",
+          "explanation": "Tato volba je vyvážená a zohledňuje jak pozitivní, tak negativní stránky."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-04",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 4,
+      "question": "Jak budete reagovat na změny v cenách akcií vaší oblíbené společnosti?",
+      "options": [
+        {
+          "answer": "Ignorujete negativní zprávy a soustředíte se na pozitivní.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje na preference potvrzení pozitivního vyjádření."
+        },
+        {
+          "answer": "Sledujete jak pozitivní, tak negativní zprávy.",
+          "verdict": "rational",
+          "explanation": "Tato volba zahrnuje objektivní hodnocení všech informací."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-05",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "pracovní pohovor",
+      "difficulty": 5,
+      "question": "Jaká kritéria budete používat při rozhodování o povýšení v práci?",
+      "options": [
+        {
+          "answer": "Zaměříte se na pozitivní výsledky vaší práce.",
+          "verdict": "biased",
+          "explanation": "Tato volba je ovlivněna konfirmací vašich úspěchů, ignoruje nedostatky."
+        },
+        {
+          "answer": "Zvážíte všechny aspekty vaší práce, včetně nedostatků.",
+          "verdict": "rational",
+          "explanation": "Toto zohledňuje objektivní pohled a komplexitu situace."
+        }
+      ]
+    }
+  ],
+  "sunk_cost_fallacy": [
+    {
+      "id": "sunk_cost_fallacy-textbook-01",
+      "bias": "sunk_cost_fallacy",
+      "source": "textbook",
+      "domain": "rodina",
+      "difficulty": 2,
+      "question": "Jestliže jste investovali čas a peníze do projektu, který se nezdá být úspěšný, co byste měli udělat?",
+      "options": [
+        {
+          "answer": "Pokračovat v projektu, protože jste už investovali.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje klam utopených nákladů."
+        },
+        {
+          "answer": "Zrušit projekt a zaměřit se na jiné příležitosti.",
+          "verdict": "rational",
+          "explanation": "Racionální rozhodnutí by mělo vycházet ze současných nákladů, ne minulých."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-textbook-02",
+      "bias": "sunk_cost_fallacy",
+      "source": "textbook",
+      "domain": "finance",
+      "difficulty": 3,
+      "question": "Pokud jste investovali do akcií, které nyní ztrácejí hodnotu, co byste měli udělat?",
+      "options": [
+        {
+          "answer": "Držet akcie, protože jste do nich už investovali peníze.",
+          "verdict": "biased",
+          "explanation": "Tato volba demonstruje klam utopených nákladů."
+        },
+        {
+          "answer": "Prodat akcie a ztrátu minimalizovat.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, založená na aktuálních tržních podmínkách."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-textbook-03",
+      "bias": "sunk_cost_fallacy",
+      "source": "textbook",
+      "domain": "volný čas",
+      "difficulty": 4,
+      "question": "Pokud jste nahlásili účas na dlouhé dovolené a již jste za ni zaplatili, ale cítíte se špatně a raději byste zůstali doma, co uděláte?",
+      "options": [
+        {
+          "answer": "Pojedete na dovolenou, protože už jste zaplatili.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje klam utopených nákladů, ignoruje vaše aktuální preference."
+        },
+        {
+          "answer": "Zůstanete doma, abyste se uzdravili.",
+          "verdict": "rational",
+          "explanation": "Racionální rozhodnutí vychází z aktuálního pocitu a zdraví."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-01",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "práce",
+      "difficulty": 2,
+      "question": "Pokud jste do projektu strávili mnoho hodin a stále to nevypadá nadějně, co uděláte?",
+      "options": [
+        {
+          "answer": "Pokračujete v práci na projektu, protože jste do něj investovali čas.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje klam utopených nákladů."
+        },
+        {
+          "answer": "Ukončíte projekt a přeorientujete se na jiné úkoly.",
+          "verdict": "rational",
+          "explanation": "Racionální rozhodnutí by mělo vycházet pouze z přítomných podmínek."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-02",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Pokud jste zaplatili za klub a nemáte chuť cvičit, co učiníte?",
+      "options": [
+        {
+          "answer": "Půjdete do klubu, protože jste už zaplatili.",
+          "verdict": "biased",
+          "explanation": "Tato volba ilustruje klam utopených nákladů."
+        },
+        {
+          "answer": "Zůstanete doma a odpočinete si.",
+          "verdict": "rational",
+          "explanation": "Racionální volba se zaměřuje na vaše aktuální potřeby."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-03",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "rodina",
+      "difficulty": 4,
+      "question": "Pokud jste utratili peníze za prožitou rodinnou událost, která se neuskuteční, co uděláte?",
+      "options": [
+        {
+          "answer": "Budeš hledat alternativu, protože už jsi zaplatil.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje klam utopených nákladů."
+        },
+        {
+          "answer": "Přijmete situaci a nevydáte další peníze.",
+          "verdict": "rational",
+          "explanation": "Racionální rozhodnutí by mělo odpovídat současnému stavu a ne minulosti."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-04",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "volný čas",
+      "difficulty": 5,
+      "question": "Pokud jste investovali velké množství času a peněz do kurzu, který vám nevyhovuje, co uděláte?",
+      "options": [
+        {
+          "answer": "Pokračujete v kurzu, protože jste do něj investovali.",
+          "verdict": "biased",
+          "explanation": "Tato volba je ovlivněna snahou vyhnout se ztrátě dřívějších investic."
+        },
+        {
+          "answer": "Ukončíte kurz a najdete jiný, který vám více vyhovuje.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální a odráží vaši aktuální situaci."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-05",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 3,
+      "question": "Pokud jste zaplat

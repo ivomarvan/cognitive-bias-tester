@@ -1,0 +1,715 @@
+{
+  "_metadata": {
+    "evaluator_model": "Gemini 3.1 Pro",
+    "evaluated_at": "2026-05-10T20:11:12.206239+02:00",
+    "evaluation_prompt_version": "v1.0"
+  },
+  "input_reference": {
+    "source_file": "/home/ivo/workspace/git.hub.lab.ivo/cognitive-bias-tester/nogit_data/example-eval/gen/gpt-4o.json",
+    "sha256": null,
+    "generator_model": "GPT-4",
+    "generated_at": "2023-10-01 12:00:00",
+    "input_summary": {
+      "total_examples": 16,
+      "by_source": {
+        "textbook": 6,
+        "own": 10
+      },
+      "by_bias": {
+        "anchoring": 8,
+        "framing": 8
+      }
+    }
+  },
+  "evaluation_results": {
+    "anchoring": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 3,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 22,
+        "weighted_score": 41.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=3 (auto_reject)",
+          "weighted_score=41.0"
+        ],
+        "feedback": "Příklad selhává v racionalitě, protože správná odpověď předpokládá nevyřčený rozpočet.",
+        "strengths": [
+          "Obsahuje explicitní číselnou kotvu (200 dolarů)."
+        ],
+        "weaknesses": [
+          "Racionální odpověď vyžaduje externí předpoklad (rozpočet).",
+          "Krkolomný překlad ('nakupování hotelu')."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 0,
+          "subtlety": 3,
+          "difficulty_adherence": 3,
+          "rule_adherence": 3
+        },
+        "total_score_raw": 14,
+        "weighted_score": 27.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=27.0"
+        ],
+        "feedback": "Racionální odpověď je logicky nesprávná, v aukci cena stoupá nad vyvolávací hodnotu.",
+        "strengths": [
+          "Obsahuje výraznou kotvu."
+        ],
+        "weaknesses": [
+          "Fakticky chybná 'racionální' odpověď.",
+          "Špatná čeština ('aukčnědrážební')."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 3,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 22,
+        "weighted_score": 41.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=3 (auto_reject)",
+          "weighted_score=41.0"
+        ],
+        "feedback": "Racionální odpověď operuje s náhodnou hodnotou (90 000), kterou nelze z textu odvodit.",
+        "strengths": [
+          "Scénář z reálného života."
+        ],
+        "weaknesses": [
+          "Racionální odpověď není objektivně doložitelná.",
+          "Slabší stylistika ('nabídkový minimální plat')."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "scores": {
+          "cognitive_trap": 0,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 0,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 10,
+        "weighted_score": 12.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=12.5"
+        ],
+        "feedback": "Zcela chybná logika pasti – volba levnější ekonomické třídy není kognitivní zkreslení, ale běžné rozhodnutí.",
+        "strengths": [
+          "Dobré téma z praxe."
+        ],
+        "weaknesses": [
+          "Záměna racionálního rozhodnutí za bias.",
+          "Zcela nejasná past."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "scores": {
+          "cognitive_trap": 3,
+          "rationality": 0,
+          "subtlety": 5,
+          "difficulty_adherence": 2,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 15,
+        "weighted_score": 24.5,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=24.5"
+        ],
+        "feedback": "Racionální odpověď si vymýšlí nutnost rekonstrukce, která v zadání není uvedena.",
+        "strengths": [
+          "Realistická situace (nákup nemovitosti)."
+        ],
+        "weaknesses": [
+          "Neodpovídá obtížnosti 5.",
+          "Zavádí externí informace do řešení."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 7,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 26,
+        "weighted_score": 53.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "weighted_score=53.0"
+        ],
+        "feedback": "Slušný základ, ale past spíše testuje ignorování kvality než klasické ukotvení.",
+        "strengths": [
+          "Racionální odpověď je logicky správná."
+        ],
+        "weaknesses": [
+          "Neodpovídá přesně definici anchoringu.",
+          "Horší stylistika ('kontrastně nabídnuta')."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 7,
+          "subtlety": 5,
+          "difficulty_adherence": 7,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 31,
+        "weighted_score": 61.0,
+        "recommendation": "needs_major_rewrite",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5"
+        ],
+        "feedback": "Jeden z lepších příkladů, správně ukazuje potřebu zhodnotit reálnou hodnotu namísto slevy.",
+        "strengths": [
+          "Jasná kotva a srozumitelné řešení.",
+          "Dobře trefená obtížnost."
+        ],
+        "weaknesses": [
+          "Past je poměrně průhledná.",
+          "Chybí větší hloubka pro vlastní (own) příklad."
+        ],
+        "suggested_fix": "Přepracujte racionální odpověď tak, aby byla logicky nenapadnutelná a nevyžadovala externí znalosti."
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "scores": {
+          "cognitive_trap": 0,
+          "rationality": 3,
+          "subtlety": 5,
+          "difficulty_adherence": 3,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 16,
+        "weighted_score": 26.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=3 (auto_reject)",
+          "weighted_score=26.0"
+        ],
+        "feedback": "Příklad testuje framing (rámování úspěšnosti), nikoliv anchoring.",
+        "strengths": [
+          "Scénář je srozumitelný."
+        ],
+        "weaknesses": [
+          "Zcela chybné zařazení pod anchoring.",
+          "Vágní racionální odpověď."
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "framing": [
+      {
+        "example_id": "framing-textbook-01",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 5,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 26,
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ],
+        "feedback": "Příklad neobsahuje dvě různě zarámované varianty, pouze testuje interpretaci jednoho čísla.",
+        "strengths": [
+          "Jednoduchost a čitelnost."
+        ],
+        "weaknesses": [
+          "Chybí klasická struktura framingu (dvě možnosti).",
+          "Obě odpovědi jsou matematicky ekvivalentní."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 5,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 26,
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ],
+        "feedback": "Stejný problém jako u prvního příkladu – chybí protichůdné rámování téže situace.",
+        "strengths": [
+          "Dobrá doména (marketing)."
+        ],
+        "weaknesses": [
+          "Nesplňuje strukturní požadavky pasti pro framing."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 5,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 26,
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ],
+        "feedback": "Opět chybí dvě varianty rámování v možnostech; testuje se jen pesimismus vs. optimismus.",
+        "strengths": [
+          "Dobré navození kontextu."
+        ],
+        "weaknesses": [
+          "Nevyužívá plný potenciál framingu."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-01",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 5,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 26,
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ],
+        "feedback": "Příklad je spíše testem slovních úloh na pravděpodobnost než skutečným rámováním.",
+        "strengths": [
+          "Srozumitelný každodenní scénář."
+        ],
+        "weaknesses": [
+          "Chybí strukturní volba mezi rámci."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-02",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 5,
+          "subtlety": 0,
+          "difficulty_adherence": 2,
+          "rule_adherence": 5
+        },
+        "total_score_raw": 16,
+        "weighted_score": 35.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=35.0"
+        ],
+        "feedback": "Text explicitně prozrazuje 'zkreslení rámování' v explanation biased volby, což zabíjí subtilitu.",
+        "strengths": [
+          "Realistická marketingová ukázka."
+        ],
+        "weaknesses": [
+          "Prozrazení názvu biase (Subtlety = 0).",
+          "Neodpovídá obtížnosti 5."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 5,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 26,
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ],
+        "feedback": "Zcela identická struktura i téma jako textbook-01 (zdraví, 95% vs 90%).",
+        "strengths": [
+          "Jasná čísla."
+        ],
+        "weaknesses": [
+          "Duplicita s textbook příkladem.",
+          "Chybí dvě různě zarámované volby."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-04",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 6,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 27,
+        "weighted_score": 52.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "weighted_score=52.0"
+        ],
+        "feedback": "Další variace na stejné téma – chybí negativní a pozitivní rámování u samotných možností.",
+        "strengths": [
+          "Logičtější racionální volba než v předchozích."
+        ],
+        "weaknesses": [
+          "Opakující se stejný vzorec bez hlubší invence."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-05",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 4,
+          "subtlety": 5,
+          "difficulty_adherence": 5,
+          "rule_adherence": 7
+        },
+        "total_score_raw": 25,
+        "weighted_score": 46.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=4 (auto_reject)",
+          "weighted_score=46.0"
+        ],
+        "feedback": "Opakující se téma; navíc 'zálohovat plán' je velmi krkolomný překlad.",
+        "strengths": [
+          "Krátký a výstižný text."
+        ],
+        "weaknesses": [
+          "Špatná čeština v racionální odpovědi.",
+          "Stále chybí správná struktura framingu."
+        ],
+        "suggested_fix": null
+      }
+    ]
+  },
+  "population_checks": {
+    "anchoring": {
+      "difficulty_coverage_own": {
+        "status": "missing_levels",
+        "missing_levels": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "framing": {
+      "difficulty_coverage_own": {
+        "status": "missing_levels",
+        "missing_levels": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "scenario_diversity": {
+        "status": "near_duplicates",
+        "near_duplicates": [
+          [
+            "framing-textbook-01",
+            "framing-own-03"
+          ]
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "averages_by_bias": {
+      "anchoring": {
+        "n": 8,
+        "mean_weighted": 35.8,
+        "min_weighted": 12.5,
+        "max_weighted": 61.0,
+        "stdev_weighted": 15.1
+      },
+      "framing": {
+        "n": 8,
+        "mean_weighted": 47.2,
+        "min_weighted": 35.0,
+        "max_weighted": 52.0,
+        "stdev_weighted": 4.9
+      }
+    },
+    "averages_by_source": {
+      "textbook": {
+        "n": 6,
+        "mean_weighted": 42.7
+      },
+      "own": {
+        "n": 10,
+        "mean_weighted": 40.8
+      }
+    },
+    "averages_by_criteria": {
+      "cognitive_trap": 3.6,
+      "rationality": 3.9,
+      "subtlety": 4.6,
+      "difficulty_adherence": 4.2,
+      "rule_adherence": 5.9
+    },
+    "overall_mean_weighted": 41.5,
+    "flagged_examples": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "weighted_score": 41.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=3 (auto_reject)",
+          "weighted_score=41.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "weighted_score": 27.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=5",
+          "rationality=0 (auto_reject)",
+          "weighted_score=27.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "weighted_score": 41.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=3 (auto_reject)",
+          "weighted_score=41.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "weighted_score": 12.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=12.5"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "weighted_score": 24.5,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=3 (auto_reject)",
+          "rationality=0 (auto_reject)",
+          "weighted_score=24.5"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "weighted_score": 53.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "weighted_score=53.0"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "weighted_score": 61.0,
+        "recommendation": "needs_major_rewrite",
+        "reasons": [
+          "cognitive_trap=5"
+        ]
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "weighted_score": 26.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=0 (auto_reject)",
+          "rationality=3 (auto_reject)",
+          "weighted_score=26.0"
+        ]
+      },
+      {
+        "example_id": "framing-textbook-01",
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ]
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ]
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-01",
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-02",
+        "weighted_score": 35.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=35.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-03",
+        "weighted_score": 49.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=5",
+          "weighted_score=49.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-04",
+        "weighted_score": 52.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "weighted_score=52.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-05",
+        "weighted_score": 46.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=4 (auto_reject)",
+          "weighted_score=46.0"
+        ]
+      }
+    ],
+    "top_3_examples": [
+      "anchoring-own-04",
+      "anchoring-own-03",
+      "framing-own-04"
+    ],
+    "bottom_3_examples": [
+      "anchoring-own-05",
+      "anchoring-own-02",
+      "anchoring-own-01"
+    ],
+    "overall_summary_feedback": "Modely selhaly v generování objektivně racionálních odpovědí, obzvláště u anchoringu zaváděly nevyslovené předpoklady (rozpočet, rekonstrukce). U framingu generátor vůbec nepochopil, že má poskytnout dvě různě zarámované volby popisující tutéž realitu. Celkově je kvalita příkladů velmi nízká a většina vyžaduje kompletní přepsání."
+  }
+}

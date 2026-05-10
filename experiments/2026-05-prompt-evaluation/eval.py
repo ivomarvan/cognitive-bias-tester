@@ -11,7 +11,7 @@ For each (model, bias_type, variant) combination:
   3. Saves raw API responses and generates a Markdown report
 
 Output structure:
-  nogit_data/prompt-eval/<YYYYMMDD_HHMMSS>_<git-hash>/
+  data/prompt-eval/<YYYYMMDD_HHMMSS>_<git-hash>/
     run_meta.json            — inputs, git state, prompt version
     prompts-v<VERSION>.json  — copy of the prompt file used (for reproducibility)
     raw/<model>/
@@ -160,6 +160,7 @@ def _call_openai(messages: list[dict[str, str]], model: str) -> tuple[str, dict[
         messages=messages,  # type: ignore[arg-type]
         response_format={"type": "json_object"},
         timeout=60,
+        max_tokens=4096,   # eval responses are short; 4096 sufficient
     )
     usage = {
         "prompt_tokens": resp.usage.prompt_tokens if resp.usage else 0,
@@ -169,17 +170,20 @@ def _call_openai(messages: list[dict[str, str]], model: str) -> tuple[str, dict[
 
 
 def _call_gemini(messages: list[dict[str, str]], model: str) -> tuple[str, dict[str, int]]:
-    import google.generativeai as genai  # type: ignore[import-untyped]
+    """Call Gemini using the current google-genai SDK (replaces deprecated google.generativeai)."""
+    from google import genai  # type: ignore[import-untyped]
+    from google.genai import types  # type: ignore[import-untyped]
 
-    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
     system = next((m["content"] for m in messages if m["role"] == "system"), "")
     user = next((m["content"] for m in messages if m["role"] == "user"), "")
-    gmodel = genai.GenerativeModel(
-        model_name=model,
-        system_instruction=system,
-        generation_config={"response_mime_type": "application/json"},
+
+    client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+    config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        max_output_tokens=4096,
+        system_instruction=system or None,
     )
-    resp = gmodel.generate_content(user)
+    resp = client.models.generate_content(model=model, contents=user, config=config)
     usage = {
         "prompt_tokens": getattr(resp.usage_metadata, "prompt_token_count", 0),
         "completion_tokens": getattr(resp.usage_metadata, "candidates_token_count", 0),
@@ -549,7 +553,7 @@ def main() -> None:
     # Set up run output directory
     ts = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
     run_id = f"{ts}_{_git_hash()}"
-    run_dir = _PROJECT_ROOT / "nogit_data" / "prompt-eval" / run_id
+    run_dir = _PROJECT_ROOT / "data" / "prompt-eval" / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
 
     # Copy prompt file into run directory for reproducibility

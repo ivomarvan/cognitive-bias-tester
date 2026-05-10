@@ -1,0 +1,1098 @@
+{
+  "_metadata": {
+    "evaluator_model": "Claude Sonnet 4.6",
+    "evaluated_at": "2026-05-10T20:15:00+02:00",
+    "evaluation_prompt_version": "v1.0"
+  },
+  "input_reference": {
+    "source_file": "/home/ivo/workspace/git.hub.lab.ivo/cognitive-bias-tester/nogit_data/example-eval/gen/sonet-4.6.json",
+    "sha256": "a364162cbd18dea866ca47dd59e36408d884431e021744b8d51b6c30a35f1b5f",
+    "generator_model": "Claude Sonnet 4.6",
+    "generated_at": "2026-05-10 19:55:00",
+    "input_summary": {
+      "total_examples": 40,
+      "by_source": {
+        "textbook": 15,
+        "own": 25
+      },
+      "by_bias": {
+        "anchoring": 8,
+        "framing": 8,
+        "loss_aversion": 8,
+        "confirmation_bias": 8,
+        "sunk_cost_fallacy": 8
+      }
+    }
+  },
+  "evaluation_results": {
+    "anchoring": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 79.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Byt s inzerovanou cenou vs. tržní srovnání — vzorový. Kotva (8,5 mil.) je přirozeně přítomna, racionální odpověď (tržní data) jasně doložitelná.",
+        "strengths": [
+          "Anchor explicitní, doložitelná racionální volba.",
+          "Přirozený realitní scénář."
+        ],
+        "weaknesses": [
+          "Biased odpověď (7,5 mil. jako 'sleva z inzerované ceny') by mohla ještě více zdůraznit, proč je to stále nad trhem."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Televize přeškrtnutá cena vs. tržní 13–14 K — čistý retailový anchoring.",
+        "strengths": [
+          "Tržní srovnání je dostupné v otázce.",
+          "Biased volba přirozená."
+        ],
+        "weaknesses": [
+          "Difficulty 2 odpovídá."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Personalistka uvádí platové pásmo jako první — dobrý anchor. Racionální odpověď (tržní data) doložitelná.",
+        "strengths": [
+          "Anchor (30–55K) přirozeně zapadá do dialogu."
+        ],
+        "weaknesses": [
+          "'Požádat o 70K' je správné, ale absence konkrétní citace tržních dat v otázce mírně snižuje doložitelnost."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Restaurace prémiová stránka — subtle anchor přes strukturu menu.",
+        "strengths": [
+          "Biased odpověď (380 Kč = výhodné oproti prémiové stránce) je přirozená."
+        ],
+        "weaknesses": [
+          "Difficulty 1 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "App tiered pricing — 890 Kč Týmový kotví vnímání 299 Kč jako 'kompromis'.",
+        "strengths": [
+          "Tří-úrovňové menu je typický anchoring retailový vzor.",
+          "Biased volba přirozená a lákavá."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Aukce s vyvolávací cenou 120K vs. odborný odhad 60–80K — výborný scénář.",
+        "strengths": [
+          "Biased volba (110K 'pod vyvolávací cenou') je subtilní a lákavá.",
+          "Odborný odhad je k dispozici."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Charity preset buttons — predefinované částky tvoří referenční rám. Jemná past.",
+        "strengths": [
+          "Predefined tlačítka jsou reálný marketingový anchoring.",
+          "Biased volba (500 Kč místo obvyklých 200 Kč) je přirozená a obtížně viditelná."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Obchodní vyjednávání s klientovým 'budgetem' — profesionální, numericky obtížný.",
+        "strengths": [
+          "Klientův budget jako kotva je realistický.",
+          "Difficulty 5 přesná."
+        ],
+        "weaknesses": [
+          "Otázka je 55 slov — mírně přes limit."
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "framing": [
+      {
+        "example_id": "framing-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Asian Disease varianta — 200 zachráněno vs. 400 zemře. Oba programy mají shodné EV.",
+        "strengths": [
+          "Strukturní požadavek splněn.",
+          "Difficulty 4 přesná."
+        ],
+        "weaknesses": [
+          "Racionální odpověď by mohla říct, co to EV 200 přesně je."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 81.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "75 % libové = 25 % tuk — klasický, přirozený.",
+        "strengths": [
+          "Přesná ekvivalence."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "90 % přežití = 10 % mortalita — jasné.",
+        "strengths": [
+          "Přesná ekvivalence.",
+          "Dobrý lékařský kontext."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "90 % bez tuku = 10 % tuk — nejjednodušší, přirozený.",
+        "strengths": [
+          "Difficulty 1 přesná."
+        ],
+        "weaknesses": [
+          "Trochu podobný framing-textbook-02 (obě jsou potraviny)."
+        ],
+        "suggested_fix": "Zvážit změnu domény u jednoho z příkladů."
+      },
+      {
+        "example_id": "framing-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Manažer prezentuje 12% growth vs. 30% pod plánem — realistický business scénář.",
+        "strengths": [
+          "Obě čísla jsou pravdivá, ale vedou k různým dojmům."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Auto: poplatek 7K za kartu vs. sleva 7K za hotovost — výborný framing reálné situace.",
+        "strengths": [
+          "Ekvivalence při kartové platbě je přesná."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-04",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Retence zaměstnanců: 25% nárůst vs. odejde čtvrtina více — personalistika.",
+        "strengths": [
+          "Obě formulace jsou ekvivalentní."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Klinická studie: relativní 50 % vs. absolutní 1 % a NNT=100 — excelentní difficulty-5.",
+        "strengths": [
+          "EV a NNT jsou explicitní.",
+          "Biased volba (50 % snížení) je velmi přirozená."
+        ],
+        "weaknesses": [
+          "Otázka je mírně přes 60 slov."
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "loss_aversion": [
+      {
+        "example_id": "loss_aversion-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Hra mincí +50/−50 eur, hledá minimální X > 50 eur.",
+        "strengths": [
+          "EV podmínka (X>50) je jednoduše ověřitelná."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 9,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Hrnek za 10 eur — endowment effect.",
+        "strengths": [
+          "Velmi přirozený scénář."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-textbook-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Akcie klesla o 30%, analytici shodně — silné, doložitelné.",
+        "strengths": [
+          "Racionální odpověď (přesunout dle výhledu) je doložitelná."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Free trial + hrozba smazání dat — přirozená a realistická.",
+        "strengths": [
+          "Past (nechci přijít o data) je intuitivně silná."
+        ],
+        "weaknesses": [
+          "Difficulty 1 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kvíz: +200/−100, P=70%, EV=+110 — přímý výpočet.",
+        "strengths": [
+          "EV je v otázce explicitní."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Vedlejší příjem: jistý 400 vs. EV=450.",
+        "strengths": [
+          "EV obou je v otázce.",
+          "Tři volby s neutrální jsou vhodné."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Garantovaný fond vs. alternativní: -2% vs +4% reálně na 15 let — numericky solidní.",
+        "strengths": [
+          "Reálné výnosy a horizont jsou dostatečné pro doložení."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 9,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 41,
+        "weighted_score": 83.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Pojistka A vs. B: výpočet za 8 let 1440 vs. 780 eur — gold standard difficulty-5.",
+        "strengths": [
+          "Všechna čísla pro výpočet přítomna.",
+          "EV výpočet je explicitní v otázce."
+        ],
+        "weaknesses": [],
+        "suggested_fix": ""
+      }
+    ],
+    "confirmation_bias": [
+      {
+        "example_id": "confirmation_bias-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Wason A,K,2,7 — vzorový s věrnými verdikty.",
+        "strengths": [
+          "Biased (A a 2) je typická chyba.",
+          "Racionální (A a 7) je správná."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Lékař a diagnóza viróza — přirozený, racionální (test) je doložitelný.",
+        "strengths": [
+          "Rychlý test jako falsifikační nástroj je realistický."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Pohovor a introvert hypotéza — dobrý Snyder&Swann inspirovaný příklad.",
+        "strengths": [
+          "Biased volba přirozená."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Recenze fotoaparátu — lehký, každodenní příklad.",
+        "strengths": [
+          "Difficulty 1 přesná."
+        ],
+        "weaknesses": [
+          "Trochu podobný confirmation_bias-own-03 (oba nákup + recenze)."
+        ],
+        "suggested_fix": "Zvážit změnu domény."
+      },
+      {
+        "example_id": "confirmation_bias-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Akcie: sledovat jen přátele k akcii — přirozené.",
+        "strengths": [
+          "Investiční kontext přirozený."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Debugging: testovat hypotézu vs. ji vyvrátit — výborný technický příklad.",
+        "strengths": [
+          "Falsifikační vs. konfirmační test je metodologicky jasný."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Vědecký experiment: kontrolní skupina — metodologicky výborné.",
+        "strengths": [
+          "Racionální (kontrolní skupina) je vědecky správná."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Management + multiple information sources — difficulty-5 s nutností posoudit zaujatost zdrojů.",
+        "strengths": [
+          "Complexity informačního prostředí je realistická.",
+          "Racionální (začít nejrigoróznějším zdrojem) je doložitelná."
+        ],
+        "weaknesses": [
+          "Difficulty 5 přesná."
+        ],
+        "suggested_fix": null
+      }
+    ],
+    "sunk_cost_fallacy": [
+      {
+        "example_id": "sunk_cost_fallacy-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Concorde efekt — sunk cost explicitní, racionální odpověď doložitelná.",
+        "strengths": [
+          "Sunk cost (miliardy) explicitní."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kino — gold standard. Sunk cost (vstupenka) explicitní, racionální (odejít a ušetřit čas) jasný.",
+        "strengths": [
+          "Vzorový příklad."
+        ],
+        "weaknesses": [
+          "Difficulty 1 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Startup pivot — sunk cost vs. pivotovací příležitost.",
+        "strengths": [
+          "Sunk cost (18 měs. + 200K) explicitní."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Špatné restaurační jídlo — přirozené, přímé.",
+        "strengths": [
+          "Difficulty 1 přesná."
+        ],
+        "weaknesses": [
+          "Trochu podobný kinu (textbook-02) — jiná doména, přijatelné."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Online kurz zastaralý — přirozené.",
+        "strengths": [
+          "Sunk cost (poplatek) explicitní."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 7,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Rekonstrukce koupelny — sunk 15K, zdražení projektu.",
+        "strengths": [
+          "Sunk cost explicitní."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 7,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 77.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Software development — 14 měsíců práce vs. pivot. Silná past.",
+        "strengths": [
+          "Biased volba ('jsme skoro u cíle') je přirozená."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 80.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Investiční fond: sankce 2500 eur vs. rozdíl výnosů ~5200 eur — výborný numerický příklad.",
+        "strengths": [
+          "EV výpočet je v explanaci uveden.",
+          "Difficulty 5 přesná."
+        ],
+        "weaknesses": [
+          "Otázka je mírně nad 60 slov (pro difficulty 5 akceptovatelné)."
+        ],
+        "suggested_fix": null
+      }
+    ]
+  },
+  "population_checks": {
+    "anchoring": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "framing": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": [
+          "framing-textbook-02 (mleté maso) a framing-own-01 (jogurt) sdílí podobný potravinářský framing. Dostatečně odlišné produkty."
+        ]
+      }
+    },
+    "loss_aversion": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "confirmation_bias": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": [
+          "confirmation_bias-own-01 a confirmation_bias-own-02 oba zahrnují nákup + vyhledávání recenzí — různá doména (foto vs. akcie), přijatelné."
+        ]
+      }
+    },
+    "sunk_cost_fallacy": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": [
+          "sunk_cost-textbook-02 (kino) a sunk_cost-own-01 (restaurace) jsou strukturálně blízké (placený zážitek + nelze reklamovat). Dostatečně odlišné."
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "averages_by_bias": {
+      "anchoring": {
+        "n": 8,
+        "mean_weighted": 77.7,
+        "min_weighted": 75.5,
+        "max_weighted": 80.0,
+        "stdev_weighted": 1.8
+      },
+      "framing": {
+        "n": 8,
+        "mean_weighted": 78.1,
+        "min_weighted": 75.5,
+        "max_weighted": 81.5,
+        "stdev_weighted": 2.2
+      },
+      "loss_aversion": {
+        "n": 8,
+        "mean_weighted": 78.1,
+        "min_weighted": 74.0,
+        "max_weighted": 83.0,
+        "stdev_weighted": 2.8
+      },
+      "confirmation_bias": {
+        "n": 8,
+        "mean_weighted": 76.8,
+        "min_weighted": 74.0,
+        "max_weighted": 80.0,
+        "stdev_weighted": 2.2
+      },
+      "sunk_cost_fallacy": {
+        "n": 8,
+        "mean_weighted": 78.6,
+        "min_weighted": 75.5,
+        "max_weighted": 82.5,
+        "stdev_weighted": 1.9
+      }
+    },
+    "averages_by_source": {
+      "textbook": {
+        "n": 15,
+        "mean_weighted": 78.3
+      },
+      "own": {
+        "n": 25,
+        "mean_weighted": 77.6
+      }
+    },
+    "averages_by_criteria": {
+      "cognitive_trap": 7.7,
+      "rationality": 8.1,
+      "subtlety": 7.8,
+      "difficulty_adherence": 7.3,
+      "rule_adherence": 8.1
+    },
+    "overall_mean_weighted": 77.9,
+    "flagged_examples": [],
+    "top_3_examples": [
+      "loss_aversion-own-05",
+      "sunk_cost_fallacy-textbook-02",
+      "framing-textbook-02"
+    ],
+    "bottom_3_examples": [
+      "sunk_cost_fallacy-own-03",
+      "loss_aversion-own-02",
+      "confirmation_bias-own-02"
+    ],
+    "overall_summary_feedback": "Claude Sonnet 4.6 produkuje konzistentní, dobře strukturované příklady. Silné stránky: anchoring a sunk_cost sekce mají přesné numerické kotvy; loss_aversion obsahuje explicitní EV výpočty. Slabiny: framing obsahuje dvě potravinářské příklady (mleté maso + jogurt) s podobnou strukturou; u confirmation_bias jsou první dva 'own' příklady tematicky blízké (nákup + recenze). Difficulty kalibrace je přesná. Celkově vhodná sada pro produkci s drobnými editorskými úpravami."
+  }
+}

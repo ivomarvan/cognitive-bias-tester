@@ -3,5 +3,5 @@ openai>=1.30.0              # GPT-4o-mini, GPT-4o — needs OPENAI_API_KEY
 python-dotenv>=1.0.0        # loads .env from project root automatically
 
 # Optional (install only if you want to test that provider)
-google-generativeai>=0.8.0  # Gemini 2.0 Flash, Gemini 2.5 Pro — needs GOOGLE_API_KEY
+google-genai>=1.0.0         # Gemini 2.0 Flash, Gemini 2.5 Pro — needs GOOGLE_API_KEY
 anthropic>=0.25.0           # Claude Haiku/Sonnet — needs ANTHROPIC_API_KEY

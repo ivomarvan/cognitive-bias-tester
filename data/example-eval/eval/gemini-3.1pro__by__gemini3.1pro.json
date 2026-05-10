@@ -1,0 +1,1069 @@
+{
+  "_metadata": {
+    "evaluator_model": "Gemini 3.1 Pro",
+    "evaluated_at": "2026-05-10T20:12:50.076271+02:00",
+    "evaluation_prompt_version": "v1.0"
+  },
+  "input_reference": {
+    "source_file": "/home/ivo/workspace/git.hub.lab.ivo/cognitive-bias-tester/nogit_data/example-eval/gen/gemini-3.1pro.json",
+    "sha256": "6d66009ab7fc9101dffee3b15b177799c45c71e2dad94ec2a70659e057ec8797",
+    "generator_model": "Gemini 3.1 Pro",
+    "generated_at": "2026-05-10 17:15:00",
+    "input_summary": {
+      "total_examples": 40,
+      "by_source": {
+        "textbook": 15,
+        "own": 25
+      },
+      "by_bias": {
+        "anchoring": 8,
+        "framing": 8,
+        "loss_aversion": 8,
+        "confirmation_bias": 8,
+        "sunk_cost_fallacy": 8
+      }
+    }
+  },
+  "evaluation_results": {
+    "anchoring": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 5,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Učebnicový příklad ukotvení funguje dobře.",
+        "strengths": [
+          "Jasně definovaná kotva před otázkou."
+        ],
+        "weaknesses": [
+          "Odpověď působí meta a uměle."
+        ],
+        "suggested_fix": "Přeformulovat biased odpověď na reálnou úvahu, např. 'Zhruba 65 %.'"
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "scores": {
+          "cognitive_trap": 10,
+          "rationality": 9,
+          "subtlety": 3,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 39,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Klasický příklad SSN kotvení, avšak formulace odpovědí je umělá.",
+        "strengths": [
+          "Skvělé využití rodného čísla jako náhodné kotvy."
+        ],
+        "weaknesses": [
+          "Odpovědi jsou formulovány jako sebereflexe, ne reálné volby."
+        ],
+        "suggested_fix": "Změnit biased odpověď na konkrétní příklad částky odvozené z RČ."
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad přirozeně ukazuje efekt kotvy při vyjednávání.",
+        "strengths": [
+          "Přirozené a realistické možnosti odpovědí."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Jednoduchý a srozumitelný příklad pro běžný nákup.",
+        "strengths": [
+          "Dobrý kontrast mezi dvěma cenami."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Výborná aplikace kotvení v B2B kontextu.",
+        "strengths": [
+          "Reálný scénář z praxe."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 78.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Jde spíše o průměrování odhadů než o čisté kotvení.",
+        "strengths": [
+          "Obsahuje neutrální variantu odpovědi."
+        ],
+        "weaknesses": [
+          "Kotva není zcela nezávislá na dotazu."
+        ],
+        "suggested_fix": "Jasněji oddělit první odhad jako nesmyslnou kotvu."
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 6,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad dobře ilustruje kotvení v odhadech času.",
+        "strengths": [
+          "Běžná situace, se kterou se mnozí ztotožní."
+        ],
+        "weaknesses": [
+          "Obtížnost spíše neodpovídá hodnotě 4."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 88.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kvalitní příklad zasazený do realitního trhu.",
+        "strengths": [
+          "Dobře kalibrovaná obtížnost s konkrétními čísly."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ],
+    "framing": [
+      {
+        "example_id": "framing-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 5,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 38,
+        "weighted_score": 78.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad jasně ukazuje rámování, ale racionální odpověď je robotická.",
+        "strengths": [
+          "Přesná ukázka klasického experimentu (asijská nemoc)."
+        ],
+        "weaknesses": [
+          "Racionální odpověď je příliš meta ('matematicky vyhodnotí...')."
+        ],
+        "suggested_fix": "Zformulovat odpovědi jako skutečné volby v situaci, bez analýzy vlastního chování."
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 5,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Známý příklad s masem, avšak biased odpověď vysvětluje sama sebe.",
+        "strengths": [
+          "Velmi názorné použití pozitivního a negativního rámování."
+        ],
+        "weaknesses": [
+          "Biased odpověď působí uměle ('...působí jako zdravější')."
+        ],
+        "suggested_fix": "Přeformulovat odpověď tak, aby byla jen volbou s přirozeným zdůvodněním."
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 36,
+        "weighted_score": 69.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)"
+        ],
+        "feedback": "Příklad nepopisuje volbu, ale analyzuje systém (opt-in vs opt-out).",
+        "strengths": [
+          "Vysvětluje zajímavý fenomén default effect."
+        ],
+        "weaknesses": [
+          "Porušuje strukturální limit framing (žádné dvě možnosti s různým nasvícením téhož)."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Hezká ukázka vlivu slevy vs příplatku.",
+        "strengths": [
+          "Realistický a častý scénář."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Výborný příklad přepočtu pravděpodobností z IT.",
+        "strengths": [
+          "Velmi dobré zaměření na konkrétní doménu (SLA)."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-03",
+        "scores": {
+          "cognitive_trap": 4,
+          "rationality": 4,
+          "subtlety": 7,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 33,
+        "weighted_score": 57.0,
+        "recommendation": "reject",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=4 (auto_reject)",
+          "weighted_score=57.0"
+        ],
+        "feedback": "Obě tvrzení nejsou matematicky identická, což porušuje základní pravidlo framingu.",
+        "strengths": [
+          "Zajímavý námět na zdravotní téma."
+        ],
+        "weaknesses": [
+          "Absolutní snížení o 50 % a 50% šance onemocnět jsou dvě naprosto rozdílné hodnoty."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-04",
+        "scores": {
+          "cognitive_trap": 5,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 36,
+        "weighted_score": 69.0,
+        "recommendation": "needs_major_rewrite",
+        "flagged": true,
+        "flag_reasons": [
+          "cognitive_trap=5"
+        ],
+        "feedback": "Dotaz analyzuje rozhodnutí cizí osoby, místo aby čtenář sám volil.",
+        "strengths": [
+          "Ukazuje aplikaci klasického problému do managementu."
+        ],
+        "weaknesses": [
+          "Neposkytuje přímo dvě různě zarámované volby pro respondenta."
+        ],
+        "suggested_fix": "Přepsat tak, aby čtenář sám vybíral mezi Návrhem X a Y."
+      },
+      {
+        "example_id": "framing-own-05",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 6,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Velmi dobrý příklad z kyberbezpečnosti.",
+        "strengths": [
+          "Skvělé využití statistiky 90 % vs 10 %."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ],
+    "loss_aversion": [
+      {
+        "example_id": "loss_aversion-textbook-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 3,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 38,
+        "weighted_score": 79.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Klasický případ averze ke ztrátě s meta-odpověďmi.",
+        "strengths": [
+          "Čistá ukázka averze s pozitivní očekávanou hodnotou."
+        ],
+        "weaknesses": [
+          "Odpověď zmiňuje 'bolest ze ztráty', což je metajazyk."
+        ],
+        "suggested_fix": "Odstranit z odpovědí vysvětlení psychologického mechanismu."
+      },
+      {
+        "example_id": "loss_aversion-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 6,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad na endowment effect s hrnkem.",
+        "strengths": [
+          "Známý ukázkový případ."
+        ],
+        "weaknesses": [
+          "Biased odpověď trochu prozrazuje test ('nechci vzdát, když vlastním')."
+        ],
+        "suggested_fix": "Udělat biased odpověď více intuitivní."
+      },
+      {
+        "example_id": "loss_aversion-textbook-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobrý příklad na status quo bias u zděděných akcií.",
+        "strengths": [
+          "Dobrá úroveň obtížnosti (4)."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 88.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Skvělý a velmi aktuální příklad se zkušební dobou předplatného.",
+        "strengths": [
+          "Běžný a každodenní problém."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 9,
+          "subtlety": 4,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 37,
+        "weighted_score": 75.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad na sunk cost/loss aversion u akcií, ale odpovídá na 'Proč to děláte?'.",
+        "strengths": [
+          "Dobrá ilustrace neochoty realizovat ztrátu."
+        ],
+        "weaknesses": [
+          "Otázka nutí k sebe-analýze ('Protože si nechci přiznat...')."
+        ],
+        "suggested_fix": "Přeformulovat otázku tak, aby volil strategii (prodat/držet), ne aby analyzoval psychologii."
+      },
+      {
+        "example_id": "loss_aversion-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Zajímavý příklad s bydlením, i když ztráta kuchyně může být pro někoho objektivně cennější.",
+        "strengths": [
+          "Srozumitelná srovnávací situace."
+        ],
+        "weaknesses": [
+          "Subjektivita 'krásné kuchyně' trochu narušuje jednoznačnou racionalitu."
+        ],
+        "suggested_fix": "Zvýraznit, že kuchyň reálně téměř nevyužívá."
+      },
+      {
+        "example_id": "loss_aversion-own-04",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 6,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Typický příklad s prodlouženou zárukou.",
+        "strengths": [
+          "Dobrá matematická prokazatelnost nevýhodnosti."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-05",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 5,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 39,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Pěkný příklad s oblečením a úklidem.",
+        "strengths": [
+          "Snadno pochopitelný scénář z běžného života."
+        ],
+        "weaknesses": [
+          "Obtížnost rozhodně není 4, spíše 2."
+        ],
+        "suggested_fix": "Snížit označenou obtížnost."
+      }
+    ],
+    "confirmation_bias": [
+      {
+        "example_id": "confirmation_bias-textbook-01",
+        "scores": {
+          "cognitive_trap": 10,
+          "rationality": 10,
+          "subtlety": 9,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 46,
+        "weighted_score": 94.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Vynikající klasický příklad '2-4-6'.",
+        "strengths": [
+          "Vzorová ukázka potvrzovacího zkreslení.",
+          "Velmi přirozené řešení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 4,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 37,
+        "weighted_score": 76.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobrý příklad, ale hodnocení studie je formulováno příliš uvědoměle.",
+        "strengths": [
+          "Dobrá ukázka my-side biasu."
+        ],
+        "weaknesses": [
+          "Odpověď ('budu hledat chyby') vyžaduje uvědomění si vlastní zaujatosti."
+        ],
+        "suggested_fix": "Zformulovat odpovědi spíše jako reálný závěr, např. 'První studie je evidentně kvalitnější.'"
+      },
+      {
+        "example_id": "confirmation_bias-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobré využití medicínského scénáře pro pozitivní testování.",
+        "strengths": [
+          "Praktický a neakademický scénář."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Hezká ukázka z IT vývoje.",
+        "strengths": [
+          "Reálné využití v praxi analytika."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobrý příklad návodných otázek při pohovoru.",
+        "strengths": [
+          "Zahrnuje i neutrální variantu (plat).",
+          "Skvěle ukazuje, jak lze falzifikovat hypotézu."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 88.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Výborný příklad na selektivní vyhledávání informací na internetu.",
+        "strengths": [
+          "Jasné rozlišení hledání potvrzení vs. vyvrácení."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-04",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 79.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad na analýzu problému (krádeže), opět ale žádá sebe-reflexi z biasu.",
+        "strengths": [
+          "Ukazuje bias při vyšetřování."
+        ],
+        "weaknesses": [
+          "Racionální odpověď analyzuje riziko, místo aby ukazovala racionální postup."
+        ],
+        "suggested_fix": "Přeformulovat na volbu samotného postupu (např. 'Zkontroluji pouze jeho směny' vs 'Zkontroluji náhodný vzorek směn všech')."
+      },
+      {
+        "example_id": "confirmation_bias-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kvalitní ukázka z marketingu.",
+        "strengths": [
+          "Praktická B2B situace s měřením kampaně."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ],
+    "sunk_cost_fallacy": [
+      {
+        "example_id": "sunk_cost_fallacy-textbook-01",
+        "scores": {
+          "cognitive_trap": 10,
+          "rationality": 10,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 46,
+        "weighted_score": 94.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Klasická situace z kina.",
+        "strengths": [
+          "Čistá ukázka ignorování obětovaných nákladů."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Výborná B2B ilustrace Concorde fallacy.",
+        "strengths": [
+          "Reálná čísla a přímý byznysový dopad."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Typický příklad s 'all-you-can-eat' rautem.",
+        "strengths": [
+          "Dobře ukazuje, že peníze už jsou nevratné."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-01",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příklad s čekáním na autobus perfektně ilustruje utopený čas.",
+        "strengths": [
+          "Srozumitelná a každodenní situace."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-02",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dobrý příklad z oblasti online vzdělávání.",
+        "strengths": [
+          "Velmi realistické dilema."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 85.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Klasický příklad s opravou starého zařízení.",
+        "strengths": [
+          "Jasné vyčíslení budoucích nákladů a úspor."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-04",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Silný příklad z oblasti studia a kariéry.",
+        "strengths": [
+          "Těžké životní rozhodnutí s vysokou emocionální zátěží."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-05",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 88.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Příjemný knižní příklad, velmi podobný případu s kinem.",
+        "strengths": [
+          "Zcela běžná situace pro mnoho čtenářů."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ]
+  },
+  "population_checks": {
+    "anchoring": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "framing": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "loss_aversion": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "confirmation_bias": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "sunk_cost_fallacy": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    }
+  },
+  "statistics": {
+    "averages_by_bias": {
+      "anchoring": {
+        "n": 8,
+        "mean_weighted": 84.4,
+        "min_weighted": 78.0,
+        "max_weighted": 88.5,
+        "stdev_weighted": 3.1
+      },
+      "framing": {
+        "n": 8,
+        "mean_weighted": 76.1,
+        "min_weighted": 57.0,
+        "max_weighted": 85.5,
+        "stdev_weighted": 9.5
+      },
+      "loss_aversion": {
+        "n": 8,
+        "mean_weighted": 82.1,
+        "min_weighted": 75.0,
+        "max_weighted": 88.5,
+        "stdev_weighted": 3.7
+      },
+      "confirmation_bias": {
+        "n": 8,
+        "mean_weighted": 84.4,
+        "min_weighted": 76.5,
+        "max_weighted": 94.5,
+        "stdev_weighted": 5.2
+      },
+      "sunk_cost_fallacy": {
+        "n": 8,
+        "mean_weighted": 87.9,
+        "min_weighted": 85.5,
+        "max_weighted": 94.5,
+        "stdev_weighted": 2.6
+      }
+    },
+    "averages_by_source": {
+      "textbook": {
+        "n": 15,
+        "mean_weighted": 83.5
+      },
+      "own": {
+        "n": 25,
+        "mean_weighted": 82.7
+      }
+    },
+    "averages_by_criteria": {
+      "cognitive_trap": 8.3,
+      "rationality": 8.9,
+      "subtlety": 7.0,
+      "difficulty_adherence": 7.9,
+      "rule_adherence": 9.0
+    },
+    "overall_mean_weighted": 83.0,
+    "flagged_examples": [
+      {
+        "example_id": "framing-textbook-03",
+        "weighted_score": 69.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)"
+        ]
+      },
+      {
+        "example_id": "framing-own-03",
+        "weighted_score": 57.0,
+        "recommendation": "reject",
+        "reasons": [
+          "cognitive_trap=4 (auto_reject)",
+          "rationality=4 (auto_reject)",
+          "weighted_score=57.0"
+        ]
+      },
+      {
+        "example_id": "framing-own-04",
+        "weighted_score": 69.0,
+        "recommendation": "needs_major_rewrite",
+        "reasons": [
+          "cognitive_trap=5"
+        ]
+      }
+    ],
+    "top_3_examples": [
+      "confirmation_bias-textbook-01",
+      "sunk_cost_fallacy-textbook-01",
+      "anchoring-own-05"
+    ],
+    "bottom_3_examples": [
+      "framing-textbook-03",
+      "framing-own-04",
+      "framing-own-03"
+    ],
+    "overall_summary_feedback": "Generující model Gemini 3.1 Pro zvládl velmi dobře vytvořit logické a věcně správné scénáře, obzvláště u confirmation bias a sunk cost fallacy. Častým neduhem je 'meta' formulace odpovědí, kdy text odpovídajícího analyzuje samotné kognitivní zkreslení (Subtlety), místo aby reprezentoval přirozenou volbu respondenta. Ze 40 příkladů byly dva vyřazeny kvůli strukturálním chybám v kategorii framing."
+  }
+}

@@ -89,7 +89,7 @@ python eval.py --help
 Each run creates a directory:
 
 ```
-nogit_data/prompt-eval/
+data/prompt-eval/
 └── 20260510_143022_a1b2c3d/      ← YYYYMMDD_HHMMSS_<git-hash>
     ├── run_meta.json              ← models, bias types, git state, prompt version
     ├── prompts-v1.0.0.json        ← copy of the prompt file used (reproducibility)
@@ -105,7 +105,7 @@ nogit_data/prompt-eval/
     └── summary.json               ← scores + costs only (for cross-run comparison)
 ```
 
-`nogit_data/` is never committed to git (see `.gitignore`).
+`data/` is committed to git — results are preserved as part of the repository.
 
 ---
 

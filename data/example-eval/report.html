@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Example Evaluation Report</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 20px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; }
+  th { text-align: center; }
+  h1 { font-size: 1.4em; }
+  .legend span { display:inline-block; width:12px; height:12px; margin-right:4px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<h1>Cognitive Bias Example Evaluation</h1>
+<p>
+  <b>Rows = M1 (generator)</b> · <b>Columns = M2 (evaluator)</b><br>
+  Cell: <b>weighted score</b> / ✅ use_as_is / ❌ reject / ⚑ flagged / <a>json2 link</a>
+</p>
+<p class="legend">
+  Score legend:
+  <span style="background:#c8e6c9"></span>≥80
+  <span style="background:#fff9c4"></span>65–80
+  <span style="background:#ffe0b2"></span>50–65
+  <span style="background:#ffcdd2"></span>&lt;50
+  <span style="background:#e0e0e0"></span>missing
+</p>
+<table>
+<thead>
+<tr>
+  <th style="background:#e8eaf6;padding:6px">M1 \ M2</th>
+  <th style="background:#e8eaf6;padding:6px;font-size:0.85em">gemini3.1pro</th><th style="background:#e8eaf6;padding:6px;font-size:0.85em">sonnet4.6</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="font-weight:bold;background:#f5f5f5;padding:6px;white-space:nowrap;font-size:0.85em">Gemini 3.1 Pro<br><small style="color:#888">2026-05-10</small><br><a href="gen/gemini-3.1pro.json" target="_blank">json1</a></td><td style="background:#c8e6c9;vertical-align:top;padding:6px;font-size:0.85em"><b>83.0</b><br><span title="use_as_is / total">✅ 20/40</span> <span title="reject">❌ 2</span> <span title="flagged">⚑ 3</span><br><small style="color:#555">Generující model Gemini 3.1 Pro zvládl velmi dobře vytvořit logické a věcně správné scénáře, obzvláště u confirmation bi…</small><br><a href="eval/gemini-3.1pro__by__gemini3.1pro.json" target="_blank">json</a></td><td style="background:#fff9c4;vertical-align:top;padding:6px;font-size:0.85em"><b>75.0</b><br><span title="use_as_is / total">✅ 4/40</span> <span title="reject">❌ 2</span> <span title="flagged">⚑ 3</span><br><small style="color:#555">Gemini 3.1 Pro generuje strukturálně korektní příklady s dobrými sunk_cost a confirmation_bias sekcemi. Systémová slabin…</small><br><a href="eval/gemini-3.1pro__by__sonnet4.6.json" target="_blank">json</a></td></tr>
+<tr><td style="font-weight:bold;background:#f5f5f5;padding:6px;white-space:nowrap;font-size:0.85em">GPT-4<br><small style="color:#888">2023-10-01</small><br><a href="gen/gpt-4o.json" target="_blank">json1</a></td><td style="background:#ffcdd2;vertical-align:top;padding:6px;font-size:0.85em"><b>41.5</b><br><span title="use_as_is / total">✅ 0/16</span> <span title="reject">❌ 15</span> <span title="flagged">⚑ 16</span><br><small style="color:#555">Modely selhaly v generování objektivně racionálních odpovědí, obzvláště u anchoringu zaváděly nevyslovené předpoklady (r…</small><br><a href="eval/gpt-4o__by__gemini3.1pro.json" target="_blank">json</a></td><td style="background:#ffcdd2;vertical-align:top;padding:6px;font-size:0.85em"><b>43.8</b><br><span title="use_as_is / total">✅ 0/16</span> <span title="reject">❌ 12</span> <span title="flagged">⚑ 14</span><br><small style="color:#555">POZOR: Soubor je NEÚPLNÝ — obsahuje pouze anchoring a framing sekce. Chybí loss_aversion, confirmation_bias a sunk_cost_…</small><br><a href="eval/gpt-4o__by__sonnet4.6.json" target="_blank">json</a></td></tr>
+<tr><td style="font-weight:bold;background:#f5f5f5;padding:6px;white-space:nowrap;font-size:0.85em">GPT-4.0<br><small style="color:#888">2023-10-09</small><br><a href="gen/gpt-4o-mini.json" target="_blank">json1</a></td><td style="background:#ffcdd2;vertical-align:top;padding:6px;font-size:0.85em"><b>41.7</b><br><span title="use_as_is / total">✅ 0/40</span> <span title="reject">❌ 27</span> <span title="flagged">⚑ 28</span><br><small style="color:#555">Generující model GPT-4o-mini hrubě selhal ve většině kategorií. Největším problémem je naprostá absence 'objektivní raci…</small><br><a href="eval/gpt-4o-mini__by__gemini3.1pro.json" target="_blank">json</a></td><td style="background:#ffcdd2;vertical-align:top;padding:6px;font-size:0.85em"><b>39.1</b><br><span title="use_as_is / total">✅ 0/40</span> <span title="reject">❌ 37</span> <span title="flagged">⚑ 37</span><br><small style="color:#555">GPT-4o-mini (identifikován jako GPT-4.0) produkuje závažně defektní výstup s rozsáhlými systémovými chybami: (1) Celá an…</small><br><a href="eval/gpt-4o-mini__by__sonnet4.6.json" target="_blank">json</a></td></tr>
+<tr><td style="font-weight:bold;background:#f5f5f5;padding:6px;white-space:nowrap;font-size:0.85em">GPT-5.5<br><small style="color:#888">2026-05-10</small><br><a href="gen/gpt-5.5.json" target="_blank">json1</a></td><td style="background:#c8e6c9;vertical-align:top;padding:6px;font-size:0.85em"><b>81.8</b><br><span title="use_as_is / total">✅ 7/40</span> <span title="reject">❌ 0</span> <span title="flagged">⚑ 1</span><br><small style="color:#555">Generující model prokázal vysokou úroveň pochopení kognitivních zkreslení. Většina příkladů je velmi kvalitní, s jasně d…</small><br><a href="eval/gpt-5.5__by__gemini3.1pro.json" target="_blank">json</a></td><td style="background:#c8e6c9;vertical-align:top;padding:6px;font-size:0.85em"><b>80.3</b><br><span title="use_as_is / total">✅ 3/40</span> <span title="reject">❌ 0</span> <span title="flagged">⚑ 0</span><br><small style="color:#555">GPT-5.5 generuje konzistentně kvalitní sadu příkladů — nejlepší ze srovnávaných modelů. Anchoring sekce je vzorová s exp…</small><br><a href="eval/gpt-5.5__by__sonnet4.6.json" target="_blank">json</a></td></tr>
+<tr><td style="font-weight:bold;background:#f5f5f5;padding:6px;white-space:nowrap;font-size:0.85em">Claude Opus 4.7<br><small style="color:#888">2026-05-10</small><br><a href="gen/opus-4.7.json" target="_blank">json1</a></td><td style="background:#c8e6c9;vertical-align:top;padding:6px;font-size:0.85em"><b>85.5</b><br><span title="use_as_is / total">✅ 22/40</span> <span title="reject">❌ 0</span> <span title="flagged">⚑ 0</span><br><small style="color:#555">Celkově model Claude Opus 4.7 odvedl výbornou práci. Podařilo se mu generovat silné a funkční pasti, které odpovídají za…</small><br><a href="eval/opus-4.7__by__gemini3.1pro.json" target="_blank">json</a></td><td style="background:#c8e6c9;vertical-align:top;padding:6px;font-size:0.85em"><b>85.7</b><br><span title="use_as_is / total">✅ 24/40</span> <span title="reject">❌ 0</span> <span title="flagged">⚑ 0</span><br><small style="color:#555">Claude Opus 4.7 produkuje nejkvalitnější sadu ze všech hodnocených modelů. Výjimečné rysy: (1) framing sekce jako jediná…</small><br><a href="eval/opus-4.7__by__sonnet4.6.json" target="_blank">json</a></td></tr>
+<tr><td style="font-weight:bold;background:#f5f5f5;padding:6px;white-space:nowrap;font-size:0.85em">Claude Sonnet 4.6<br><small style="color:#888">2026-05-10</small><br><a href="gen/sonet-4.6.json" target="_blank">json1</a></td><td style="background:#c8e6c9;vertical-align:top;padding:6px;font-size:0.85em"><b>83.4</b><br><span title="use_as_is / total">✅ 10/40</span> <span title="reject">❌ 0</span> <span title="flagged">⚑ 0</span><br><small style="color:#555">Generující model (Claude Sonnet 4.6) odvedl vynikající práci. Příklady jsou vysoce kvalitní, srozumitelné a racionální v…</small><br><a href="eval/sonet-4.6__by__gemini3.1pro.json" target="_blank">json</a></td><td style="background:#fff9c4;vertical-align:top;padding:6px;font-size:0.85em"><b>77.9</b><br><span title="use_as_is / total">✅ 0/40</span> <span title="reject">❌ 0</span> <span title="flagged">⚑ 0</span><br><small style="color:#555">Claude Sonnet 4.6 produkuje konzistentní, dobře strukturované příklady. Silné stránky: anchoring a sunk_cost sekce mají …</small><br><a href="eval/sonet-4.6__by__sonnet4.6.json" target="_blank">json</a></td></tr>
+
+</tbody>
+</table>
+<hr>
+<p style="font-size:0.8em;color:#888">
+  Generated from: nogit_data/example-eval<br>
+  Regenerate: <code>python pipeline.py report</code>
+</p>
+</body>
+</html>

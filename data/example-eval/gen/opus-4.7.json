@@ -1,0 +1,1031 @@
+{
+  "_metadata": {
+    "model": "Claude Opus 4.7",
+    "generated_at": "2026-05-10 22:01:00"
+  },
+  "anchoring": [
+    {
+      "id": "anchoring-textbook-01",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "geografie",
+      "difficulty": 3,
+      "question": "Před zahájením úkolu se před vámi zatočilo kolo štěstí a zastavilo se na čísle 65. Po této úvodní hře je třeba odhadnout: jaké procento členských států Organizace spojených národů tvoří africké země?",
+      "options": [
+        {
+          "answer": "Přibližně 60 % zemí v OSN je afrických.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě bezvýznamného čísla z kola štěstí. Jedná se o typ zkreslení: ukotvení."
+        },
+        {
+          "answer": "Přibližně 28 % zemí v OSN je afrických.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože odpovídá faktům: z 193 členů OSN je 54 afrických zemí, tedy zhruba 28 %."
+        },
+        {
+          "answer": "Bez dat to nelze odhadnout.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je defenzivní vyhnutí se odhadu; nedemonstruje racionální použití dostupných znalostí ani podlehnutí danému zkreslení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-textbook-02",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "matematika",
+      "difficulty": 4,
+      "question": "Máte pět sekund na intuitivní odhad, bez papíru a bez kalkulačky. Spočítejte zhruba: 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = ? Vyberte odhad, který je nejblíže pravdě.",
+      "options": [
+        {
+          "answer": "Přibližně 500.",
+          "verdict": "neutral",
+          "explanation": "Tato volba podceňuje rychlý růst součinu osmi čísel; není projevem racionálního výpočtu ani typickým podlehnutím danému zkreslení."
+        },
+        {
+          "answer": "Přibližně 2 250.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě prvních pár vysokých čísel (8, 7, 6) a podceňujete celkový součin. Jedná se o typ zkreslení: ukotvení."
+        },
+        {
+          "answer": "Přibližně 40 000.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože se blíží přesné hodnotě 8! = 40 320, kterou vede strukturovaná úvaha přes řád velikosti."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-textbook-03",
+      "bias": "anchoring",
+      "source": "textbook",
+      "domain": "vzdělávání",
+      "difficulty": 2,
+      "question": "Nejprve si zodpovězte rozhodovací otázku: zemřel Albert Einstein před 140. rokem věku, nebo až po něm? Po této úvodní úvaze odhadněte: v jakém věku Albert Einstein přesně zemřel?",
+      "options": [
+        {
+          "answer": "Asi 76 let.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože odpovídá historickému faktu: Einstein zemřel v dubnu 1955 ve věku 76 let."
+        },
+        {
+          "answer": "Pod 60 let.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je výrazně mimo skutečnost; není projevem racionálního odhadu ani typickým podlehnutím danému zkreslení."
+        },
+        {
+          "answer": "Asi 95 let.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě uměle nasazené hranice 140 let, která vás táhne k vyššímu odhadu. Jedná se o typ zkreslení: ukotvení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-01",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "nákup",
+      "difficulty": 1,
+      "question": "V kamenném obchodě jsou bezdrátová sluchátka označená cenovkou „Původní cena 7 990 Kč, nyní 3 990 Kč“. Rychlé hledání na internetu ukazuje, že stejný model nabízejí jiní prodejci standardně za 3 200 Kč. Je třeba rozhodnout o nákupu.",
+      "options": [
+        {
+          "answer": "Koupit u jiného prodejce za 3 200 Kč.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vychází z aktuální tržní ceny a šetří 790 Kč proti zlevněné nabídce v obchodě."
+        },
+        {
+          "answer": "Koupit zde, sleva 50 % je výjimečná.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nadsazené původní ceny 7 990 Kč, ne podle reálné tržní ceny. Jedná se o typ zkreslení: ukotvení."
+        },
+        {
+          "answer": "Odložit nákup, sluchátka teď nepotřebujete.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je odložením rozhodnutí; není projevem racionální cenové analýzy ani typickým podlehnutím danému zkreslení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-02",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "pracovní pohovor",
+      "difficulty": 2,
+      "question": "Při pohovoru personalista zmíní: „Předchozí kandidát na stejnou pozici požadoval 95 000 Kč měsíčně.“ Z veřejných platových přehledů víte, že průměrná hrubá mzda pro tuto roli a vaši zkušenost je kolem 65 000 Kč. Je čas říct svůj požadavek.",
+      "options": [
+        {
+          "answer": "Říct přibližně 90 000 Kč.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě čísla z úst personalisty, místo abyste vycházeli z tržního průměru. Jedná se o typ zkreslení: ukotvení."
+        },
+        {
+          "answer": "Říct částku 65 000 až 72 000 Kč podle tržního průzkumu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vychází z objektivních platových dat pro danou roli a úroveň zkušeností."
+        },
+        {
+          "answer": "Nechat zaměstnavatele udělat nabídku jako první.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je vyjednávací strategií; sama o sobě neurčuje racionální tržní hodnotu ani neukazuje typické podlehnutí danému zkreslení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-03",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "cestování",
+      "difficulty": 3,
+      "question": "Cestovní agentura nabízí týdenní pobyt v hotelu Atlas, který byl původně zalistován za 32 000 Kč; aktuální cena je 19 800 Kč. Hodnocení hostů je 6,4 z 10. Srovnatelný hotel ve stejné destinaci s hodnocením 8,2 z 10 stojí 17 500 Kč. Je třeba se rozhodnout.",
+      "options": [
+        {
+          "answer": "Vybrat konkurenční hotel za 17 500 Kč s lepším hodnocením.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože za nižší cenu získáte hotel s objektivně lepším hodnocením; rozhodujete se podle aktuálních dat, ne podle původní ceny."
+        },
+        {
+          "answer": "Zatím nerezervovat a počkat na blízkost termínu.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je odložením rozhodnutí; není projevem racionálního výběru podle aktuálních dat ani typického podlehnutí danému zkreslení."
+        },
+        {
+          "answer": "Rezervovat hotel Atlas, sleva 12 200 Kč je výrazná.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě fiktivní původní ceny 32 000 Kč, místo abyste srovnali poměr cena/hodnocení. Jedná se o typ zkreslení: ukotvení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-04",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 4,
+      "question": "Komerční výživový program inzeruje, že běžná tržní cena vstupní konzultace s nutričním specialistou je 4 800 Kč; jejich balíček dvanácti konzultací během tří měsíců lze pořídit za 18 000 Kč. Klinika ve stejném městě nabízí jednu konzultaci u srovnatelného odborníka za 1 200 Kč. Je třeba zvolit.",
+      "options": [
+        {
+          "answer": "Koupit balíček, 18 000 Kč proti deklarovaným 57 600 Kč je velká úspora.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nadsazené ceny 4 800 Kč za konzultaci, ne podle skutečné tržní ceny 1 200 Kč. Jedná se o typ zkreslení: ukotvení."
+        },
+        {
+          "answer": "Objednat čtyři až šest konzultací na klinice za 4 800 až 7 200 Kč.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vychází ze skutečné tržní ceny konzultace a pokryje dostatečný počet sezení za zlomek nákladů."
+        },
+        {
+          "answer": "Zatím odložit a poradit se s ošetřujícím lékařem.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je odložením rozhodnutí; není projevem racionální nákladové analýzy ani typického podlehnutí danému zkreslení."
+        }
+      ]
+    },
+    {
+      "id": "anchoring-own-05",
+      "bias": "anchoring",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 5,
+      "question": "Akcie společnosti dosáhla před dvěma lety historického maxima 1 250 Kč. Současná tržní cena je 480 Kč. Tři nezávislí analytici odhadují vnitřní hodnotu firmy na základě cash flow přibližně na 290 Kč na akcii. Společnost letos snížila čistý zisk o 22 %. Je třeba se rozhodnout.",
+      "options": [
+        {
+          "answer": "Investovat do širokého akciového indexu místo jednotlivé akcie.",
+          "verdict": "neutral",
+          "explanation": "Tato volba je obecnou diverzifikační strategií; obchází specifické ohodnocení této akcie a není ani racionální analýzou této investice, ani typickým podlehnutím danému zkreslení."
+        },
+        {
+          "answer": "Nakoupit, proti maximu 1 250 Kč je dnešní cena 480 Kč výrazně nižší.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě historického maxima, ne podle aktuální vnitřní hodnoty 290 Kč a klesajícího zisku. Jedná se o typ zkreslení: ukotvení."
+        },
+        {
+          "answer": "Nenakupovat, cena 480 Kč je stále výše než odhadovaná hodnota 290 Kč.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vychází z fundamentální hodnoty a klesající ziskovosti; tržní cena je nad odhadem vnitřní hodnoty o 65 %."
+        }
+      ]
+    }
+  ],
+  "framing": [
+    {
+      "id": "framing-textbook-01",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "zdraví",
+      "difficulty": 3,
+      "question": "Ve zprávách čtete dvě tisková sdělení vlády o programu proti epidemii ohrožující 600 osob. Sdělení 1: 'Program zachrání 200 osob.' Sdělení 2: 'Při programu zemře 400 z 600 ohrožených.' Která reakce na tato sdělení je adekvátní?",
+      "options": [
+        {
+          "answer": "Obě sdělení popisují identický statistický výsledek z téhož vzorku; můj postoj k programu by se neměl lišit.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože '200 zachráněných z 600' a '400 zemře z 600' jsou aritmetické doplňky téhož čísla."
+        },
+        {
+          "answer": "Sdělení 1 zní povzbudivě, 200 zachráněných je jasný úspěch — program podpořím.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování (zisku) místo statistické podstaty. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Sdělení 2 zní varovně, 400 obětí je nepřijatelné — program odmítnu.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (ztráty), přestože sdělení 1 popisuje totéž. Jedná se o typ zkreslení: rámování."
+        }
+      ]
+    },
+    {
+      "id": "framing-textbook-02",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "nákup",
+      "difficulty": 2,
+      "question": "V supermarketu vidíte dvě balení mletého hovězího stejné značky, hmotnosti i ceny. První je označeno '95 % libového masa', druhé 'obsahuje 5 % tuku'. Které balení vložíte do košíku?",
+      "options": [
+        {
+          "answer": "Balení '95 % libového' — působí jako kvalitnější a zdravější produkt.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování (libového), přestože obě etikety popisují stejné maso. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Obě balení popisují identický produkt; volba mezi nimi je z výživového hlediska rovnocenná.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože 95 % libového a 5 % tuku jsou aritmetické doplňky téhož složení."
+        },
+        {
+          "answer": "Balení '5 % tuku' — explicitní zmínka o nežádoucí složce vypadá transparentněji.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (tuku) a ne reálného obsahu. Jedná se o typ zkreslení: rámování."
+        }
+      ]
+    },
+    {
+      "id": "framing-textbook-03",
+      "bias": "framing",
+      "source": "textbook",
+      "domain": "zdraví",
+      "difficulty": 4,
+      "question": "Před elektivní operací vám lékař prezentuje stejnou statistiku ve dvou verzích. Verze 1: '90 % pacientů zákrok přežije.' Verze 2: '10 % pacientů na zákrok zemře.' Která reakce je pro rozhodování adekvátní?",
+      "options": [
+        {
+          "answer": "Verze 2 mě varuje — 10 % úmrtnosti je vysoké riziko, raději zákrok odložím.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (úmrtnosti), ne na statistické podstatě. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Vyžádám si druhý lékařský názor mimo poskytnuté procentní údaje.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není projevem konkrétního zkreslení ani přímou racionální odpovědí; jde o defenzivní vyhnutí se srovnání obou formulací."
+        },
+        {
+          "answer": "Verze 1 zní povzbudivě a důvěryhodně — k operaci se přikláním.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování (přežití), přestože verze 2 popisuje totéž. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Obě verze popisují identickou pravděpodobnost úspěchu; mé rozhodnutí by se nemělo lišit podle formulace.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože 90 % přežití a 10 % úmrtnosti popisují tutéž statistiku z téhož vzorku."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-01",
+      "bias": "framing",
+      "source": "own",
+      "domain": "nákup",
+      "difficulty": 1,
+      "question": "V mlékárenském regále stojí dva totožné jogurty stejné značky, hmotnosti i ceny. Liší se pouze popisem na obalu: '98 % bez tuku' a 'obsahuje 2 % tuku'. Pro který jogurt sáhnete?",
+      "options": [
+        {
+          "answer": "Jogurt s '2 % tuku' — explicitní popis tuku vypadá poctivěji.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímo projevem zkreslení ani racionálním rozhodnutím; preferuje formulaci bez logického přínosu pro nutriční hodnotu."
+        },
+        {
+          "answer": "Jogurt s '98 % bez tuku' — působí jako lehčí a zdravější varianta.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování složení, přestože obě etikety popisují identický produkt. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Jogurty popisují identické nutriční složení; volba mezi nimi je libovolná.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože '98 % bez tuku' a '2 % tuku' jsou aritmetické doplňky téhož složení."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-02",
+      "bias": "framing",
+      "source": "own",
+      "domain": "sport",
+      "difficulty": 2,
+      "question": "Aplikace pro běžce nabízí dva totožné tréninkové plány lišící se pouze popisem statistik dokončenosti. Plán Alfa: 'Dokončí 82 % uživatelů.' Plán Beta: 'Nedokončí 18 % uživatelů.' Který plán si vyberete?",
+      "options": [
+        {
+          "answer": "Statistiky popisují identický výsledek; volba mezi plány je formálně rovnocenná.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože '82 % dokončí' a '18 % nedokončí' jsou aritmetické doplňky téže veličiny."
+        },
+        {
+          "answer": "Plán Beta — varování o '18 % nedokončených' mě motivuje k pečlivějšímu plnění.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (neúspěchu), přestože Plán Alfa popisuje totéž. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Plán Alfa — 82 % dokončenosti je povzbudivé číslo, vzbuzuje důvěru.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování (úspěchu), ne reálné odlišnosti plánů. Jedná se o typ zkreslení: rámování."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-03",
+      "bias": "framing",
+      "source": "own",
+      "domain": "finance",
+      "difficulty": 3,
+      "question": "Finanční poradce vám představuje dva fondy s totožnou strategií, poplatky i historií. Fond Lumen: 'V 70 % uplynulých let dosáhl kladného výnosu.' Fond Umbra: 'Ve 30 % uplynulých let skončil ve ztrátě.' Kterou variantu zvolíte?",
+      "options": [
+        {
+          "answer": "Fond Lumen — '70 % zisková léta' znějí jako spolehlivá volba.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování výnosu, přestože Umbra popisuje stejnou statistiku. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Bez ohledu na popis si raději vyžádám detailní výroční zprávy obou fondů.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímo projevem zkreslení ani racionální odpovědí na uvedenou otázku — vyhýbá se vyhodnocení formálně shodných statistik."
+        },
+        {
+          "answer": "Profily fondů jsou identické; volba mezi nimi je z hlediska výnosu rovnocenná.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože '70 % kladných let' a '30 % ztrátových let' jsou aritmetické doplňky téhož profilu."
+        },
+        {
+          "answer": "Fond Umbra — explicitní zmínka o '30 % ztrát' působí transparentněji.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (ztráty), ne na podstatě statistik. Jedná se o typ zkreslení: rámování."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-04",
+      "bias": "framing",
+      "source": "own",
+      "domain": "pracovní pohovor",
+      "difficulty": 4,
+      "question": "Personalista prezentuje dvě obdobné role ve společnosti se srovnatelnou mzdou, náplní i růstovými vyhlídkami. Role Alfa: 'Během prvního roku zůstává 88 % nováčků.' Role Beta: 'Během prvního roku odchází 12 % nováčků.' Co volíte?",
+      "options": [
+        {
+          "answer": "Roli Beta — informace o '12 % odchodů' ukazuje upřímnost zaměstnavatele.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování coby domnělé transparentnosti, přestože Alfa popisuje stejnou fluktuaci. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Statistiky popisují identickou fluktuaci; rozhodnutí závisí na jiných kritériích (tým, lokalita, růst).",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože '88 % zůstává' a '12 % odchází' jsou aritmetické doplňky téhož čísla."
+        },
+        {
+          "answer": "Žádnou — raději si vyžádám interní průzkum spokojenosti zaměstnanců.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani podlehnutím zkreslení, ani racionální odpovědí na položenou otázku — vyhýbá se posouzení shodnosti uvedených statistik."
+        },
+        {
+          "answer": "Roli Alfa — '88 % zůstává' indikuje stabilní pracovní prostředí.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování stability, ne na reálné odlišnosti rolí. Jedná se o typ zkreslení: rámování."
+        }
+      ]
+    },
+    {
+      "id": "framing-own-05",
+      "bias": "framing",
+      "source": "own",
+      "domain": "pojištění",
+      "difficulty": 5,
+      "question": "Cestovní pojišťovna A inzeruje: 'U 19 z 20 nahlášených škod proběhne plnění do 30 dní.' Pojišťovna B uvádí: 'Procentuální podíl škod, kde plnění překročí 30 dní, je o 1 procentní bod nižší než 6 %.' Cena, krytí i smluvní podmínky jsou totožné. Kterou volíte?",
+      "options": [
+        {
+          "answer": "Bez recenzí klientů a porovnání skrytých výluk nedokážu rozhodnout zodpovědně.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není projevem zkreslení ani racionální odpovědí — odmítá vyhodnotit poskytnuté statistiky a vyhýbá se srovnání obou formulací."
+        },
+        {
+          "answer": "Pojišťovnu A — '19 z 20' je intuitivně jasná spolehlivost.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování spolehlivosti, ne na výpočtu skutečné rovnosti. Jedná se o typ zkreslení: rámování."
+        },
+        {
+          "answer": "Po výpočtu obě varianty popisují 95% plnění do 30 dní; volba je formálně rovnocenná.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože 19/20 = 95 % a 100 − (6 − 1) = 95 %; obě formulace popisují totéž."
+        },
+        {
+          "answer": "Pojišťovnu B — popis pojmem 'procentní bod' působí odborněji a důvěryhodněji.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě formy zarámování (odbornost), ne podle obsahové rovnosti. Jedná se o typ zkreslení: rámování."
+        }
+      ]
+    }
+  ],
+  "loss_aversion": [
+    {
+      "id": "loss_aversion-textbook-01",
+      "bias": "loss_aversion",
+      "source": "textbook",
+      "domain": "hra",
+      "difficulty": 2,
+      "question": "Někdo nabízí jednorázovou sázku: hodí se spravedlivá mince. Pokud padne panna, získáte 150 €. Pokud padne orel, ztratíte 100 €. Která reakce je nejlépe odůvodněná?",
+      "options": [
+        {
+          "answer": "Sázku odmítnout — ztráta 100 € by mrzela víc než potěšila výhra 150 €.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnější váhy možné ztráty než srovnatelně velkého zisku. Jedná se o typ zkreslení: averze ke ztrátě."
+        },
+        {
+          "answer": "Sázku přijmout, průměrná očekávaná hodnota výsledku je +25 € (0,5·150 − 0,5·100).",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o objektivně kladnou očekávanou hodnotu nabídky."
+        },
+        {
+          "answer": "Pokusit se vyjednat snížení sázky na poloviční hodnoty před přijetím.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímým projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; snížením sázky úměrně klesne i očekávaný zisk."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-textbook-02",
+      "bias": "loss_aversion",
+      "source": "textbook",
+      "domain": "obchod",
+      "difficulty": 3,
+      "question": "V experimentu vám výzkumník právě daroval keramický hrnek, který se v běžných obchodech prodává za 8 €. Vzápětí přichází zájemce a ptá se, za jakou minimální cenu jste ochotni hrnek prodat. Co je nejlépe odůvodněná odpověď?",
+      "options": [
+        {
+          "answer": "Přibližně 8 €, což odpovídá běžné tržní ceně předmětu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože vychází z objektivně dohledatelné tržní hodnoty hrnku."
+        },
+        {
+          "answer": "Hrnek raději neprodávat za žádnou cenu, někdy se může hodit.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímým projevem zkreslení, ale rozhodnutí odsouvá na neurčito a opomíjí možnost okamžitého zisku z prodeje za tržní cenu."
+        },
+        {
+          "answer": "Minimálně 14 €, hrnek je nyní můj a o cennou věc nechci přijít.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nadhodnocení vlastněného předmětu, jakmile jste jej získal/a. Jedná se o typ zkreslení: averze ke ztrátě."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-textbook-03",
+      "bias": "loss_aversion",
+      "source": "textbook",
+      "domain": "finance",
+      "difficulty": 4,
+      "question": "Před vámi jsou dvě varianty: A) jistý zisk 800 €, B) 85% pravděpodobnost zisku 1 000 € a 15% pravděpodobnost nezískat nic. Která volba je racionálně lepší?",
+      "options": [
+        {
+          "answer": "Variantu B, průměrná očekávaná hodnota 850 € převyšuje jistých 800 € o 50 €.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu nabídky B (0,85·1 000)."
+        },
+        {
+          "answer": "Variantu A — jistých 800 € je bezpečnější než riziko skončit bez ničeho.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnějšího odporu k riziku nuly než k objektivně vyšší očekávané hodnotě. Jedná se o typ zkreslení: averze ke ztrátě."
+        },
+        {
+          "answer": "Rozhodnutí odložit, bez znalosti dalších možností nelze zvolit.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; obě varianty jsou na základě uvedených informací plně specifikované."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-01",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "nákup",
+      "difficulty": 1,
+      "question": "V obchodním centru probíhá zábavná akce: za poplatek 5 € si můžete losovat. S pravděpodobností 50 % vyhrajete dárek v hodnotě 100 €, jinak nic. Co je racionálnější?",
+      "options": [
+        {
+          "answer": "Akce se nezúčastnit, abych zbytečně neztratil/a 5 € poplatku.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnější váhy drobné jisté ztráty než výrazně většího pravděpodobného zisku. Jedná se o typ zkreslení: averze ke ztrátě."
+        },
+        {
+          "answer": "Účastnit se losování, průměrný čistý výsledek je +45 € (0,5·100 − 5).",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o jednoznačně kladnou očekávanou hodnotu jedné účasti."
+        },
+        {
+          "answer": "Účastnit se pouze v případě, že lze akci opakovat několikrát.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; opakování sice snižuje rozptyl, kladná očekávaná hodnota však platí už od první účasti."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-02",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "sport",
+      "difficulty": 2,
+      "question": "Sportovní klub nabízí dvě varianty smlouvy na sezónu: A) pevný plat 50 000 €, B) 60% pravděpodobnost příjmu 80 000 € a 40% pravděpodobnost 35 000 €. Co je výhodnější?",
+      "options": [
+        {
+          "answer": "Variantu B, průměrný očekávaný příjem 62 000 € převyšuje 50 000 € pevného platu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu varianty B (0,6·80 000 + 0,4·35 000)."
+        },
+        {
+          "answer": "Variantu A — jistých 50 000 € je lepší než riziko propadu na 35 000 €.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnějšího strachu ze sníženého příjmu než z lákadla vyššího průměrného výdělku. Jedná se o typ zkreslení: averze ke ztrátě."
+        },
+        {
+          "answer": "Variantu A přijmout, dokud klub nedoloží svou bonusovou historii.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímým projevem zkreslení, ale rozhodnutí podmiňuje informacemi mimo nabídku a nepoužívá uvedená čísla k vyhodnocení."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-03",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "kariéra",
+      "difficulty": 3,
+      "question": "Současné stabilní místo přináší jistý roční příjem 40 000 €. Druhá firma nabízí pozici, kde s 70% pravděpodobností budete po roce mít příjem 60 000 €, ale s 30% pravděpodobností vás propustí v polovině roku (skončíte tedy s polovičním ročním příjmem 30 000 €). Co je výhodnější?",
+      "options": [
+        {
+          "answer": "Zůstat, dokud si o nové firmě nezjistíte víc detailů.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímým projevem zkreslení, ale rozhodnutí odsouvá a nezohledňuje dostupné údaje, které ke srovnání postačí."
+        },
+        {
+          "answer": "Přijmout novou pozici — průměrný očekávaný příjem 51 000 € převyšuje 40 000 €.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu nabídky (0,7·60 000 + 0,3·30 000)."
+        },
+        {
+          "answer": "Zůstat — jistých 40 000 € je lepší než riziko propadu na 30 000 €.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnějšího strachu z propadu příjmu než ze srovnání průměrných ročních výsledků. Jedná se o typ zkreslení: averze ke ztrátě."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-04",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "investice",
+      "difficulty": 4,
+      "question": "Vlastníte akcie firmy X v aktuální tržní hodnotě 5 000 € (původní pořizovací cena 7 000 €). Analytici odhadují 60% pravděpodobnost dalšího pádu o 30 % a 40% pravděpodobnost obnovy o 20 %. Alternativně lze hotovost z prodeje přesunout do investice se stabilním očekávaným výnosem 5 % ročně. Co je nejlépe odůvodněné?",
+      "options": [
+        {
+          "answer": "Prodat polovinu pozice, druhou část ponechat — kompromis snižuje riziko obou stran.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímým projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; částečně sice diverzifikuje, zachovává však polovinu neefektivní pozice."
+        },
+        {
+          "answer": "Akcie X držet a vyčkat návratu na pořizovací cenu 7 000 €.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nechuti realizovat účetní ztrátu, ačkoli budoucí očekávaná hodnota držení je nižší než alternativa. Jedná se o typ zkreslení: averze ke ztrátě."
+        },
+        {
+          "answer": "Akcie prodat a přesunout — očekávaná hodnota 5 250 € převyšuje 4 500 € z držení.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu alternativní investice oproti dalšímu držení původní pozice."
+        }
+      ]
+    },
+    {
+      "id": "loss_aversion-own-05",
+      "bias": "loss_aversion",
+      "source": "own",
+      "domain": "cestování",
+      "difficulty": 5,
+      "question": "Plánujete dovolenou v hodnotě 1 500 €. Cestovní agentura nabízí pojištění proti zrušení (pravděpodobnost zrušení 5 %) za 120 €. Při zrušení byste přišli o nevratnou zálohu 750 € a předem zaplacené nákupy 150 €. Pojistka pokrývá 90 % takové ztráty. Co je racionálně nejvýhodnější?",
+      "options": [
+        {
+          "answer": "Pojištění uzavřít — ztráta 900 € by byla mnohem bolestnější než pojistné 120 €.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silného odporu k případné ztrátě, ačkoli průměrná očekávaná ztráta je výrazně nižší než pojistné. Jedná se o typ zkreslení: averze ke ztrátě."
+        },
+        {
+          "answer": "Pojištění neuzavírat — očekávaná ztráta 45 € (0,05·900) je nižší než pojistné 120 €.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože opírá rozhodnutí o očekávanou hodnotu pojistné události oproti ceně pojistky."
+        },
+        {
+          "answer": "Pojištění uzavřít až těsně před odjezdem podle aktuálních okolností.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není přímým projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; cena pojistky se obvykle zvyšuje a krátí se okno reálného rizika."
+        }
+      ]
+    }
+  ],
+  "confirmation_bias": [
+    {
+      "id": "confirmation_bias-textbook-01",
+      "bias": "confirmation_bias",
+      "source": "textbook",
+      "domain": "logická úloha",
+      "difficulty": 4,
+      "question": "Před vámi leží čtyři karty: A, K, 4, 7. Každá karta má na jedné straně písmeno a na druhé číslo. Pravidlo zní: 'Pokud je na jedné straně samohláska, na druhé je sudé číslo.' Které karty je nutné otočit, abyste pravidlo ověřil/a?",
+      "options": [
+        {
+          "answer": "Pouze karty A a 4.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě hledání případů, které pravidlo splňují. Otočení 4 nemůže pravidlo vyvrátit. Jedná se o typ zkreslení: konfirmační zkreslení."
+        },
+        {
+          "answer": "Karty A a 7.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože A i 7 mohou pravidlo vyvrátit: za A by mohlo být liché číslo, za 7 samohláska. Pouze tyto dvě karty nesou diagnostickou informaci."
+        },
+        {
+          "answer": "Karty A, 4 a 7.",
+          "verdict": "neutral",
+          "explanation": "Tato volba zahrnuje obě nutné karty, ale zbytečně otáčí i 4, jejíž obrácená strana pravidlo nemůže vyvrátit. Není to projev daného zkreslení, ani plně úsporné řešení."
+        },
+        {
+          "answer": "Všechny čtyři karty.",
+          "verdict": "neutral",
+          "explanation": "Tato volba sice pravidlo ověří, ale s nadbytečným úsilím. Karta K (souhláska) ani 4 nemůže pravidlo vyvrátit; informačně přínosné jsou jen A a 7."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-textbook-02",
+      "bias": "confirmation_bias",
+      "source": "textbook",
+      "domain": "indukce hypotézy",
+      "difficulty": 4,
+      "question": "Sděluji vám trojici 2-4-6, která splňuje určité skryté pravidlo. Vaším cílem je toto pravidlo odhalit. Můžete navrhnout libovolnou trojici a já vám řeknu, zda pravidlo splňuje. Kterou trojici nyní zvolíte k testu?",
+      "options": [
+        {
+          "answer": "Trojici 5-10-20.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože zkouší jinou progresi než '+2', a tím napomáhá odhalit obecnější pravidlo (např. jakákoli vzestupná trojice)."
+        },
+        {
+          "answer": "Trojici 8-10-12.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě hledání důkazů pro hypotézu '+2', místo abyste hledal/a její vyvrácení. Jedná se o typ zkreslení: konfirmační zkreslení."
+        },
+        {
+          "answer": "Trojici 6-4-2.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože cíleně zkouší vyvrátit domněnku, že jde nutně o vzestupné trojice; klesající trojice by ji rychle eliminovala."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-textbook-03",
+      "bias": "confirmation_bias",
+      "source": "textbook",
+      "domain": "psychologie / pohovor",
+      "difficulty": 3,
+      "question": "Máte za úkol během krátkého rozhovoru zjistit, zda je váš protějšek spíše extrovert. Kterou otázku položíte jako první?",
+      "options": [
+        {
+          "answer": "Co děláte na velké společenské akci, kde nikoho neznáte?",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě otázky vyzývající k aktivnímu sociálnímu chování; získáte hlavně zdánlivé důkazy pro extroverzi. Jedná se o typ zkreslení: konfirmační zkreslení."
+        },
+        {
+          "answer": "Popište, jak nejraději trávíte volný večer.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože otevřená otázka neorientuje odpověď a umožňuje stejně dobře projevit introverzi i extroverzi — hypotéza o extroverzi tak může být vyvrácena."
+        },
+        {
+          "answer": "Měl/a jste někdy potíže s navazováním nových kontaktů?",
+          "verdict": "neutral",
+          "explanation": "Tato volba získá dílčí informaci, ale nepokrývá obě strany škály symetricky. Není to projev daného zkreslení, ale ani plně diagnosticky vyvážená otázka."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-01",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "nákup",
+      "difficulty": 1,
+      "question": "Vybral/a jste si konkrétní model kávovaru a chcete využít online recenze. Jakou strategii čtení zvolíte, abyste získal/a co nejpravdivější obraz o produktu?",
+      "options": [
+        {
+          "answer": "Cíleně projít i kritické recenze (1–2 hvězdičky) a zvážit, zda jsou výhrady relevantní.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože aktivně vyhledáváte informaci, která by váš výběr mohla zpochybnit, a tak získáte vyvážený obraz produktu."
+        },
+        {
+          "answer": "Číst především recenze s pěti hvězdičkami, kde uživatelé produkt chválí.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě výběru zdrojů, které vaši preferenci podpoří, místo abyste hledal/a její slabiny. Jedná se o typ zkreslení: konfirmační zkreslení."
+        },
+        {
+          "answer": "Spolehnout se na první dojem v obchodě a recenze pominout.",
+          "verdict": "neutral",
+          "explanation": "Tato volba se analytickému rozhodování zcela vyhýbá; není projev daného zkreslení, ale ani racionální vyhledávání odporujících dat."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-02",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "zdraví",
+      "difficulty": 2,
+      "question": "Posledních šest měsíců užíváte doplněk stravy A a celkově se cítíte lépe. Chcete spolehlivě zjistit, zda za zlepšení může opravdu doplněk a ne jiné faktory (změna stravy, spánek, roční období). Jaký krok zvolíte?",
+      "options": [
+        {
+          "answer": "Vysadit doplněk A na 4–6 týdnů a pozorovat, zda se obtíže vrátí.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože cílí na vyvrácení hypotézy: pokud se po vysazení nic nezhorší, doplněk pravděpodobně nebyl příčinou zlepšení."
+        },
+        {
+          "answer": "Pokračovat v užívání a dál sledovat, jak se cítíte.",
+          "verdict": "neutral",
+          "explanation": "Tato volba neposune poznání: bez kontrolního období nelze zlepšení připsat doplňku, ale ani jiným faktorům jako jídlu nebo spánku."
+        },
+        {
+          "answer": "Přečíst svědectví dalších uživatelů doplňku A na webu výrobce.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě sběru kladných svědectví, která vaši zkušenost podpoří. Jedná se o typ zkreslení: konfirmační zkreslení."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-03",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "pracovní pohovor",
+      "difficulty": 3,
+      "question": "Jako náborář/ka vedete strukturovaný pohovor s kandidátem na technickou pozici. První dojem z prvních dvou minut je výrazně pozitivní. Jak naložíte se zbytkem otázek, abyste se rozhodl/a co nejlépe?",
+      "options": [
+        {
+          "answer": "Zaměřit se na náročné otázky z oblastí, kde podle životopisu kandidát zatím neexceloval.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože cíleně testuje, zda dobrý dojem obstojí i ve slabších oblastech; výsledek může hypotézu o vhodnosti kandidáta vyvrátit."
+        },
+        {
+          "answer": "Klást především otázky, ve kterých má kandidát podle životopisu nejlepší šanci uspět.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě otázek, které mají první dojem dále upevnit, ne ho prověřit. Jedná se o typ zkreslení: konfirmační zkreslení."
+        },
+        {
+          "answer": "Klást standardní sadu otázek pro tuto pozici bez ohledu na první dojem.",
+          "verdict": "neutral",
+          "explanation": "Tato volba zachová formální férovost, ale necílí přímo na vyvrácení vašeho dojmu, takže informačně méně rozliší silné a slabé stránky kandidáta."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-04",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "věda",
+      "difficulty": 4,
+      "question": "V regionu pozorujete, že majitelé psů žijí v průměru déle než nemajitelé. Chcete ověřit hypotézu, že 'pravidelná péče o psa skutečně prodlužuje život'. Který krok přinese nejvíce informací?",
+      "options": [
+        {
+          "answer": "Porovnat skupiny majitelů a nemajitelů srovnatelné v příjmu, fyzické aktivitě a zdravotním stavu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože kontroluje matoucí proměnné; pokud po kontrole rozdíl ve věku dožití zmizí, hypotéza o kauzálním vlivu psa je vyvrácena."
+        },
+        {
+          "answer": "Dotázat se kardiologa, zda by chov psa pacientům doporučil.",
+          "verdict": "neutral",
+          "explanation": "Tato volba získá názor experta, ale nepřinese přímou empirickou evidenci pro ani proti hypotéze o příčinném vlivu chovu psa na délku života."
+        },
+        {
+          "answer": "Vyhledat vitální seniory s psem a sebrat jejich pozitivní svědectví o vlivu mazlíčka.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě sběru souhlasných případů a ignorujete majitele psů, kteří zemřeli mladí. Jedná se o typ zkreslení: konfirmační zkreslení."
+        }
+      ]
+    },
+    {
+      "id": "confirmation_bias-own-05",
+      "bias": "confirmation_bias",
+      "source": "own",
+      "domain": "technologie / vývoj softwaru",
+      "difficulty": 5,
+      "question": "Jako vývojář/ka jste přesvědčen/a, že nový algoritmus B je v praxi rychlejší než zavedený A. Tři předběžná měření na vašich obvyklých datech ukazují přesvědčivý náskok B. Jak dále postupovat při testování, abyste získal/a spolehlivý závěr?",
+      "options": [
+        {
+          "answer": "Změřit B na dalších datech podobných těm úspěšným, abyste výhodu kvantifikoval/a.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě testování v podmínkách, kde algoritmus B už uspěl; nová evidence nemůže hypotézu vyvrátit. Jedná se o typ zkreslení: konfirmační zkreslení."
+        },
+        {
+          "answer": "Spustit profiling B na úspěšných datech a popsat příčinu jeho rychlosti.",
+          "verdict": "neutral",
+          "explanation": "Tato volba pomůže pochopit chování B, ale nesrovnává s A v podmínkách, kde by mohl prohrát; sama o sobě hypotézu o jeho nadřazenosti netestuje."
+        },
+        {
+          "answer": "Připravit benchmark s daty, kde má A teoretickou výhodu (krátké vstupy, edge cases), a změřit oba.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože aktivně hledá podmínky, ve kterých by hypotéza o nadřazenosti B měla padnout; pokud B obstojí i tam, hypotéza výrazně posílí."
+        }
+      ]
+    }
+  ],
+  "sunk_cost_fallacy": [
+    {
+      "id": "sunk_cost_fallacy-textbook-01",
+      "bias": "sunk_cost_fallacy",
+      "source": "textbook",
+      "domain": "veřejné finance",
+      "difficulty": 3,
+      "question": "Vlády dvou zemí investovaly za uplynulých dvacet let společně miliardy do vývoje nadzvukového dopravního letadla. Nezávislá analýza nyní ukazuje, že provoz nikdy nedosáhne ziskovosti a kumulované budoucí ztráty budou významné. Stojíte před rozhodnutím, zda projekt dokončit, nebo zastavit. Jak postupovat?",
+      "options": [
+        {
+          "answer": "Projekt zastavit, budoucí provoz bude prodělečný bez ohledu na již vynaložené prostředky.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože hodnotí pouze budoucí očekávané ztráty a ignoruje výdaje, které již nelze získat zpět."
+        },
+        {
+          "answer": "Projekt dokončit, jinak by miliardy investované za dvacet let přišly zcela vniveč.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již vynaložené částky, nikoli budoucí návratnosti. Jedná se o typ zkreslení: klam utopených nákladů."
+        },
+        {
+          "answer": "Odložit rozhodnutí o rok a zadat další nezávislou expertizu.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani racionální, ani projevem zkreslení; defenzivní odklad pouze prodlužuje období, po které dál narůstají provozní ztráty."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-textbook-02",
+      "bias": "sunk_cost_fallacy",
+      "source": "textbook",
+      "domain": "volný čas",
+      "difficulty": 1,
+      "question": "Před půlhodinou jste si koupili nevratnou vstupenku na film. Po prvních třiceti minutách je zřejmé, že je film nudný a zbylých devadesát minut by se vám sledovat nechtělo. Bylo by možné odejít a věnovat čas něčemu příjemnějšímu. Jak se rozhodnete?",
+      "options": [
+        {
+          "answer": "Odejít a strávit zbytek večera aktivitou s vyšším očekávaným prožitkem.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože cena vstupenky je nevratná a porovnáváte pouze budoucí prožitek z filmu a alternativy."
+        },
+        {
+          "answer": "Zůstat až do konce, aby peníze za vstupenku nepřišly nazmar.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již vynaložené částky, kterou setrváním v sále nezískáte zpět. Jedná se o typ zkreslení: klam utopených nákladů."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-textbook-03",
+      "bias": "sunk_cost_fallacy",
+      "source": "textbook",
+      "domain": "volný čas",
+      "difficulty": 3,
+      "question": "Před měsícem jste si zakoupili nevratnou vstupenku na lyžařský víkend do Michiganu za 100 dolarů. O několik týdnů později jste si pořídili nevratnou vstupenku do Wisconsinu za 50 dolarů, kterou si podle vlastního očekávání užijete více. Až nyní zjistíte, že oba zájezdy připadají na stejný víkend. Který využít?",
+      "options": [
+        {
+          "answer": "Zájezd do Michiganu — vstupenka stála dvakrát více, byla by větší škoda ji nevyužít.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě zaplacené částky, ačkoli ji žádnou variantou nezískáte zpět. Jedná se o typ zkreslení: klam utopených nákladů."
+        },
+        {
+          "answer": "Zájezd do Wisconsinu — slibuje větší prožitek, zaplacené částky jsou v obou variantách bezpovratně utracené.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože obě platby jsou nenávratné a porovnávat lze jen budoucí očekávaný prožitek z víkendu."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-01",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "stravování",
+      "difficulty": 1,
+      "question": "V hotelu jste zaplatili pevnou cenu za neomezený přístup ke snídaňovému bufetu. Po prvním talíři pociťujete plnost a další jídlo by vám bylo nepříjemné. Personál právě donáší další chody. Jak se rozhodnete?",
+      "options": [
+        {
+          "answer": "Přestat jíst, plnost a budoucí nepohodlí převažují nad cenou paušálu.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože paušál je již zaplacen bez ohledu na množství jídla a další porce přinášejí jen nepohodlí."
+        },
+        {
+          "answer": "Vzít si malý kousek ovoce, který chuťově skutečně láká.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani racionální, ani projevem zkreslení — sleduje skutečnou chuť, ne ospravedlnění zaplacenou částkou."
+        },
+        {
+          "answer": "Donutit se sníst další porce, aby zaplacený paušál »odpovídal hodnotě«.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již zaplacené částky, kterou další porce nesníží. Jedná se o typ zkreslení: klam utopených nákladů."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-02",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "sport",
+      "difficulty": 2,
+      "question": "Před šesti měsíci jste zaplatili roční členství v posilovně, kam dojíždíte 40 minut. Pět minut od domova právě otevřela nová posilovna se srovnatelnými cenami za jednorázový vstup. Do staré jste investovali nemalou částku na dalších šest měsíců a tu nelze vrátit. Jak postupovat?",
+      "options": [
+        {
+          "answer": "Pokračovat ve staré posilovně, jinak by zaplacené členství propadlo bez využití.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože motivem je již zaplacené členství, ne hodnota tréninku ani ušetřený čas. Jedná se o typ zkreslení: klam utopených nákladů."
+        },
+        {
+          "answer": "Začít chodit do nové posilovny; ušetřený čas dojíždění má vyšší hodnotu než zbylé pololetí staré.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože členství je nenávratné a budoucí přínos plyne především z času ušetřeného dojížděním."
+        },
+        {
+          "answer": "Pokusit se převést zbylou část členství na známého nebo nabídnout ji k prodeji.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani racionální, ani projevem zkreslení; pragmaticky řeší zbytkovou hodnotu členství, ale nezodpovídá otázku, kde dál cvičit."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-03",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "vzdělávání",
+      "difficulty": 3,
+      "question": "Zapsali jste se do online jazykového kurzu za nemalou nevratnou částku. Kurz má 50 lekcí. Po desáté lekci je zřejmé, že obsah je pro vás příliš základní a nepřináší nic nového. Existuje volně dostupný pokročilejší kurz, který lépe odpovídá vaší úrovni. Co udělat se zbylými 40 lekcemi?",
+      "options": [
+        {
+          "answer": "Přejít na pokročilý volně dostupný kurz; placená částka je již bezpovratně utracena.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože budoucí čas přinese hodnotu jen v učení nového, nikoli v dokončení už zaplacené látky."
+        },
+        {
+          "answer": "Dokončit zaplacený kurz až do konce, jinak by peníze přišly nazmar.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již zaplacené částky, nikoli budoucí hodnoty učení. Jedná se o typ zkreslení: klam utopených nákladů."
+        },
+        {
+          "answer": "Procházet zaplacený kurz zrychleně a paralelně sledovat ten nový.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani racionální, ani projevem zkreslení; rozkládá pozornost mezi dva kurzy a snižuje efektivitu obojího."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-04",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "kariéra",
+      "difficulty": 4,
+      "question": "Pět let pracujete na doktorátu v oboru, který vás přestává naplňovat. Soukromá firma vám právě nabízí dobře placenou pozici plně odpovídající vaší vysněné profesní dráze. Doktorát by vyžadoval ještě dva roky práce a v cílové oblasti vám prakticky nepomůže. Jak se rozhodnete?",
+      "options": [
+        {
+          "answer": "Přijmout nabídku, ale ponechat si zápis na škole pro případ návratu.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani racionální, ani projevem zkreslení; udržuje formální zápis bez aktivní práce a slouží spíše jako psychologická pojistka."
+        },
+        {
+          "answer": "Přijmout nabídku, dva další roky práce na nepotřebné kvalifikaci nepřinesou očekávaný užitek.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože hodnotí jen budoucí přínos vůči vysněné dráze a ignoruje již vynaložený čas, který nelze vrátit."
+        },
+        {
+          "answer": "Doktorát dokončit, pět let úsilí přece nemůže přijít vniveč kvůli pracovní nabídce.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě let už věnovaných studiu, nikoli budoucího přínosu. Jedná se o typ zkreslení: klam utopených nákladů."
+        }
+      ]
+    },
+    {
+      "id": "sunk_cost_fallacy-own-05",
+      "bias": "sunk_cost_fallacy",
+      "source": "own",
+      "domain": "podnikání",
+      "difficulty": 5,
+      "question": "Za tři roky jste do vývoje vlastní aplikace investovali 200 000 €. Pro uvedení na trh potřebujete dofinancovat dalších 80 000 €; očekávaný čistý výnos po uvedení je 70 000 €. Konkurence právě nabízí odkup rozpracovaného projektu za 50 000 €. Jak postupovat?",
+      "options": [
+        {
+          "answer": "Pokračovat ve vývoji, jinak by 200 000 € a tři roky práce přišly zcela vniveč.",
+          "verdict": "biased",
+          "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již vynaložené investice, ne budoucí návratnosti. Jedná se o typ zkreslení: klam utopených nákladů."
+        },
+        {
+          "answer": "Přijmout odkup za 50 000 €; dofinancování by přineslo budoucí ztrátu 10 000 €.",
+          "verdict": "rational",
+          "explanation": "Tato volba je racionální, protože porovnává jen budoucí toky: dofinancování přinese ztrátu 10 000 €, kdežto odkup zisk 50 000 €."
+        },
+        {
+          "answer": "Vyjednávat s odkupcem o vyšší cenu a mezitím dál pokračovat ve vývoji.",
+          "verdict": "neutral",
+          "explanation": "Tato volba není ani racionální, ani projevem zkreslení; vyjednávání samo o sobě nemění bilanci, paralelní vývoj však dál spaluje prostředky."
+        }
+      ]
+    }
+  ]
+}

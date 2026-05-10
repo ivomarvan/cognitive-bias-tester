@@ -1,0 +1,1109 @@
+{
+  "_metadata": {
+    "evaluator_model": "Claude Sonnet 4.6",
+    "evaluated_at": "2026-05-10T20:15:00+02:00",
+    "evaluation_prompt_version": "v1.0"
+  },
+  "input_reference": {
+    "source_file": "/home/ivo/workspace/git.hub.lab.ivo/cognitive-bias-tester/nogit_data/example-eval/gen/gpt-5.5.json",
+    "sha256": "c3fcd101443fd0421b1037407d0d70fcaa320f4cd3fca626d628b7e1cb5483c4",
+    "generator_model": "GPT-5.5",
+    "generated_at": "2026-05-10 19:14:00",
+    "input_summary": {
+      "total_examples": 40,
+      "by_source": {
+        "textbook": 15,
+        "own": 25
+      },
+      "by_bias": {
+        "anchoring": 8,
+        "framing": 8,
+        "loss_aversion": 8,
+        "confirmation_bias": 8,
+        "sunk_cost_fallacy": 8
+      }
+    }
+  },
+  "evaluation_results": {
+    "anchoring": [
+      {
+        "example_id": "anchoring-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 77.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Wheel of fortune základ je korektní. Tři možnosti včetně neutrální jsou vhodné. Obtížnost 3 odpovídá.",
+        "strengths": [
+          "Strukturní požadavek anchoring (číselná kotva před odhadem) splněn.",
+          "Biased odpověď (60 %) přirozeně táhnutá kotvou."
+        ],
+        "weaknesses": [
+          "Racionální odpověď ('přiznat vysokou nejistotu') je lehce vágní bez konkrétní alternativy."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 7,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 72.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Historická osobnost a věk nad 140 let — kreativní kotva. Dobrá doložitelnost rationalu.",
+        "strengths": [
+          "Originální zpracování klasického anchoring efektu.",
+          "Racionální odpověď (kontextuální znalost) je doložitelná."
+        ],
+        "weaknesses": [
+          "Otázka je poněkud abstraktní; mohla by být konkrétnější s reálnou historickou osobou."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-textbook-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 44,
+        "weighted_score": 88.5,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Výborný příklad. Nabídková cena 520 000 eur vs. tržní 410–430 000 eur je jasný anchoring s konkrétními čísly. Gold standard.",
+        "strengths": [
+          "Kotva (520K) a tržní srovnání jsou explicitní — full scoring condition.",
+          "Biased odpověď (~500K) přirozeně se přibližuje kotvě.",
+          "Racionální volba (~420K) je tržně doložitelná."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Přeškrtnutá cena vs. tržní srovnání — klasický retailový anchoring. Přirozený a jednoznačný.",
+        "strengths": [
+          "Kotva (299 EUR) je přeškrtnuta, tržní cena (105–115) je dostupná.",
+          "Biased volba přeceňuje výhodnost na základě kotvy, racionální porovnává trh."
+        ],
+        "weaknesses": [
+          "Difficulty 1 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Náborář zmiňuje předchozího kandidáta — realistický interview anchoring. Obtížnost 2 odpovídá.",
+        "strengths": [
+          "Kotva (92K) pochází z externího zdroje, nikoli tržní dat.",
+          "Tři možnosti s neutrální ('čekat na nabídku') jsou vhodné."
+        ],
+        "weaknesses": [
+          "Biased odpověď (88K) by mohla ještě více zdůraznit, proč je to nad tržní hodnotou."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Komentátor a počet gólů — sportovní anchoring s konkrétními statistikami. Přirozené.",
+        "strengths": [
+          "Dlouhodobé průměry jsou v otázce dostupné pro ověření.",
+          "Biased volba (4–5 gólů) je intuitivně lákavá."
+        ],
+        "weaknesses": [
+          "Tři odpovědi s neutrální ('netipovat') vhodné."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 79.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Firemní rozpočet — praktický profesionální scénář. Kotva (240K) vs. reálné náklady (155–170K) jsou explicitní.",
+        "strengths": [
+          "Rozdíl kotvového a reálného odhadu je dramatický (240K vs. 155–170K) — silná past.",
+          "Racionální odpověď vychází z detailního rozpisu."
+        ],
+        "weaknesses": [
+          "Subtilita mírně nižší — scénář je poměrně transparentní pro odborníka."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "anchoring-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Dodavatel vs. historická data — výborný difficulty-5 příklad. Průměr minulých funkcí (7K) vs. tvrzení dodavatele (30K).",
+        "strengths": [
+          "Historická data jsou v otázce explicitně dostupná pro přepočet.",
+          "Biased volba (25K) ukazuje podlehnutí kotvě 30K.",
+          "Racionální volba využívá statistiku průměru."
+        ],
+        "weaknesses": [],
+        "suggested_fix": ""
+      }
+    ],
+    "framing": [
+      {
+        "example_id": "framing-textbook-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Asian Disease varianta s risk vs. certain tradeoff. Neobvyklé verdikty (A=neutral, B=biased, C=rational) jsou správně zdůvodněné, ale uživatele mohou překvapit.",
+        "strengths": [
+          "Strukturní požadavek framing splněn (gain vs. loss frame).",
+          "Tři volby dobře pokrývají spektrum."
+        ],
+        "weaknesses": [
+          "Neutral verdict pro volbu A je neobvyklý — není chybný, ale pro méně zkušeného kurátora neintuitivní."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Chirurgický zákrok 90 % přežití vs. 10 % mortalita — čistý, vzorový příklad.",
+        "strengths": [
+          "Dvě možnosti popisující identická čísla z různých rámů.",
+          "Strukturní požadavek plně splněn."
+        ],
+        "weaknesses": [
+          "Obtížnost 2 odpovídá."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-textbook-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "75 % libové = 25 % tuk — nejlepší potravní framing, velice přirozený.",
+        "strengths": [
+          "Obě formulace jsou přesně ekvivalentní, biased volba je intuitivní."
+        ],
+        "weaknesses": [
+          "Difficulty 1 je přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-01",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 5,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 36,
+        "weighted_score": 72.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "99 % uptime vs. 1 % nedostupnost — čistý framing. Difficulty 1 je podhodnocena (spíše 2).",
+        "strengths": [
+          "Přirozený technologický scénář."
+        ],
+        "weaknesses": [
+          "Difficulty 1 odpovídá spíše 2."
+        ],
+        "suggested_fix": "Zvýšit difficulty na 2."
+      },
+      {
+        "example_id": "framing-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "80 % dokončí vs. 20 % nedokončí — dobrý vzdělávací framing. Tři volby s neutrální jsou vhodné.",
+        "strengths": [
+          "Ekvivalence 80 %/20 % je přesná.",
+          "Biased volba (zapsat se kvůli formulaci) je přirozená."
+        ],
+        "weaknesses": [
+          "Vysvětlení biased odpovědi by mohlo být stručnější."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 37,
+        "weighted_score": 74.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Pojistka 95 % vs. 5 % spoluúčast — dobrý praktický framing.",
+        "strengths": [
+          "Realistický pojistný scénář.",
+          "Ekvivalence je přesná."
+        ],
+        "weaknesses": [
+          "Obtížnost 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "framing-own-04",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 7,
+          "difficulty_adherence": 5,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 35,
+        "weighted_score": 71.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "70 % udržení vs. 30 % opuštění — dobrý fitness framing. Difficulty 4 je nadhodnocena.",
+        "strengths": [
+          "Tři volby s neutrální jsou vhodné."
+        ],
+        "weaknesses": [
+          "Difficulty 4 neodpovídá: ekvivalence je přímá, spíše difficulty 2–3."
+        ],
+        "suggested_fix": "Snížit difficulty na 2–3."
+      },
+      {
+        "example_id": "framing-own-05",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 5,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 37,
+        "weighted_score": 73.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Fond 6/10 vs. 4/10 — správný framing, dvě biased volby z opačných stran. Difficulty 5 nadhodnocena.",
+        "strengths": [
+          "Dvě biased odpovědi ukazují framing z obou stran (pozitivní i negativní rám).",
+          "Racionální odpověď (sledovat výnos a poplatky) je objektivně správná."
+        ],
+        "weaknesses": [
+          "Difficulty 5 neodpovídá: ekvivalence je přímá, spíše difficulty 3."
+        ],
+        "suggested_fix": "Snížit difficulty na 3."
+      }
+    ],
+    "loss_aversion": [
+      {
+        "example_id": "loss_aversion-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Mince 150/100 eur — EV explicitně v otázce (+25 eur). Difficulty 4 je mírně vysoká pro tento typ výpočtu.",
+        "strengths": [
+          "EV je vypočten a uveden v otázce (kladný).",
+          "Biased volba přirozeně odmítá kvůli bolesti ztráty."
+        ],
+        "weaknesses": [
+          "Difficulty 4 by odpovídala spíše 3 — výpočet je trivdní."
+        ],
+        "suggested_fix": "Zvýšit číselnou složitost pro zachování difficulty 4."
+      },
+      {
+        "example_id": "loss_aversion-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 9,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 81.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Hrnek — endowment effect. Přirozený, dobrá doložitelnost.",
+        "strengths": [
+          "Hrnek + okamžitá nabídka je realistická experimentální situace.",
+          "Racionální volba (prodat za 8, neboť nebyl koupen ani za 4) je doložitelná."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-textbook-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Akcie klesla 80/100 — sell vs. hold. Přirozený investiční scénář.",
+        "strengths": [
+          "Biased volba (čekat na 100 eur) je intuitivně velmi lákavá.",
+          "Tři volby s neutrální jsou vhodné."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kupón 5 eur jistých vs. kolo EV=6 eur. Výpočet v otázce. Přirozený.",
+        "strengths": [
+          "EV kola je explicitně 6 eur.",
+          "Biased volba (jistota) je realistická."
+        ],
+        "weaknesses": [
+          "Difficulty 1 — jistota vs. EV=6 > 5 je OK, ale není 'zjevně' obtížné."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-02",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Letenka + pojistka EV=15 < 40 eur — výborný. Tři volby s komfortní volbou jako neutrální.",
+        "strengths": [
+          "EV pojistky (15 eur) vs. cena (40 eur) je explicitně v otázce.",
+          "Racionální argument je jasný a doložitelný."
+        ],
+        "weaknesses": [
+          "Neutrální volba (koupit kvůli klidu) je dobře zdůvodněná a edukativně zajímavá."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 38,
+        "weighted_score": 75.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kariérní bonusová rozhodnutí: EV nové pozice (6K) > jistých 5K. Přirozené.",
+        "strengths": [
+          "EV výpočet je přítomen.",
+          "Tři volby s neutrální (vyjednávat záruku) jsou správné."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Produktový test: EV=+450 eur. Profesionální scénář, konkrétní čísla.",
+        "strengths": [
+          "EV (0,7×1500−0,3×2000=450) je uveden v otázce.",
+          "Biased volba přirozeně bojí ztráty 2 000 eur."
+        ],
+        "weaknesses": [
+          "Obtížnost 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "loss_aversion-own-05",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Garance 120 eur, EV=80 eur — výborný pojistný příklad. Doložitelné výpočtem.",
+        "strengths": [
+          "EV (0,08×1000=80 eur) je v otázce.",
+          "Biased volba (koupit garanci kvůli obavě ze ztráty 1000) je přirozená.",
+          "Neutrální volba (levnější zboží) přidává kontextovou flexibilitu."
+        ],
+        "weaknesses": [],
+        "suggested_fix": ""
+      }
+    ],
+    "confirmation_bias": [
+      {
+        "example_id": "confirmation_bias-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 9,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Wasonův test s A,D,4,7 — vzorový. Difficulty 5 přesná.",
+        "strengths": [
+          "Klasická karty — high fidelity.",
+          "Biased volba (A a 4) je typická chyba; racionální (A a 7) je správná."
+        ],
+        "weaknesses": [
+          "Tři volby s neutrální ('otočit všechny') jsou vhodné."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 7,
+          "difficulty_adherence": 8,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 40,
+        "weighted_score": 81.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "2-4-6 experiment — klasický. Difficulty 4 přesná. Biased testování sudých vzestupných čísel je typické.",
+        "strengths": [
+          "Racionální odpověď (2,3,4 a 6,4,2) testuje alternativní pravidla."
+        ],
+        "weaknesses": [
+          "Obtížnost 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-textbook-03",
+        "scores": {
+          "cognitive_trap": 7,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 39,
+        "weighted_score": 76.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Extroverti jako obchodníci — dobrý scénář výběru otázek. Tři volby vhodné.",
+        "strengths": [
+          "Racionální (srovnat obě skupiny) je correct metodologicky."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Notebook a vyhledávání 'proč je nejlepší' — výborný everyday příklad.",
+        "strengths": [
+          "Biased formulace vyhledávání je autentická a přirozená.",
+          "Racionální (nevýhody a alternativy) je jasně lepší."
+        ],
+        "weaknesses": [
+          "Difficulty 1 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Snídaně a soustředění — experiment s kontrolní podmínkou. Výborný difficulty-2 příklad.",
+        "strengths": [
+          "Biased (záznamy jen ve dnech s novou snídaní) je přirozená chyba.",
+          "Racionální (střídání + měření) je vědecky správné."
+        ],
+        "weaknesses": [
+          "Tři volby s neutrální (ptát se známých) jsou vhodné."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 40,
+        "weighted_score": 79.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Pohovor a první dojem — realistický HR scénář.",
+        "strengths": [
+          "Biased (ptát se na úspěchy) potvrzuje první dojem.",
+          "Racionální (behaviorální otázky) je standardizovaný postup."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Produktový pilot s biased vzorkem newsletteru — excelentní difficulty-4 příklad.",
+        "strengths": [
+          "Biased (sbírat citace nadšenců) je přirozená firemní past.",
+          "Racionální (náhodný kontrolovaný test) je metodologicky správný."
+        ],
+        "weaknesses": [
+          "Tři volby s neutrální (odložit) jsou vhodné."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "confirmation_bias-own-05",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Analýza dat — selektivní zastavení u příznivého segmentu. Výborný difficulty-5 příklad.",
+        "strengths": [
+          "Biased (prezentovat první segment jako důkaz) je extrémně přirozené v projektovém prostředí.",
+          "Racionální (predefinovat segmenty) je metodologicky správné."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ],
+    "sunk_cost_fallacy": [
+      {
+        "example_id": "sunk_cost_fallacy-textbook-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Concorde (bez explicitního pojmenování) — splňuje strukturní požadavek. Skvělý.",
+        "strengths": [
+          "Sunk cost (miliardy) explicitně v otázce.",
+          "Racionální (budoucí ekonomika) jednoznačná."
+        ],
+        "weaknesses": [
+          "Difficulty 4 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 8
+        },
+        "total_score_raw": 39,
+        "weighted_score": 78.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Divadlo + nemoc — přirozený, dvě racionální odpovědi (zůstat doma nebo darovat). Elegantní.",
+        "strengths": [
+          "Sunk cost (60 eur vstupenka) explicitní.",
+          "Dvě racionální volby správně ohodnoceny."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-textbook-03",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Sport a high-draft pick — realistický profesionální scénář.",
+        "strengths": [
+          "Sunk cost (podpisový bonus) explicitně zmíněn.",
+          "Racionální (lepší hráč) je výkonnostně doložitelná."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-01",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 9,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Seriál 7 dílů — každodenní příklad. Přirozený a elegantní.",
+        "strengths": [
+          "Sunk time (7×45 minut) je implicitní, ale zjevný.",
+          "Difficulty 1 přesná."
+        ],
+        "weaknesses": [
+          "Sunk cost mohl být explicitnější (kolik hodin stráveno)."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-02",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Zaplacený kurz, volně dostupná alternativa — výborný. Dvě racionální odpovědi.",
+        "strengths": [
+          "Sunk cost (200 eur) explicitní.",
+          "Dvě racionální odpovědi (přejít nebo selektivně dokončit) jsou obě korektní."
+        ],
+        "weaknesses": [
+          "Difficulty 2 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-03",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 8,
+          "subtlety": 8,
+          "difficulty_adherence": 7,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 41,
+        "weighted_score": 82.5,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "4 měsíce práce, 2 % chtějí funkci — silná profesionální past.",
+        "strengths": [
+          "Biased volba ('nesmí přijít nazmar') je intuitivně silná.",
+          "Racionální (budoucí přínos vs. náklady na údržbu) je doložitelná."
+        ],
+        "weaknesses": [
+          "Difficulty 3 přesná."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-04",
+        "scores": {
+          "cognitive_trap": 8,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 42,
+        "weighted_score": 84.0,
+        "recommendation": "needs_minor_edit",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Kávovar 600+250 opravy vs. 180 oprava vs. 220 nový — numericky výborný.",
+        "strengths": [
+          "Sunk cost (850 eur celkem) explicitní.",
+          "Biased volba ('přece ho nevyhodím') přirozená.",
+          "Racionální srovnání 180 vs. 220 eur + záruka je v otázce."
+        ],
+        "weaknesses": [
+          "Tři volby s neutrální (nepít kávu) jsou přiměřené."
+        ],
+        "suggested_fix": null
+      },
+      {
+        "example_id": "sunk_cost_fallacy-own-05",
+        "scores": {
+          "cognitive_trap": 9,
+          "rationality": 9,
+          "subtlety": 8,
+          "difficulty_adherence": 8,
+          "rule_adherence": 9
+        },
+        "total_score_raw": 43,
+        "weighted_score": 87.0,
+        "recommendation": "use_as_is",
+        "flagged": false,
+        "flag_reasons": [],
+        "feedback": "Software migrace 120K sunk, 180K dokončení vs. 90K alternativa — gold standard difficulty-5.",
+        "strengths": [
+          "Sunk cost (120K) explicitní; 180K > 90K je explicitní výpočet.",
+          "Biased volba je velmi přirozená v podnikovém prostředí."
+        ],
+        "weaknesses": [],
+        "suggested_fix": null
+      }
+    ]
+  },
+  "population_checks": {
+    "anchoring": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "framing": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "loss_aversion": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "confirmation_bias": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    },
+    "sunk_cost_fallacy": {
+      "difficulty_coverage_own": {
+        "status": "ok",
+        "missing_levels": []
+      },
+      "scenario_diversity": {
+        "status": "ok",
+        "near_duplicates": []
+      }
+    }
+  },
+  "statistics": {
+    "averages_by_bias": {
+      "anchoring": {
+        "n": 8,
+        "mean_weighted": 79.8,
+        "min_weighted": 72.5,
+        "max_weighted": 88.5,
+        "stdev_weighted": 4.8
+      },
+      "framing": {
+        "n": 8,
+        "mean_weighted": 75.7,
+        "min_weighted": 71.0,
+        "max_weighted": 82.5,
+        "stdev_weighted": 4.1
+      },
+      "loss_aversion": {
+        "n": 8,
+        "mean_weighted": 80.4,
+        "min_weighted": 75.5,
+        "max_weighted": 82.5,
+        "stdev_weighted": 2.5
+      },
+      "confirmation_bias": {
+        "n": 8,
+        "mean_weighted": 82.6,
+        "min_weighted": 76.5,
+        "max_weighted": 87.0,
+        "stdev_weighted": 3.1
+      },
+      "sunk_cost_fallacy": {
+        "n": 8,
+        "mean_weighted": 83.1,
+        "min_weighted": 78.5,
+        "max_weighted": 87.0,
+        "stdev_weighted": 2.2
+      }
+    },
+    "averages_by_source": {
+      "textbook": {
+        "n": 15,
+        "mean_weighted": 80.4
+      },
+      "own": {
+        "n": 25,
+        "mean_weighted": 80.2
+      }
+    },
+    "averages_by_criteria": {
+      "cognitive_trap": 7.8,
+      "rationality": 8.5,
+      "subtlety": 7.8,
+      "difficulty_adherence": 7.2,
+      "rule_adherence": 8.7
+    },
+    "overall_mean_weighted": 80.3,
+    "flagged_examples": [],
+    "top_3_examples": [
+      "anchoring-textbook-03",
+      "confirmation_bias-own-05",
+      "sunk_cost_fallacy-own-05"
+    ],
+    "bottom_3_examples": [
+      "anchoring-textbook-02",
+      "framing-own-01",
+      "framing-own-04"
+    ],
+    "overall_summary_feedback": "GPT-5.5 generuje konzistentně kvalitní sadu příkladů — nejlepší ze srovnávaných modelů. Anchoring sekce je vzorová s explicitními číselnými kotvami. Confirmation bias a sunk_cost_fallacy jsou téměř bezchybné. Hlavní slabinou je systematické nadhodnocování difficulty u framing příkladů (majority 'X% vs. Y%' jsou ekvivalentní priamo viditelné, ale dostávají difficulty 4–5). Loss aversion s explicitními EV výpočty je edukačně ceněná sada."
+  }
+}
