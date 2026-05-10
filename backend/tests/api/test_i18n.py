@@ -24,8 +24,8 @@ async def _delete_ui_key(session: AsyncSession, key: str) -> None:
 
 
 def _transport() -> ASGITransport:
-    """ASGI transport; enable lifespan so startup DB probe runs in integration jobs."""
-    return ASGITransport(app=app, lifespan="on")
+    """ASGI transport (httpx 0.27 has no ``lifespan`` kwarg on ``ASGITransport``)."""
+    return ASGITransport(app=app)
 
 
 @pytest.mark.unit

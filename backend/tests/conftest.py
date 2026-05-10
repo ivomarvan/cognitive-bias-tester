@@ -10,7 +10,26 @@ ASGI lifespan, and model-only tests never touch the session).
 
 import os
 
+import pytest
+
 os.environ.setdefault(
     "DATABASE_URL",
     "postgresql+asyncpg://test:test@localhost:5432/test",
 )
+
+
+@pytest.fixture(autouse=True)
+def _dispose_sqlalchemy_engine_after_integration(request: pytest.FixtureRequest) -> None:
+    """Reset async connection pool after integration tests (per-function event loops).
+
+    Pytest closes the event loop after each async test; asyncpg connections must be
+    recycled or the next test hits "Future attached to a different loop".
+    """
+    yield
+    if request.node.get_closest_marker("integration") is None:
+        return
+    import asyncio
+
+    from src.db.session import engine
+
+    asyncio.run(engine.dispose())
