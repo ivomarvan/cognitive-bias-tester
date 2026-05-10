@@ -32,7 +32,7 @@ Mode 3 (X publishing) **must not** go live before Stripe is integrated and teste
 
 ### Epic E010 — Repo & Infrastructure Skeleton
 
-**Status:** pending  
+**Status:** done ✅  
 **Complexity:** low  
 **Depends on:** —  
 **Description:** Bootstrap the repository: backend (FastAPI) and frontend (Vue 3 + Vite) skeletons, `docker-compose.yml` with PostgreSQL 16, Alembic, `.env.example`, `.gitignore`, `README.md`, `README.docker.md`, ruff + mypy + pytest pipeline. ADR-001 (PostgreSQL choice) and ADR-002 (ethics framework — list of B2B segments the project refuses to serve).
@@ -43,7 +43,7 @@ Mode 3 (X publishing) **must not** go live before Stripe is integrated and teste
 
 ### Epic E020 — Data Model & Seed Cases
 
-**Status:** pending  
+**Status:** done ✅  
 **Complexity:** medium  
 **Depends on:** E010  
 **Description:** Domain model: `Case` (English), `CaseTranslation` (per-language), `BiasType`, `Rating`, `User`, `AnswerEvent`, `Subscription` placeholder, `UiString` (English source for UI chrome), `UiStringTranslation` (AI-translated per-locale cache). Alembic initial migration. Repository layer for all entities. Cyclic-buffer logic stub (interface only — fully implemented in E030). Author 25 gold-standard Cases (5 bias types × 5 variants) in English with parametric placeholders; seed initial `UiString` keys from existing `frontend/src/locales/en.json`. Backend endpoint `GET /v1/i18n/{locale}` with hash-based lookup and English fallback (AI translation wired in E040). Side task during this Epic: send first contact e-mail to a Czech university psychology department about future cooperation (informational, no commitment).
@@ -54,7 +54,7 @@ Mode 3 (X publishing) **must not** go live before Stripe is integrated and teste
 
 ### Epic E030 — LLM Pipeline & Cache
 
-**Status:** pending  
+**Status:** in_progress 🔧  
 **Complexity:** high  
 **Depends on:** E020  
 **Description:** ADR-003 (LLM provider comparison and choice) and ADR-004 (embedding model choice). Implement Case generator using selected LLM; embedding-based deduplication on insert; LLM-as-judge validation pass. Cyclic buffer fully implemented with eviction by `(rating_avg, age)` composite ordering. Prompt templates versioned in `backend/src/prompts/` (Git-tracked). Test fixtures use a recorded provider response (no live API calls in CI).
@@ -239,6 +239,22 @@ Mode 3 (X publishing) **must not** go live before Stripe is integrated and teste
 **Status:** pending (post-MVP)  
 **Complexity:** medium  
 **Description:** After 30 Cases, generate a personal "cognitive profile" — shareable, virally attractive (16Personalities-style).
+
+---
+
+### Epic E200 — Argumentative Fallacies (Logical Reasoning)
+
+**Status:** pending (post-MVP)  
+**Complexity:** high  
+**Description:** Expand the application scope beyond cognitive biases to external communication (identifying straw man, ad hominem, etc.). Implements specific micro-interaction UIs (e.g. chat bubble clicking) for the best gamified experience, which can gracefully degrade to standard A/B/C choices based on user/B2B settings. Requires extending the `BiasType` concept to a broader `ConceptType` and new LLM prompt templates for dialogue generation.
+
+---
+
+### Epic E210 — Claim Types & Information Literacy
+
+**Status:** pending (post-MVP)  
+**Complexity:** high  
+**Description:** Expand the application to teach identifying subjective vs. verifiable claims, historical facts, predictions, etc. Implements specific micro-interaction UIs (e.g. text highlighter) for gamification, with graceful degradation to standard A/B/C questions. Completes the vision of the app as a comprehensive "critical thinking" platform.
 
 ---
 

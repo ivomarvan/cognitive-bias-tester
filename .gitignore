@@ -23,6 +23,8 @@ nogit_data/
 *.tmp
 
 # Python (see .cursor/rules/10-python.mdc)
+# Virtual environments — match `.venv` in any project path (root, experiments/, etc.)
+.venv/
 __pycache__
 __pycache__/
 *.pyc

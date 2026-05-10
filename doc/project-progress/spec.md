@@ -120,6 +120,8 @@ After MVP launch (Monetized MVP / E130 complete), the following Epics are queued
 - **E170** — Formal academic validation partnership.
 - **E180** — Open data export and public research API.
 - **E190** — Persona/profile report (post-30-Cases shareable summary).
+- **E200** — Argumentative fallacies (expansion to logical reasoning with micro-interaction UIs).
+- **E210** — Claim types & Information literacy (text highlighter UIs and deeper integration).
 
 ## References
 
