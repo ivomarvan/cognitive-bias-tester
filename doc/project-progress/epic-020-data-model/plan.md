@@ -37,6 +37,16 @@ T030 and T040 can start in parallel once T010 + T020 are done.
 
 ---
 
+## APM Output Convention (applies to every task)
+
+After completing all code and passing all tests, Coder MUST:
+1. Write `report.md` in the task directory (e.g. `task-010-domain-models/report.md`) — all APM required sections in Czech.
+2. Fill all checkboxes in the task's `dod.md` with ✅ or ❌ + note.
+
+The constraint "Do NOT modify `doc/**`" in each task's Context Bundle means: do NOT touch other tasks' spec/dod files, `plan.md`, `spec.md`, `roadmap.md`, or `doc/architecture/`. It does NOT prevent writing the current task's own `report.md` and filling its `dod.md`.
+
+---
+
 ## Cross-Task Conventions
 
 - All new Python files in `backend/src/` must pass `ruff check`, `ruff format --check`, and `mypy src/ --strict` with exit 0.
@@ -198,7 +208,7 @@ class Subscription(Base):
 - Read: `doc/project-progress/spec.md` (Data Model section, UI translation section)
 - Read: `doc/project-progress/epic-020-data-model/plan.md` (this file — model fields above)
 - Do NOT modify: `docker-compose.yml`, `backend/src/main.py`, `backend/src/api/`
-- Files NOT to modify: `doc/**`
+- Do NOT modify: `doc/**` except — Coder MUST write `doc/project-progress/epic-020-data-model/task-010-domain-models/report.md` and fill checkboxes in `dod.md` at task end
 
 **Recommended Coder model:** Composer-2
 
@@ -295,7 +305,7 @@ class SubscriptionRepository(Repository[Subscription]):
 - Read: `backend/src/db/session.py`
 - Read: `doc/project-progress/epic-020-data-model/plan.md` (repository specs above)
 - Do NOT modify: `backend/src/api/`, `backend/src/main.py`, `docker-compose.yml`
-- Files NOT to modify: `doc/**`
+- Do NOT modify: `doc/**` except — Coder MUST write `doc/project-progress/epic-020-data-model/task-020-repository-layer/report.md` and fill checkboxes in `dod.md` at task end
 
 **Recommended Coder model:** Composer-2
 
@@ -394,7 +404,8 @@ Migrate all keys from `frontend/src/locales/en.json` into this format, adding a 
 - Read: `frontend/src/locales/en.json`, `frontend/src/locales/cs.json` (for reference)
 - Read: `doc/project-progress/spec.md` (Parametric Case structure, 5 bias types)
 - Read: `doc/project-progress/epic-020-data-model/plan.md` (fixture formats above)
-- Files NOT to modify: `doc/**`, `frontend/src/locales/` (read only, do not delete)
+- Do NOT modify: `doc/**` except — Coder MUST write `doc/project-progress/epic-020-data-model/task-030-seed-data/report.md` and fill checkboxes in `dod.md` at task end
+- `frontend/src/locales/` — read only, do not delete or modify
 
 **Recommended Coder model:** Composer-2
 
@@ -466,7 +477,7 @@ class I18nResponse(BaseModel):
 - Read: `doc/project-progress/spec.md` (UI translation three-tier strategy)
 - Read: `doc/project-progress/epic-020-data-model/plan.md` (endpoint spec above)
 - Do NOT modify: `docker-compose.yml`, frontend files
-- Files NOT to modify: `doc/**`
+- Do NOT modify: `doc/**` except — Coder MUST write `doc/project-progress/epic-020-data-model/task-040-i18n-api/report.md` and fill checkboxes in `dod.md` at task end
 
 **Recommended Coder model:** Composer-2
 
@@ -560,7 +571,7 @@ class InMemoryCyclicBuffer(CyclicBuffer):
 - Read: `doc/project-progress/spec.md` (LLM cache cyclic buffer description)
 - Read: `doc/project-progress/epic-020-data-model/plan.md` (interface spec above)
 - Read: `backend/src/core/config.py`, `backend/src/core/logging.py` (style reference)
-- Do NOT modify: any existing files; do NOT add DB dependencies
-- Files NOT to modify: `doc/**`
+- Do NOT modify: any existing backend/frontend files; do NOT add DB dependencies
+- Do NOT modify: `doc/**` except — Coder MUST write `doc/project-progress/epic-020-data-model/task-050-cyclic-buffer-stub/report.md` and fill checkboxes in `dod.md` at task end
 
 **Recommended Coder model:** Composer-2

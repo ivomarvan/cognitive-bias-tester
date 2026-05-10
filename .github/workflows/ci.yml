@@ -1,5 +1,5 @@
 # Cognitive Bias Tester — CI (E010.T070). No deploy steps.
-# Triggers: push to main / feature branches, PRs into main, manual dispatch.
+# Triggers: push to master / feature branches, PRs into master, manual dispatch.
 
 name: CI
 
@@ -10,11 +10,11 @@ concurrency:
 on:
   push:
     branches:
-      - main
+      - master
       - "feature/**"
   pull_request:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 permissions:

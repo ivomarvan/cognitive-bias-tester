@@ -207,6 +207,15 @@ pytest -m "not integration" -q
 
 All must exit 0.
 
+## APM Output (required at task end)
+
+After all code is implemented and tests pass, Coder MUST:
+
+1. Write `report.md` in this directory (`task-050-cyclic-buffer-stub/report.md`) — all APM sections in Czech.
+2. Fill all checkboxes in `dod.md` in this directory with ✅ or ❌ + note.
+
+These files are in `doc/` but are the Coder's responsibility to create/fill. The "do not modify doc/**" constraint in plan.md refers to spec files, plan files, roadmap, and ADRs — NOT to this task's own `report.md` and `dod.md`.
+
 ## Definition of Done
 
 See [dod.md](dod.md).
