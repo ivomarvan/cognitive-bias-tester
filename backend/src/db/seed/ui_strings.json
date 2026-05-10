@@ -1,0 +1,70 @@
+{
+  "app_title": {
+    "title": "Cognitive Bias Tester",
+    "description": "Application name in the browser tab and main header, mapped from en.json app.title."
+  },
+  "home_heading": {
+    "title": "Welcome",
+    "description": "Hero heading on the home page, mapped from en.json home.heading."
+  },
+  "nav_home": {
+    "title": "Home",
+    "description": "Navigation link to the landing page."
+  },
+  "nav_settings": {
+    "title": "Settings",
+    "description": "Navigation menu item for user preferences."
+  },
+  "nav_about": {
+    "title": "About",
+    "description": "Navigation link to product information."
+  },
+  "btn_start_quiz": {
+    "title": "Start",
+    "description": "Primary button to begin a quiz session."
+  },
+  "btn_submit_answer": {
+    "title": "Submit answer",
+    "description": "Confirms the selected option for the current case."
+  },
+  "btn_next_case": {
+    "title": "Next case",
+    "description": "Advances to the following scenario."
+  },
+  "result_correct": {
+    "title": "Correct",
+    "description": "Short caption when the user picked the unbiased option."
+  },
+  "result_incorrect": {
+    "title": "Not quite",
+    "description": "Caption when the chosen option is suboptimal."
+  },
+  "error_generic": {
+    "title": "Something went wrong. Please try again.",
+    "description": "Generic API or network failure message."
+  },
+  "error_not_found": {
+    "title": "We could not find that resource.",
+    "description": "Shown when a requested entity is missing."
+  },
+  "settings_locale": {
+    "title": "Language",
+    "description": "Label for locale selection in settings."
+  },
+  "settings_theme": {
+    "title": "Theme",
+    "description": "Label for color theme preference."
+  },
+  "footer_tagline": {
+    "title": "Train critical thinking, one bias at a time.",
+    "description": "Short tagline shown in the page footer."
+  },
+  "bias_catalog_heading": {
+    "title": "Explore cognitive biases",
+    "description": "Heading above the list of bias categories."
+  },
+  "loading_message": {
+    "title": "Loading…",
+    "description": "Shown while async data is fetched."
+  }
+}

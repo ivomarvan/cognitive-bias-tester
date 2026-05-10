@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "anchoring",
+    "name_en": "Anchoring Bias",
+    "description_en": "The tendency to rely too heavily on the first piece of information encountered when making decisions."
+  },
+  {
+    "slug": "framing",
+    "name_en": "Framing Effect",
+    "description_en": "The tendency to react differently to the same information depending on how it is presented."
+  },
+  {
+    "slug": "loss_aversion",
+    "name_en": "Loss Aversion",
+    "description_en": "The tendency to prefer avoiding losses over acquiring equivalent gains."
+  },
+  {
+    "slug": "confirmation_bias",
+    "name_en": "Confirmation Bias",
+    "description_en": "The tendency to search for, interpret, and recall information that confirms one's prior beliefs."
+  },
+  {
+    "slug": "sunk_cost",
+    "name_en": "Sunk Cost Fallacy",
+    "description_en": "The tendency to continue a behaviour due to past investments, even when stopping is the better choice."
+  }
+]

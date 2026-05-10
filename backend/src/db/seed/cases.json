@@ -1,0 +1,788 @@
+[
+  {
+    "bias_type_slug": "anchoring",
+    "variant": 0,
+    "parametric_payload": {
+      "local_first_name": "Alex",
+      "currency_amount_small": 20,
+      "currency_amount_large": 500,
+      "timeframe_days": 3
+    },
+    "locale": "en",
+    "title": "The car lot",
+    "question": "{local_first_name} shops for a used car. The dealer opens at {currency_amount_large} € and {local_first_name} fixates on beating the sticker by only {currency_amount_small} €. What should {local_first_name} do first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Offer exactly {currency_amount_small} € below the sticker"
+      },
+      {
+        "label": "B",
+        "text": "Gather independent market comps, then negotiate from data"
+      },
+      {
+        "label": "C",
+        "text": "Trust the sticker as fair because professionals set it"
+      },
+      {
+        "label": "D",
+        "text": "Avoid research for {timeframe_days} days to save time"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "The sticker is a classic anchor; unbiased choice is independent valuation before any number is treated as meaningful (anchoring bias)."
+  },
+  {
+    "bias_type_slug": "anchoring",
+    "variant": 1,
+    "parametric_payload": {
+      "local_first_name": "Sam",
+      "percentage": 12,
+      "currency_amount_large": 78000
+    },
+    "locale": "en",
+    "title": "Salary talk",
+    "question": "{local_first_name} interviews for a role. The recruiter says the band tops out near {currency_amount_large} € and mentions a {percentage}% raise cap from the prior hire. {local_first_name} now mentally anchors to that cap. What is the sound approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Treat the band as the hard ceiling without external data"
+      },
+      {
+        "label": "B",
+        "text": "Research market wages for the role and city before negotiating"
+      },
+      {
+        "label": "C",
+        "text": "Ask for exactly {percentage}% more than the prior hire"
+      },
+      {
+        "label": "D",
+        "text": "Accept the first number to seem cooperative"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Recruiter figures anchor expectations; market data breaks the anchor (anchoring bias)."
+  },
+  {
+    "bias_type_slug": "anchoring",
+    "variant": 2,
+    "parametric_payload": {
+      "local_first_name": "Jordan",
+      "timeframe_days": 14,
+      "percentage": 40
+    },
+    "locale": "en",
+    "title": "Project deadline",
+    "question": "A client suggests a {timeframe_days}-day sprint because last year a similar job finished that fast. The team now plans resources around that timeline even though scope doubled. What should the lead do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Keep the {timeframe_days}-day plan to match history"
+      },
+      {
+        "label": "B",
+        "text": "Re-estimate from tasks and risk, ignoring the old timeline as an anchor"
+      },
+      {
+        "label": "C",
+        "text": "Promise {percentage}% buffer verbally but keep the old dates internally"
+      },
+      {
+        "label": "D",
+        "text": "Skip estimation to avoid conflict"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Past timelines anchor planning; rational PMs recompute from scope (anchoring bias)."
+  },
+  {
+    "bias_type_slug": "anchoring",
+    "variant": 3,
+    "parametric_payload": {
+      "local_first_name": "Rhea",
+      "currency_amount_small": 1200,
+      "currency_amount_large": 9000
+    },
+    "locale": "en",
+    "title": "Clinic quote",
+    "question": "{local_first_name} needs a procedure. Clinic A quotes {currency_amount_large} € first; Clinic B quotes {currency_amount_small} €. {local_first_name} assumes Clinic B must be cutting corners. What is the balanced move?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pick Clinic A solely because the higher quote feels safer"
+      },
+      {
+        "label": "B",
+        "text": "Compare credentials, outcomes, and inclusions independent of order of quotes"
+      },
+      {
+        "label": "C",
+        "text": "Split the difference between {currency_amount_small} and {currency_amount_large}"
+      },
+      {
+        "label": "D",
+        "text": "Avoid both because prices differ"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "First or highest prices anchor quality judgments; evidence should drive the choice (anchoring)."
+  },
+  {
+    "bias_type_slug": "anchoring",
+    "variant": 4,
+    "parametric_payload": {
+      "local_first_name": "Morgan",
+      "currency_amount_small": 5,
+      "currency_amount_large": 50
+    },
+    "locale": "en",
+    "title": "Coffee donation",
+    "question": "A charity tablet suggests gifts of {currency_amount_large} €, {currency_amount_small} €, or custom. Most pick {currency_amount_small} € because it looks modest next to {currency_amount_large} €. What best counters anchoring here?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always pick the middle number shown"
+      },
+      {
+        "label": "B",
+        "text": "Decide based on your budget and impact research, not the preset amounts"
+      },
+      {
+        "label": "C",
+        "text": "Match the highest suggestion to avoid guilt"
+      },
+      {
+        "label": "D",
+        "text": "Donate zero because menus manipulate people"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Suggested amounts anchor generosity; a planned donation avoids the nudge (anchoring bias)."
+  },
+  {
+    "bias_type_slug": "framing",
+    "variant": 0,
+    "parametric_payload": {
+      "local_first_name": "Chris",
+      "percentage": 90,
+      "timeframe_days": 30
+    },
+    "locale": "en",
+    "title": "Vaccine leaflet",
+    "question": "A clinic flyer says the vaccine is {percentage}% effective. Another flyer for the same vaccine says {local_first_name} faces a small chance of illness in the next {timeframe_days} days without it. Same facts, different frames. Which mindset helps a rational choice?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pick based on whichever flyer you saw first"
+      },
+      {
+        "label": "B",
+        "text": "Translate both frames into consistent metrics like absolute risk reduction"
+      },
+      {
+        "label": "C",
+        "text": "Assume positive framing is always manipulative"
+      },
+      {
+        "label": "D",
+        "text": "Ignore numbers and follow social media sentiment"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Framing bias is neutralized by converting narratives into comparable statistics."
+  },
+  {
+    "bias_type_slug": "framing",
+    "variant": 1,
+    "parametric_payload": {
+      "currency_amount_small": 50,
+      "currency_amount_large": 1200,
+      "local_first_name": "Pat"
+    },
+    "locale": "en",
+    "title": "Subscription trial",
+    "question": "A streamer offers a trial for {currency_amount_small} € today or {currency_amount_large} € after. {local_first_name} focuses on how cheap today feels. What is the clearest next step?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Buy because today is cheap without reading renewal terms"
+      },
+      {
+        "label": "B",
+        "text": "Annualize total cost and cancellation rules before deciding"
+      },
+      {
+        "label": "C",
+        "text": "Assume {currency_amount_large} € will never be charged"
+      },
+      {
+        "label": "D",
+        "text": "Pick randomly between offers"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Highlighting a small today fee hides long-term cost; normalize to totals (framing effect)."
+  },
+  {
+    "bias_type_slug": "framing",
+    "variant": 2,
+    "parametric_payload": {
+      "percentage": 2,
+      "local_first_name": "Terry"
+    },
+    "locale": "en",
+    "title": "Investment slide",
+    "question": "Slide A says an index rose {percentage}% last quarter. Slide B shows the same move wiped {percentage}% off a large notional portfolio. Executives react oppositely to the slides. What should {local_first_name} the analyst do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use whichever slide leadership prefers"
+      },
+      {
+        "label": "B",
+        "text": "Present both percent and absolute figures with the same baseline"
+      },
+      {
+        "label": "C",
+        "text": "Drop numbers entirely to avoid bias"
+      },
+      {
+        "label": "D",
+        "text": "Show only the positive slide"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Identical performance looks different by frame; pair metrics (framing effect)."
+  },
+  {
+    "bias_type_slug": "framing",
+    "variant": 3,
+    "parametric_payload": {
+      "timeframe_days": 7,
+      "local_first_name": "Jamie"
+    },
+    "locale": "en",
+    "title": "Workout app",
+    "question": "App copy says you will lose habits in {timeframe_days} days if you skip once. Another screen says most users stay consistent with gentle reminders. How should {local_first_name} decide whether to pay for premium?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pay immediately to avoid the loss frame"
+      },
+      {
+        "label": "B",
+        "text": "Evaluate features versus free alternatives independent of fear copy"
+      },
+      {
+        "label": "C",
+        "text": "Assume both frames are equally scientific"
+      },
+      {
+        "label": "D",
+        "text": "Never pay because scare tactics are unfair"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Loss-framed marketing exploits feelings; judge product value on needs (framing)."
+  },
+  {
+    "bias_type_slug": "framing",
+    "variant": 4,
+    "parametric_payload": {
+      "percentage": 95,
+      "currency_amount_small": 10
+    },
+    "locale": "en",
+    "title": "Bus reliability",
+    "question": "The operator advertises {percentage}% on-time trips versus a rival citing only {currency_amount_small} major delays per month. Riders pick the operator with nicer percentages, though the delay counts differ in scale. What is rational?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pick the highest percentage headline"
+      },
+      {
+        "label": "B",
+        "text": "Normalize to the same unit like expected delay minutes per ride"
+      },
+      {
+        "label": "C",
+        "text": "Avoid math entirely"
+      },
+      {
+        "label": "D",
+        "text": "Follow whichever brand advertises loudest"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Competing frames require converting to common units before comparing (framing effect)."
+  },
+  {
+    "bias_type_slug": "loss_aversion",
+    "variant": 0,
+    "parametric_payload": {
+      "currency_amount_small": 50,
+      "currency_amount_large": 50,
+      "local_first_name": "Lee"
+    },
+    "locale": "en",
+    "title": "Bonus clawback",
+    "question": "{local_first_name} can keep a sure {currency_amount_small} € bonus or risk it for a coin flip doubling to {currency_amount_large} € on heads. The EV matches, yet {local_first_name} hates losing the sure amount. What reflects unbiased reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always keep the sure {currency_amount_small} € because losses hurt more"
+      },
+      {
+        "label": "B",
+        "text": "Weigh the utility of both outcomes; equal EV means indifference for risk-neutral agents"
+      },
+      {
+        "label": "C",
+        "text": "Reject both because any risk is bad"
+      },
+      {
+        "label": "D",
+        "text": "Flip a coin emotionally"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Loss aversion overweights avoiding a loss versus gaining the same amount; EV analysis helps."
+  },
+  {
+    "bias_type_slug": "loss_aversion",
+    "variant": 1,
+    "parametric_payload": {
+      "percentage": 60,
+      "local_first_name": "Avery"
+    },
+    "locale": "en",
+    "title": "Medical test",
+    "question": "A screening has a {percentage}% false alarm rate but catches serious issues early. {local_first_name} skips it fearing bad news more than valuing information. What is the balanced view?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Skip testing entirely to avoid anxiety"
+      },
+      {
+        "label": "B",
+        "text": "Model likelihoods with a clinician and decide given priors and costs"
+      },
+      {
+        "label": "C",
+        "text": "Assume {percentage}% always means useless"
+      },
+      {
+        "label": "D",
+        "text": "Test daily to eliminate uncertainty"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Fearing diagnosis more than information reflects loss aversion; expect value of info matters."
+  },
+  {
+    "bias_type_slug": "loss_aversion",
+    "variant": 2,
+    "parametric_payload": {
+      "currency_amount_large": 2000,
+      "timeframe_days": 365,
+      "local_first_name": "Quinn"
+    },
+    "locale": "en",
+    "title": "Insurance rider",
+    "question": "{local_first_name} pays extra to avoid a small chance of paying {currency_amount_large} € out of pocket next year. The rider costs more than its expected loss, but fear of a bill dominates. What is prudent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Buy every rider offered"
+      },
+      {
+        "label": "B",
+        "text": "Compare premium to expected payout using real probabilities"
+      },
+      {
+        "label": "C",
+        "text": "Skip all insurance because fear is irrational"
+      },
+      {
+        "label": "D",
+        "text": "Choose based on advertising fear alone"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Loss aversion inflates willingness to overpay for thin coverage; compare price to EV."
+  },
+  {
+    "bias_type_slug": "loss_aversion",
+    "variant": 3,
+    "parametric_payload": {
+      "percentage": 15,
+      "local_first_name": "Riley"
+    },
+    "locale": "en",
+    "title": "Stock stop-loss",
+    "question": "{local_first_name} refuses to sell a declining stock because locking in a {percentage}% paper loss feels worse than hoping it rebounds. What aligns with rational portfolio rules?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Hold forever to avoid realizing loss"
+      },
+      {
+        "label": "B",
+        "text": "Re-evaluate thesis and diversification; cut if fundamentals changed"
+      },
+      {
+        "label": "C",
+        "text": "Sell immediately on any down day"
+      },
+      {
+        "label": "D",
+        "text": "Double down solely to avoid regret"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Holding losers to dodge realized pain is loss aversion; decisions should follow valuation."
+  },
+  {
+    "bias_type_slug": "loss_aversion",
+    "variant": 4,
+    "parametric_payload": {
+      "currency_amount_small": 8,
+      "local_first_name": "Casey"
+    },
+    "locale": "en",
+    "title": "Lunch credits",
+    "question": "Cafeteria credits worth {currency_amount_small} € expire tonight. {local_first_name} buys extra dessert to not waste them, adding calories worthless otherwise. What is smarter?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Overconsume because wasting credits feels unbearable"
+      },
+      {
+        "label": "B",
+        "text": "Treat spent credits as sunk; choose food for health now"
+      },
+      {
+        "label": "C",
+        "text": "Hoard credits though they expire"
+      },
+      {
+        "label": "D",
+        "text": "Buy random items to maximize spending"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Fear of 'losing' credit makes people overpay in calories—loss aversion toward waste."
+  },
+  {
+    "bias_type_slug": "confirmation_bias",
+    "variant": 0,
+    "parametric_payload": {
+      "local_first_name": "Drew",
+      "percentage": 80
+    },
+    "locale": "en",
+    "title": "Politics feed",
+    "question": "{local_first_name} believes a policy works and only reads outlets that report {percentage}% positive outcomes, dismissing critiques as noise. What improves reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mute opposing views to stay calm"
+      },
+      {
+        "label": "B",
+        "text": "Actively seek disconfirming evidence and best opposing arguments"
+      },
+      {
+        "label": "C",
+        "text": "Trust any headline matching prior beliefs"
+      },
+      {
+        "label": "D",
+        "text": "Assume all media is equally biased so ignore it all"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Confirmation bias filters evidence; steelmanning the other side counteracts it."
+  },
+  {
+    "bias_type_slug": "confirmation_bias",
+    "variant": 1,
+    "parametric_payload": {
+      "timeframe_days": 14,
+      "local_first_name": "Skyler"
+    },
+    "locale": "en",
+    "title": "Performance review",
+    "question": "A manager remembers the last {timeframe_days} days of good work and ignores earlier misses when rating {local_first_name}. What process reduces bias?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Rely on latest impressions only"
+      },
+      {
+        "label": "B",
+        "text": "Use structured criteria and notes across the whole cycle"
+      },
+      {
+        "label": "C",
+        "text": "Ask peers who already agree with you"
+      },
+      {
+        "label": "D",
+        "text": "Rate entirely from memory"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Cherry-picking recent supportive facts confirms preconceptions; structure counters it."
+  },
+  {
+    "bias_type_slug": "confirmation_bias",
+    "variant": 2,
+    "parametric_payload": {
+      "local_first_name": "Emerson",
+      "currency_amount_small": 100
+    },
+    "locale": "en",
+    "title": "Side hustle",
+    "question": "{local_first_name} invested {currency_amount_small} € and ignores red flags because early customers praised the idea. Which step is most objective?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Collect only positive testimonials"
+      },
+      {
+        "label": "B",
+        "text": "Interview churned users and test falsifying hypotheses"
+      },
+      {
+        "label": "C",
+        "text": "Assume praise equals product-market fit"
+      },
+      {
+        "label": "D",
+        "text": "Quit because doubt feels uncomfortable"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Early praise confirms hope; hunting falsifying data resists confirmation bias."
+  },
+  {
+    "bias_type_slug": "confirmation_bias",
+    "variant": 3,
+    "parametric_payload": {
+      "percentage": 55,
+      "local_first_name": "Blair"
+    },
+    "locale": "en",
+    "title": "Health headline",
+    "question": "A study with {percentage}% significance is shared widely because it matches what {local_first_name} already eats. What should they verify?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Adopt the diet immediately"
+      },
+      {
+        "label": "B",
+        "text": "Read methods, sample size, replication, and conflicts of interest"
+      },
+      {
+        "label": "C",
+        "text": "Dismiss if social media likes are high"
+      },
+      {
+        "label": "D",
+        "text": "Trust because the number is above half"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Alignment with prior belief raises confirmation risk; methodology checks matter."
+  },
+  {
+    "bias_type_slug": "confirmation_bias",
+    "variant": 4,
+    "parametric_payload": {
+      "local_first_name": "Kendall"
+    },
+    "locale": "en",
+    "title": "Hiring loop",
+    "question": "{local_first_name} prefers a candidate who shares hobby trivia and downplays structured scores. What improves fairness?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Hire on vibe"
+      },
+      {
+        "label": "B",
+        "text": "Weight blinded work samples and consistent rubrics higher"
+      },
+      {
+        "label": "C",
+        "text": "Ask only friendly references supplied by the candidate"
+      },
+      {
+        "label": "D",
+        "text": "Assume chemistry predicts performance"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Affinity confirms likability hypotheses; structured evidence reduces confirmation bias."
+  },
+  {
+    "bias_type_slug": "sunk_cost",
+    "variant": 0,
+    "parametric_payload": {
+      "currency_amount_large": 8000,
+      "timeframe_days": 120,
+      "local_first_name": "Taylor"
+    },
+    "locale": "en",
+    "title": "Night classes",
+    "question": "{local_first_name} spent {currency_amount_large} € and {timeframe_days} days on a certificate that no longer fits career goals. Continuing feels mandatory. What is rational?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Finish solely because of past spend"
+      },
+      {
+        "label": "B",
+        "text": "Compare future value of finishing versus switching paths, ignoring spent money"
+      },
+      {
+        "label": "C",
+        "text": "Quit immediately without analysis"
+      },
+      {
+        "label": "D",
+        "text": "Double time to justify the old spend faster"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Past tuition is sunk; only forward costs and benefits should decide (sunk cost fallacy)."
+  },
+  {
+    "bias_type_slug": "sunk_cost",
+    "variant": 1,
+    "parametric_payload": {
+      "currency_amount_small": 200,
+      "local_first_name": "Parker"
+    },
+    "locale": "en",
+    "title": "Bad movie",
+    "question": "{local_first_name} already paid {currency_amount_small} € for a dull film ticket and stays to the end to not waste it. What reflects economic reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Stay because the ticket money would be 'lost' otherwise"
+      },
+      {
+        "label": "B",
+        "text": "Leave if time is better elsewhere; ticket cost is sunk"
+      },
+      {
+        "label": "C",
+        "text": "Sleep in the seat to maximize seat usage"
+      },
+      {
+        "label": "D",
+        "text": "Force friends to stay too"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Ticket price is sunk; staying wastes additional time."
+  },
+  {
+    "bias_type_slug": "sunk_cost",
+    "variant": 2,
+    "parametric_payload": {
+      "percentage": 40,
+      "local_first_name": "Reese"
+    },
+    "locale": "en",
+    "title": "Failing project",
+    "question": "A project consumed {percentage}% of budget with little traction. Leaders push on to salvage pride. What should planning prioritize?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Continue to recover sunk budget"
+      },
+      {
+        "label": "B",
+        "text": "Estimate incremental return versus pivoting; ignore spent funds"
+      },
+      {
+        "label": "C",
+        "text": "Hide metrics to protect morale"
+      },
+      {
+        "label": "D",
+        "text": "Fire everyone immediately"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Throwing good money after bad honors sunk costs; marginal analysis guides pivots."
+  },
+  {
+    "bias_type_slug": "sunk_cost",
+    "variant": 3,
+    "parametric_payload": {
+      "timeframe_days": 30,
+      "currency_amount_small": 15,
+      "local_first_name": "Sage"
+    },
+    "locale": "en",
+    "title": "Gym membership",
+    "question": "{local_first_name} pays monthly but has not trained in {timeframe_days} days, yet renews because each visit should cost under {currency_amount_small} € if they return. What is clear thinking?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Renew to amortize past misses"
+      },
+      {
+        "label": "B",
+        "text": "Decide renewal from expected future use, not past underuse"
+      },
+      {
+        "label": "C",
+        "text": "Cancel out of guilt without a plan"
+      },
+      {
+        "label": "D",
+        "text": "Buy a yearly lock-in to force discipline"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Averaging past payments confuses sunk membership with future motivation."
+  },
+  {
+    "bias_type_slug": "sunk_cost",
+    "variant": 4,
+    "parametric_payload": {
+      "local_first_name": "Shay",
+      "currency_amount_large": 200000
+    },
+    "locale": "en",
+    "title": "Vendor contract",
+    "question": "The team picked a vendor after {currency_amount_large} € in integration. New benchmarks show cheaper options. Leadership hesitates because switching wastes the integration spend. What is best?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Stay to honor past integration expense"
+      },
+      {
+        "label": "B",
+        "text": "Model switching costs versus lifetime savings including migration"
+      },
+      {
+        "label": "C",
+        "text": "Never revisit vendor decisions"
+      },
+      {
+        "label": "D",
+        "text": "Blame procurement and stall"
+      }
+    ],
+    "correct_option": 1,
+    "explanation": "Integration spend is sunk; compare forward totals including cutover costs."
+  }
+]
