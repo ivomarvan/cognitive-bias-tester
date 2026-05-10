@@ -309,9 +309,7 @@ async def test_ui_string_get_all_keys_empty() -> None:
 @pytest.mark.unit
 async def test_ui_string_get_translation_found() -> None:
     """Fetch one translation."""
-    tr = UiStringTranslation(
-        key="k", locale="cs", title_translated="T", source_hash="h"
-    )
+    tr = UiStringTranslation(key="k", locale="cs", title_translated="T", source_hash="h")
     mock_session = AsyncMock(spec=AsyncSession)
     mock_session.execute = AsyncMock(return_value=_scalar_one_or_none(tr))
     repo = UiStringRepository(mock_session)
@@ -331,14 +329,10 @@ async def test_ui_string_get_translation_none() -> None:
 async def test_ui_string_get_all_with_translation_pairs() -> None:
     """Left join yields (UiString, translation or None) pairs."""
     u = UiString(key="k", title="t", description="d", source_hash="h")
-    tr = UiStringTranslation(
-        key="k", locale="cs", title_translated="T", source_hash="h"
-    )
+    tr = UiStringTranslation(key="k", locale="cs", title_translated="T", source_hash="h")
     u2 = UiString(key="k2", title="t2", description="d2", source_hash="h2")
     mock_session = AsyncMock(spec=AsyncSession)
-    mock_session.execute = AsyncMock(
-        return_value=_rows_all([(u, tr), (u2, None)])
-    )
+    mock_session.execute = AsyncMock(return_value=_rows_all([(u, tr), (u2, None)]))
     repo = UiStringRepository(mock_session)
     pairs = await repo.get_all_with_translation("cs")
     assert len(pairs) == 2
@@ -350,9 +344,7 @@ async def test_ui_string_get_all_with_translation_pairs() -> None:
 @pytest.mark.unit
 async def test_ui_string_upsert_translation_returns_row() -> None:
     """``upsert_translation`` returns RETURNING row."""
-    tr = UiStringTranslation(
-        key="k", locale="cs", title_translated="T", source_hash="nh"
-    )
+    tr = UiStringTranslation(key="k", locale="cs", title_translated="T", source_hash="nh")
     mock_session = AsyncMock(spec=AsyncSession)
     mock_session.execute = AsyncMock(return_value=_scalar_one(tr))
     repo = UiStringRepository(mock_session)
