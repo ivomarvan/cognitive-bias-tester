@@ -10,6 +10,7 @@ from sqlalchemy import text
 from starlette.responses import HTMLResponse
 
 from src.api.health import router as health_router
+from src.api.i18n import router as i18n_router
 from src.core.config import settings
 from src.core.logging import configure_logging
 from src.db.session import engine
@@ -45,6 +46,7 @@ app = FastAPI(
     redoc_url=None,
 )
 app.include_router(health_router)
+app.include_router(i18n_router)
 
 
 @app.get("/redoc", include_in_schema=False)
