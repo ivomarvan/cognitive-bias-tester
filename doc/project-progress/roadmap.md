@@ -6,7 +6,7 @@ created_by: Planner
 model: claude-opus-4-7
 intended_for: All
 created_at: 2026-05-08
-updated_at: 2026-05-08
+updated_at: 2026-05-10
 ---
 
 # Roadmap — Cognitive Bias Tester
@@ -46,9 +46,9 @@ Mode 3 (X publishing) **must not** go live before Stripe is integrated and teste
 **Status:** pending  
 **Complexity:** medium  
 **Depends on:** E010  
-**Description:** Domain model: `Case` (English), `CaseTranslation` (per-language), `BiasType`, `Rating`, `User`, `AnswerEvent`, `Subscription` placeholder. Alembic initial migration. Cyclic-buffer logic stub (interface only — fully implemented in E030). Author 25 gold-standard Cases (5 bias types × 5 variants) in English with parametric placeholders. Side task during this Epic: send first contact e-mail to a Czech university psychology department about future cooperation (informational, no commitment).
+**Description:** Domain model: `Case` (English), `CaseTranslation` (per-language), `BiasType`, `Rating`, `User`, `AnswerEvent`, `Subscription` placeholder, `UiString` (English source for UI chrome), `UiStringTranslation` (AI-translated per-locale cache). Alembic initial migration. Repository layer for all entities. Cyclic-buffer logic stub (interface only — fully implemented in E030). Author 25 gold-standard Cases (5 bias types × 5 variants) in English with parametric placeholders; seed initial `UiString` keys from existing `frontend/src/locales/en.json`. Backend endpoint `GET /v1/i18n/{locale}` with hash-based lookup and English fallback (AI translation wired in E040). Side task during this Epic: send first contact e-mail to a Czech university psychology department about future cooperation (informational, no commitment).
 
-**MVP gate:** Migration `alembic upgrade head` succeeds; 25 seeded Cases queryable via repository; unit tests for cyclic-buffer interface pass.
+**MVP gate:** Migration `alembic upgrade head` succeeds; 25 seeded Cases queryable via repository; `GET /v1/i18n/en` returns all UI string keys with English values; `GET /v1/i18n/fr` returns English fallback for unknown locale; unit tests for cyclic-buffer interface pass.
 
 ---
 
@@ -68,7 +68,7 @@ Mode 3 (X publishing) **must not** go live before Stripe is integrated and teste
 **Status:** pending  
 **Complexity:** medium  
 **Depends on:** E030  
-**Description:** Vue 3 + Tailwind frontend: anonymous-session landing, single-Case view, answer flow, evaluation, star rating, language switch (cs / en at Tier B; any language at Tier A via LLM cache). Two-tier i18n implementation: `vue-i18n` for Tier B keys; runtime fetch + client cache for Tier A. Bias-resistance score display (per bias type). All Tier B keys translated `cs` + `en`.
+**Description:** Vue 3 + Tailwind frontend: anonymous-session landing, single-Case view, answer flow, evaluation, star rating, language switch (browser-detected or user-selected, any locale). Three-tier i18n implementation: `vue-i18n` fed by `GET /v1/i18n/{locale}` (Tier B — UI chrome, any language via DB-backed AI translation); runtime fetch + client cache for Case translations (Tier A); Tier C static strings (landing/legal, cs+en) remain in `frontend/src/locales/`. Wire AI translation call for locales that return `stale_keys`. Bias-resistance score display (per bias type). All Tier C keys human-authored in cs + en.
 
 **MVP gate:** End-to-end flow works locally for both `cs` and `en` UI; switching to a third language (e.g. `sk`) shows English Tier B + LLM-translated Tier A content.
 

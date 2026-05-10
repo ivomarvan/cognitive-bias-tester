@@ -6,7 +6,7 @@ created_by: Planner
 model: claude-opus-4-7
 intended_for: All
 created_at: 2026-05-08
-updated_at: 2026-05-08
+updated_at: 2026-05-10
 ---
 
 # Project Specification — Cognitive Bias Tester
@@ -32,9 +32,10 @@ The MVP delivers a publicly launchable, monetised product driven by viral mechan
 - **Seeded gold-standard Cases**: 25 manually authored, validated Cases (5 bias types × 5 variants) seed the database before launch — eliminates cold-start cost.
 - **A/B variant Cases** for biases that require contrast (framing, anchoring): the schema supports two variants of the same Case shown to disjoint user groups.
 - **Parametric Case structure**: monetary amounts, names, places, time units stored as placeholders (`{currency_amount_small}`, `{local_first_name}`); resolved at translation time from a per-locale dictionary.
-- **UI translation — two tiers**:
+- **UI translation — three tiers**:
   - *Tier A (LLM + cache)*: Cases, in-app micro-copy, dynamic stat captions, error messages, tooltips, empty states. On-demand for any language; cached per `(text_hash, target_lang)`.
-  - *Tier B (human-curated)*: landing page, marketing copy, legal text (Privacy, ToS, GDPR, cookie banner), Stripe checkout / payment flow, transactional e-mails (welcome, magic link), bias-type display names. MVP languages: `cs` + `en`.
+  - *Tier B (DB-backed AI translation)*: all UI chrome — navigation labels, menu items, button text, headings, form labels, captions, bias-type display names. English source maintained as structured keys (`key`, `title`, `description`) seeded in E020; stored in `ui_string` table with `source_hash`; translated on-demand by AI for any locale; cached in `ui_string_translation` table; automatically re-translated when `source_hash` changes. Frontend fetches `GET /v1/i18n/{locale}` at startup and caches the result.
+  - *Tier C (human-curated static)*: landing page marketing copy, legal text (Privacy Policy, ToS, GDPR, cookie banner), Stripe checkout / payment flow text, transactional e-mails (welcome, magic link). MVP languages: `cs` + `en`.
 - **Auth**: passwordless magic link only. Anonymous session works without registration for Mode 1.
 - **GDPR**: cookie-less analytics, "export my data" + "delete my account" endpoints, audit log of consent.
 - **Monetisation**: Stripe Checkout subscription, global price 3.99 € / month (Stripe converts to user's local currency automatically). Free tier = 5 Cases / day; Premium = unlimited + history + per-bias resistance score. B2B billing is **out of MVP scope** (see Non-Goals).
@@ -77,7 +78,7 @@ The following are valuable, planned post-MVP, and **must not** be included in MV
 | 8 | Hosting target | Render.com or Fly.io (decided after E080, before E090) | Both fit `Dockerfile` + Postgres setup; differ on egress cost and cold-start. | ADR-005 (E090) |
 | 9 | Payments | Stripe Checkout subscription, multi-currency auto-detect | Industry standard; tax handled via Stripe Tax for the few EU currencies we accept; webhook idempotency built-in. | ADR-007 (E060) |
 | 10 | Analytics | Plausible (self-host or cloud) or PostHog | Cookie-less, GDPR-friendly; chosen in E100. | ADR-008 (E100) |
-| 11 | UI translation strategy | Two-tier: LLM cache (Tier A) + human-curated (Tier B, cs+en) | Right-sized: legal/brand strings safe; long-tail content scales without manual translation work. | — |
+| 11 | UI translation strategy | Three-tier: LLM cache (Tier A — Cases + dynamic content) + DB-backed AI translation with hash invalidation (Tier B — UI chrome, any locale on demand) + human-curated (Tier C — legal/marketing, cs+en only) | UI chrome scales to any language automatically; legal/brand text stays human-reviewed; Cases and dynamic content handled by existing Tier A pipeline. | — |
 | 12 | Pricing | 3.99 € / month global, Stripe currency auto-conversion. PPP localisation = E165 (post-MVP). | Simplicity in MVP; PPP requires conversion data we do not yet have. | — |
 | 13 | First social network | X / Twitter | Highest virality for bite-sized content; deep-link friendly; user choice. | — |
 | 14 | Repository structure | Web-app layout: `backend/`, `frontend/`, `docker-compose.yml` at root | Per `06-project-structure.mdc`. | — |
@@ -90,7 +91,7 @@ The following are valuable, planned post-MVP, and **must not** be included in MV
 - Stripe is available in the operator's country (Czech Republic — confirmed) and supports multi-currency subscriptions for our target markets.
 - Render.com or Fly.io free / hobby tier suffices until first 100 paying users; commercial scale concerns are post-launch.
 - The operator (Human) handles GDPR / DPO obligations as a sole-trader; no separate DPO infrastructure needed in MVP.
-- Czech and English UI translations of Tier B strings (~150 keys) can be human-authored within E040; future languages are added 1 day per language post-launch on demand.
+- UI chrome strings (~150 keys, Tier B) have English source authored in E020; AI translations for any locale are generated on-demand starting E040; no manual translation work beyond English source maintenance. Landing page, legal copy, and transactional e-mails (Tier C, ~50 keys) are human-authored in cs + en within E040.
 - X / Twitter API access (free or basic tier) is sufficient for ≤ 5 posts / day; if not, we degrade to manual posting via dashboard until budget allows paid tier.
 - The user (Human, you) operates as solo developer + AI agent; capacity is variable and time-to-launch is not a hard constraint.
 
