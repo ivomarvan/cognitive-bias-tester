@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Evaluate Case generation + judge prompts across multiple LLM models.
 
-Prompt definitions live in prompts/prompts-v<VERSION>.json.
+Prompt definitions live in data/v1-plain/prompts/prompts-v<VERSION>.json.
 The script auto-selects the highest available version unless --prompt-version is given.
 The prompt file is copied into the run output directory for full reproducibility.
 
@@ -11,7 +11,7 @@ For each (model, bias_type, variant) combination:
   3. Saves raw API responses and generates a Markdown report
 
 Output structure:
-  data/prompt-eval/<YYYYMMDD_HHMMSS>_<git-hash>/
+  data/eval-runs/<YYYYMMDD_HHMMSS>_<git-hash>/
     run_meta.json            — inputs, git state, prompt version
     prompts-v<VERSION>.json  — copy of the prompt file used (for reproducibility)
     raw/<model>/
@@ -20,18 +20,18 @@ Output structure:
     report.md                — human-readable case-by-case comparison
     summary.json             — scores + costs only (easy cross-run comparison)
 
-Usage:
-  pip install -r requirements.txt
+Usage (run from experiments/2026-05-prompt-evaluation/):
+  pip install -r src/requirements.txt
   # API keys are loaded from .env in the project root (or set in shell):
   #   OPENAI_API_KEY   — required for gpt-4o-mini / gpt-4o
   #   GOOGLE_API_KEY   — optional, for Gemini models
   #   ANTHROPIC_API_KEY — optional, for Claude models
 
-  python eval.py                                           # defaults: gpt-4o-mini, 2 variants, English
-  python eval.py --models gpt-4o-mini,gemini-2.0-flash    # compare two models
-  python eval.py --variants 3 --lang cs                   # Czech output, 3 variants
-  python eval.py --bias anchoring,framing                 # only two bias types
-  python eval.py --prompt-version 1.1.0                   # use a specific prompt version
+  python src/eval.py                                           # defaults: gpt-4o-mini, 2 variants, English
+  python src/eval.py --models gpt-4o-mini,gemini-2.0-flash    # compare two models
+  python src/eval.py --variants 3 --lang cs                   # Czech output, 3 variants
+  python src/eval.py --bias anchoring,framing                 # only two bias types
+  python src/eval.py --prompt-version 1.1.0                   # use a specific prompt version
 """
 
 from __future__ import annotations
@@ -48,9 +48,10 @@ from typing import Any
 
 from dotenv import load_dotenv
 
-# Load .env from the project root (two levels up from this file's directory).
+_SCRIPT_DIR = Path(__file__).resolve().parent          # experiments/.../src/
+_EXPERIMENT_DIR = _SCRIPT_DIR.parent                    # experiments/2026-05-prompt-evaluation/
+_PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent           # project root
 # Keys already set in the shell environment take precedence over .env values.
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 load_dotenv(_PROJECT_ROOT / ".env")
 
 # ── Bias types (MVP set) ──────────────────────────────────────────────────────
@@ -65,7 +66,7 @@ BIAS_TYPES: list[dict[str, str]] = [
 
 # ── Prompt loading ────────────────────────────────────────────────────────────
 
-_PROMPTS_DIR = Path(__file__).parent / "prompts"
+_PROMPTS_DIR = _EXPERIMENT_DIR / "data" / "v1-plain" / "prompts"
 
 
 def _available_versions() -> list[str]:
@@ -553,7 +554,7 @@ def main() -> None:
     # Set up run output directory
     ts = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
     run_id = f"{ts}_{_git_hash()}"
-    run_dir = _PROJECT_ROOT / "data" / "prompt-eval" / run_id
+    run_dir = _EXPERIMENT_DIR / "data" / "eval-runs" / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
 
     # Copy prompt file into run directory for reproducibility

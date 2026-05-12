@@ -1,0 +1,57 @@
+{
+  "example": {
+    "id": "anchoring-textbook-01",
+    "bias": "anchoring",
+    "source": "textbook",
+    "domain": "geografie",
+    "difficulty": 3,
+    "question": "Před zahájením úkolu se před vámi zatočilo kolo štěstí a zastavilo se na čísle 65. Po této úvodní hře je třeba odhadnout: jaké procento členských států Organizace spojených národů tvoří africké země?",
+    "options": [
+      {
+        "answer": "Přibližně 60 % zemí v OSN je afrických.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě bezvýznamného čísla z kola štěstí. Jedná se o typ zkreslení: ukotvení."
+      },
+      {
+        "answer": "Přibližně 28 % zemí v OSN je afrických.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože odpovídá faktům: z 193 členů OSN je 54 afrických zemí, tedy zhruba 28 %."
+      },
+      {
+        "answer": "Bez dat to nelze odhadnout.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je defenzivní vyhnutí se odhadu; nedemonstruje racionální použití dostupných znalostí ani podlehnutí danému zkreslení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Kolo štěstí a africké země v OSN — vzorový klasický anchoring příklad. Racionální odpověď je fakticky přesně doložená (54/193 ≈ 28 %).",
+      "strengths": [
+        "Strukturní požadavek anchoring (číslo 65 před otázkou) zcela splněn.",
+        "Racionální odpověď s přesným výpočtem 54/193 je gold standard.",
+        "Tři možnosti s neutrální volbou elegantně pokrývají spektrum odpovědí."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

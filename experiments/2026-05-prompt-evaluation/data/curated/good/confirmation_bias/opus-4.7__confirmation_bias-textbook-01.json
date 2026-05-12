@@ -1,0 +1,64 @@
+{
+  "example": {
+    "id": "confirmation_bias-textbook-01",
+    "bias": "confirmation_bias",
+    "source": "textbook",
+    "domain": "logická úloha",
+    "difficulty": 4,
+    "question": "Před vámi leží čtyři karty: A, K, 4, 7. Každá karta má na jedné straně písmeno a na druhé číslo. Pravidlo zní: 'Pokud je na jedné straně samohláska, na druhé je sudé číslo.' Které karty je nutné otočit, abyste pravidlo ověřil/a?",
+    "options": [
+      {
+        "answer": "Pouze karty A a 4.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě hledání případů, které pravidlo splňují. Otočení 4 nemůže pravidlo vyvrátit. Jedná se o typ zkreslení: konfirmační zkreslení."
+      },
+      {
+        "answer": "Karty A a 7.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože A i 7 mohou pravidlo vyvrátit: za A by mohlo být liché číslo, za 7 samohláska. Pouze tyto dvě karty nesou diagnostickou informaci."
+      },
+      {
+        "answer": "Karty A, 4 a 7.",
+        "verdict": "neutral",
+        "explanation": "Tato volba zahrnuje obě nutné karty, ale zbytečně otáčí i 4, jejíž obrácená strana pravidlo nemůže vyvrátit. Není to projev daného zkreslení, ani plně úsporné řešení."
+      },
+      {
+        "answer": "Všechny čtyři karty.",
+        "verdict": "neutral",
+        "explanation": "Tato volba sice pravidlo ověří, ale s nadbytečným úsilím. Karta K (souhláska) ani 4 nemůže pravidlo vyvrátit; informačně přínosné jsou jen A a 7."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 82.5,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Wasonův test A,K,4,7. Čtyři možnosti pokrývají biased (A+4), rational (A+7) i dvě neutrální varianty s nadbytečnými kartami.",
+      "strengths": [
+        "Čtyři-opcový design pokrývá celé spektrum od biased po overkill.",
+        "Rational správně vysvětluje diagnostičnost A a 7.",
+        "Difficulty 4 přesná."
+      ],
+      "weaknesses": [
+        "Formulace neutrálních možností je poměrně detailní — kurátorovi může trvat delší čas je posoudit."
+      ],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

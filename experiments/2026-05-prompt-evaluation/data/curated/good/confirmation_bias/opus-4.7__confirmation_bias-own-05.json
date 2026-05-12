@@ -1,0 +1,59 @@
+{
+  "example": {
+    "id": "confirmation_bias-own-05",
+    "bias": "confirmation_bias",
+    "source": "own",
+    "domain": "technologie / vývoj softwaru",
+    "difficulty": 5,
+    "question": "Jako vývojář/ka jste přesvědčen/a, že nový algoritmus B je v praxi rychlejší než zavedený A. Tři předběžná měření na vašich obvyklých datech ukazují přesvědčivý náskok B. Jak dále postupovat při testování, abyste získal/a spolehlivý závěr?",
+    "options": [
+      {
+        "answer": "Změřit B na dalších datech podobných těm úspěšným, abyste výhodu kvantifikoval/a.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě testování v podmínkách, kde algoritmus B už uspěl; nová evidence nemůže hypotézu vyvrátit. Jedná se o typ zkreslení: konfirmační zkreslení."
+      },
+      {
+        "answer": "Spustit profiling B na úspěšných datech a popsat příčinu jeho rychlosti.",
+        "verdict": "neutral",
+        "explanation": "Tato volba pomůže pochopit chování B, ale nesrovnává s A v podmínkách, kde by mohl prohrát; sama o sobě hypotézu o jeho nadřazenosti netestuje."
+      },
+      {
+        "answer": "Připravit benchmark s daty, kde má A teoretickou výhodu (krátké vstupy, edge cases), a změřit oba.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože aktivně hledá podmínky, ve kterých by hypotéza o nadřazenosti B měla padnout; pokud B obstojí i tam, hypotéza výrazně posílí."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Algoritmus B vs A: testovat v podmínkách kde B uspěl, nebo kde má A výhodu? Výjimečný difficulty-5 příklad.",
+      "strengths": [
+        "Biased (testovat podobná data) je přirozená vývojářská chyba.",
+        "Rational (adversarial benchmark kde má A výhodu) je vědecky správné.",
+        "Difficulty 5 přesná — vyžaduje metodologické myšlení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

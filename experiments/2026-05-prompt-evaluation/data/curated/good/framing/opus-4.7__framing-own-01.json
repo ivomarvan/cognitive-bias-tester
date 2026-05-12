@@ -1,0 +1,58 @@
+{
+  "example": {
+    "id": "framing-own-01",
+    "bias": "framing",
+    "source": "own",
+    "domain": "nákup",
+    "difficulty": 1,
+    "question": "V mlékárenském regále stojí dva totožné jogurty stejné značky, hmotnosti i ceny. Liší se pouze popisem na obalu: '98 % bez tuku' a 'obsahuje 2 % tuku'. Pro který jogurt sáhnete?",
+    "options": [
+      {
+        "answer": "Jogurt s '2 % tuku' — explicitní popis tuku vypadá poctivěji.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímo projevem zkreslení ani racionálním rozhodnutím; preferuje formulaci bez logického přínosu pro nutriční hodnotu."
+      },
+      {
+        "answer": "Jogurt s '98 % bez tuku' — působí jako lehčí a zdravější varianta.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování složení, přestože obě etikety popisují identický produkt. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Jogurty popisují identické nutriční složení; volba mezi nimi je libovolná.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože '98 % bez tuku' a '2 % tuku' jsou aritmetické doplňky téhož složení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Jogurt: 98 % bez tuku vs 2 % tuk. Jednoduchý a elegantní — difficulty 1 přesná.",
+      "strengths": [
+        "Scénář je přirozený, ekvivalence okamžitě viditelná při pozorném čtení.",
+        "Tři možnosti s neutrální jsou vhodné."
+      ],
+      "weaknesses": [
+        "Strukturálně podobný framing-textbook-02 (mleté maso) — obě jsou potravinářské produkty s fat/lean framing. Tematická blízkost je mírná slabina."
+      ],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

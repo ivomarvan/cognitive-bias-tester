@@ -1,0 +1,58 @@
+{
+  "example": {
+    "id": "loss_aversion-own-01",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "nákup",
+    "difficulty": 1,
+    "question": "V obchodním centru probíhá zábavná akce: za poplatek 5 € si můžete losovat. S pravděpodobností 50 % vyhrajete dárek v hodnotě 100 €, jinak nic. Co je racionálnější?",
+    "options": [
+      {
+        "answer": "Akce se nezúčastnit, abych zbytečně neztratil/a 5 € poplatku.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnější váhy drobné jisté ztráty než výrazně většího pravděpodobného zisku. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Účastnit se losování, průměrný čistý výsledek je +45 € (0,5·100 − 5).",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o jednoznačně kladnou očekávanou hodnotu jedné účasti."
+      },
+      {
+        "answer": "Účastnit se pouze v případě, že lze akci opakovat několikrát.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; opakování sice snižuje rozptyl, kladná očekávaná hodnota však platí už od první účasti."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Losování: poplatek 5 €, 50% šance 100 €, EV=+45 €. Přirozený obchodní kontext.",
+      "strengths": [
+        "EV=0,5×100−5=45 € je explicitní.",
+        "Biased odpověď (nezúčastnit se, aby neztratil/a 5 €) je autentická."
+      ],
+      "weaknesses": [
+        "Difficulty 1 mírně podhodnocena — EV výpočet vyžaduje vědomou úvahu (spíše 1–2)."
+      ],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

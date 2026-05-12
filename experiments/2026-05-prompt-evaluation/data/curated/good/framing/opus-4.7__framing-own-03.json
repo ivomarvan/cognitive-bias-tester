@@ -1,0 +1,63 @@
+{
+  "example": {
+    "id": "framing-own-03",
+    "bias": "framing",
+    "source": "own",
+    "domain": "finance",
+    "difficulty": 3,
+    "question": "Finanční poradce vám představuje dva fondy s totožnou strategií, poplatky i historií. Fond Lumen: 'V 70 % uplynulých let dosáhl kladného výnosu.' Fond Umbra: 'Ve 30 % uplynulých let skončil ve ztrátě.' Kterou variantu zvolíte?",
+    "options": [
+      {
+        "answer": "Fond Lumen — '70 % zisková léta' znějí jako spolehlivá volba.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování výnosu, přestože Umbra popisuje stejnou statistiku. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Bez ohledu na popis si raději vyžádám detailní výroční zprávy obou fondů.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímo projevem zkreslení ani racionální odpovědí na uvedenou otázku — vyhýbá se vyhodnocení formálně shodných statistik."
+      },
+      {
+        "answer": "Profily fondů jsou identické; volba mezi nimi je z hlediska výnosu rovnocenná.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože '70 % kladných let' a '30 % ztrátových let' jsou aritmetické doplňky téhož profilu."
+      },
+      {
+        "answer": "Fond Umbra — explicitní zmínka o '30 % ztrát' působí transparentněji.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (ztráty), ne na podstatě statistik. Jedná se o typ zkreslení: rámování."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Investiční fondy: 70 % ziskových let vs 30 % ztrátových. Čtyři možnosti — dvě biased, neutrální, racionální.",
+      "strengths": [
+        "Finanční scénář je přirozený.",
+        "Čtyři-opcový design pokrývá celé spektrum."
+      ],
+      "weaknesses": [
+        "Mírně podobný framing-own-04 ve struktuře (procenta zůstávajících/odcházejících, procenta ziskových/ztrátových). Dostatečně odlišné domény."
+      ],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "example": {
+    "id": "confirmation_bias-own-04",
+    "bias": "confirmation_bias",
+    "source": "own",
+    "domain": "věda",
+    "difficulty": 4,
+    "question": "V regionu pozorujete, že majitelé psů žijí v průměru déle než nemajitelé. Chcete ověřit hypotézu, že 'pravidelná péče o psa skutečně prodlužuje život'. Který krok přinese nejvíce informací?",
+    "options": [
+      {
+        "answer": "Porovnat skupiny majitelů a nemajitelů srovnatelné v příjmu, fyzické aktivitě a zdravotním stavu.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože kontroluje matoucí proměnné; pokud po kontrole rozdíl ve věku dožití zmizí, hypotéza o kauzálním vlivu psa je vyvrácena."
+      },
+      {
+        "answer": "Dotázat se kardiologa, zda by chov psa pacientům doporučil.",
+        "verdict": "neutral",
+        "explanation": "Tato volba získá názor experta, ale nepřinese přímou empirickou evidenci pro ani proti hypotéze o příčinném vlivu chovu psa na délku života."
+      },
+      {
+        "answer": "Vyhledat vitální seniory s psem a sebrat jejich pozitivní svědectví o vlivu mazlíčka.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě sběru souhlasných případů a ignorujete majitele psů, kteří zemřeli mladí. Jedná se o typ zkreslení: konfirmační zkreslení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Majitelé psů žijí déle: jak ověřit kauzalitu? Sbírat pozitivní příběhy vs kontrolovat confounding variables.",
+      "strengths": [
+        "Biased (pozitivní svědectví vitálních seniorů) je přirozená, ale fundamentálně chybná strategie.",
+        "Rational (kontrola confounding proměnných) je vědecky správná.",
+        "Difficulty 4 přesná — vyžaduje znalost confounding variables."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost."
+    }
+  },
+  "selection": {
+    "tier": "borderline",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je na hraně — oba hodnotitelé doporučují drobné úpravy. Vyžaduje ruční přeformulování."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "example": {
+    "id": "framing-own-05",
+    "bias": "framing",
+    "source": "own",
+    "domain": "pojištění",
+    "difficulty": 5,
+    "question": "Cestovní pojišťovna A inzeruje: 'U 19 z 20 nahlášených škod proběhne plnění do 30 dní.' Pojišťovna B uvádí: 'Procentuální podíl škod, kde plnění překročí 30 dní, je o 1 procentní bod nižší než 6 %.' Cena, krytí i smluvní podmínky jsou totožné. Kterou volíte?",
+    "options": [
+      {
+        "answer": "Bez recenzí klientů a porovnání skrytých výluk nedokážu rozhodnout zodpovědně.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není projevem zkreslení ani racionální odpovědí — odmítá vyhodnotit poskytnuté statistiky a vyhýbá se srovnání obou formulací."
+      },
+      {
+        "answer": "Pojišťovnu A — '19 z 20' je intuitivně jasná spolehlivost.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování spolehlivosti, ne na výpočtu skutečné rovnosti. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Po výpočtu obě varianty popisují 95% plnění do 30 dní; volba je formálně rovnocenná.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože 19/20 = 95 % a 100 − (6 − 1) = 95 %; obě formulace popisují totéž."
+      },
+      {
+        "answer": "Pojišťovnu B — popis pojmem 'procentní bod' působí odborněji a důvěryhodněji.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě formy zarámování (odbornost), ne podle obsahové rovnosti. Jedná se o typ zkreslení: rámování."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 93.0,
+      "recommendation": "use_as_is",
+      "feedback": "Pojišťovna A: 19/20 škod do 30 dní vs pojišťovna B: 'o 1 procentní bod nižší než 6 %'. Difficulty 5 naprosto oprávněná — výpočet B je genuinně neintuitivní.",
+      "strengths": [
+        "Výpočet ekvivalence je genuinně difficulty-5: 19/20=95 % vs 100−(6−1)=95 %.",
+        "Dvě biased možnosti z různých framingových perspektiv (A: emocionální jasnost, B: odborný jazyk).",
+        "Racionální odpověď s explicitním výpočtem je gold standard."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 73.5,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Zarámování pomocí '1 procentní bod nižší než 6 %' zní velmi uměle a nepoužívá se v běžné komunikaci.",
+      "strengths": [
+        "Matematicky přesné."
+      ],
+      "weaknesses": [
+        "Nepřirozená formulace."
+      ],
+      "suggested_fix": "Přeformulovat pojišťovnu B tak, aby zněla přirozeněji (např. 'v 5 % případů'), ale zachovat framing."
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Hodnotitelé se rozcházejí: Sonnet=93.0 (use_as_is), Gemini=73.5 (needs_minor_edit). Vhodná ruční kontrola. Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

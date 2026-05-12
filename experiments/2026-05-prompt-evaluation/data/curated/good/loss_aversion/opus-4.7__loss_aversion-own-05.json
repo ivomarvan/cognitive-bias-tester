@@ -1,0 +1,59 @@
+{
+  "example": {
+    "id": "loss_aversion-own-05",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "cestování",
+    "difficulty": 5,
+    "question": "Plánujete dovolenou v hodnotě 1 500 €. Cestovní agentura nabízí pojištění proti zrušení (pravděpodobnost zrušení 5 %) za 120 €. Při zrušení byste přišli o nevratnou zálohu 750 € a předem zaplacené nákupy 150 €. Pojistka pokrývá 90 % takové ztráty. Co je racionálně nejvýhodnější?",
+    "options": [
+      {
+        "answer": "Pojištění uzavřít — ztráta 900 € by byla mnohem bolestnější než pojistné 120 €.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silného odporu k případné ztrátě, ačkoli průměrná očekávaná ztráta je výrazně nižší než pojistné. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Pojištění neuzavírat — očekávaná ztráta 45 € (0,05·900) je nižší než pojistné 120 €.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o očekávanou hodnotu pojistné události oproti ceně pojistky."
+      },
+      {
+        "answer": "Pojištění uzavřít až těsně před odjezdem podle aktuálních okolností.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímým projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; cena pojistky se obvykle zvyšuje a krátí se okno reálného rizika."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Dovolená 1500 €: pojistka 120 €, zrušení 5%, nevratné náklady 900 €, pojistka kryje 90 %. EV krytí ≈ 45 € < 120 €.",
+      "strengths": [
+        "EV výpočet je v explanaci explicitní (0,05×900=45 €).",
+        "Biased odpověď (strach ze ztráty 900 €) je emotivně velmi silná.",
+        "Difficulty 5 přesná — výpočet s probabilities a krytím je genuinně komplexní."
+      ],
+      "weaknesses": [
+        "Drobná nepřesnost: s 90% krytím je EV=0,05×810=40,5 €, nikoli 45 €. Závěr (< 120 €) je správný, ale přesnost by mohla být vyšší."
+      ],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

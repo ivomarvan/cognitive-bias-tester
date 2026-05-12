@@ -1,0 +1,61 @@
+{
+  "example": {
+    "id": "framing-own-04",
+    "bias": "framing",
+    "source": "own",
+    "domain": "pracovní pohovor",
+    "difficulty": 4,
+    "question": "Personalista prezentuje dvě obdobné role ve společnosti se srovnatelnou mzdou, náplní i růstovými vyhlídkami. Role Alfa: 'Během prvního roku zůstává 88 % nováčků.' Role Beta: 'Během prvního roku odchází 12 % nováčků.' Co volíte?",
+    "options": [
+      {
+        "answer": "Roli Beta — informace o '12 % odchodů' ukazuje upřímnost zaměstnavatele.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování coby domnělé transparentnosti, přestože Alfa popisuje stejnou fluktuaci. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Statistiky popisují identickou fluktuaci; rozhodnutí závisí na jiných kritériích (tým, lokalita, růst).",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože '88 % zůstává' a '12 % odchází' jsou aritmetické doplňky téhož čísla."
+      },
+      {
+        "answer": "Žádnou — raději si vyžádám interní průzkum spokojenosti zaměstnanců.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není ani podlehnutím zkreslení, ani racionální odpovědí na položenou otázku — vyhýbá se posouzení shodnosti uvedených statistik."
+      },
+      {
+        "answer": "Roli Alfa — '88 % zůstává' indikuje stabilní pracovní prostředí.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování stability, ne na reálné odlišnosti rolí. Jedná se o typ zkreslení: rámování."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "HR: Role Alfa 88 % zůstane vs Beta 12 % odejde. Čtyři možnosti pokrývají obě strany framingového efektu i neutrální a racionální.",
+      "strengths": [
+        "HR scénář je velmi přirozený a autentický.",
+        "Biased výběr Role Beta ('transparentnost') je rafinovaná past."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

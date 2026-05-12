@@ -1,0 +1,57 @@
+{
+  "example": {
+    "id": "loss_aversion-own-04",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "investice",
+    "difficulty": 4,
+    "question": "Vlastníte akcie firmy X v aktuální tržní hodnotě 5 000 € (původní pořizovací cena 7 000 €). Analytici odhadují 60% pravděpodobnost dalšího pádu o 30 % a 40% pravděpodobnost obnovy o 20 %. Alternativně lze hotovost z prodeje přesunout do investice se stabilním očekávaným výnosem 5 % ročně. Co je nejlépe odůvodněné?",
+    "options": [
+      {
+        "answer": "Prodat polovinu pozice, druhou část ponechat — kompromis snižuje riziko obou stran.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímým projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením; částečně sice diverzifikuje, zachovává však polovinu neefektivní pozice."
+      },
+      {
+        "answer": "Akcie X držet a vyčkat návratu na pořizovací cenu 7 000 €.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nechuti realizovat účetní ztrátu, ačkoli budoucí očekávaná hodnota držení je nižší než alternativa. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Akcie prodat a přesunout — očekávaná hodnota 5 250 € převyšuje 4 500 € z držení.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu alternativní investice oproti dalšímu držení původní pozice."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Akcie koupeny za 7000 €, nyní 5000 €: 60% −30 % vs 40% +20 %, alternativa 5% ročně. Numericky propracovaný.",
+      "strengths": [
+        "Biased odpověď (čekat na 7000 €) je extrémně přirozená díky psychologii nerealizované ztráty.",
+        "Racionální porovnání (5250 > 4500) je v explanaci doložené výpočtem.",
+        "Difficulty 4 přesná."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

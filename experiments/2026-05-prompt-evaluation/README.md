@@ -1,175 +1,146 @@
-# Experiment: Prompt Evaluation — Case Generation + Judge
+# Experiment: Vyhodnocení promptů — generování a hodnocení příkladů kognitivních zkreslení
 
-**Goal:** Evaluate the quality of cognitive bias Case generation and LLM-as-judge
-validation prompts across multiple LLM models, before wiring them into production code
-(Epic E030, T020 + T040).
+**Cíl:** Porovnat kvalitu promptů pro generování příkladů kognitivních zkreslení (M1)
+a jejich LLM hodnocení (M2) napříč různými modely. Výsledkem jsou podklady pro ADR-003
+(výběr LLM pro produkci) a zlatá sada příkladů jako few-shot materiál pro v2 prompty.
 
-**Outcome:** Choose the best model for ADR-003; confirm that prompts produce valid,
-educationally sound Cases.
+Viz `GENERATION_CONCEPT.md` pro celkovou architekturu LLM použití v projektu.
 
 ---
 
-## Setup
+## Struktura adresáře
+
+```
+experiments/2026-05-prompt-evaluation/
+├── README.md               ← tento soubor — přehled a navigace
+├── GENERATION_CONCEPT.md   ← architekturní rozhodnutí (online/offline LLM, en-general)
+├── MANUAL_WORKFLOW.md      ← postup pro ruční spouštění modelů bez API
+│
+├── src/                    ← nástroje (nemění se mezi experimenty)
+│   ├── pipeline.py         ← ALG1: gen/eval/report subpříkazy
+│   ├── eval.py             ← eval.py: generování + hodnocení v jednom průchodu
+│   └── requirements.txt    ← Python závislosti
+│
+└── data/
+    ├── curated/            ← manuálně schválené příklady jako few-shot materiál
+    │   ├── good/           ← příklady připravené k použití (řazeno dle typu zkreslení)
+    │   └── borderline/     ← příklady vyžadující úpravu před použitím
+    │
+    ├── v1-plain/           ← experiment v1: základní prompty bez few-shot příkladů
+    │   ├── README.md       ← datum, modely, závěry
+    │   ├── prompts/        ← přesně ty prompty, které běžely v tomto experimentu
+    │   └── results/        ← surová data, hodnocení, reporty
+    │
+    └── v2-fewshot/         ← (plánováno) experiment v2: prompty s few-shot příklady
+```
+
+---
+
+## Instalace
 
 ```bash
 cd experiments/2026-05-prompt-evaluation
 
-# Create a venv (recommended)
+# Vytvoř virtuální prostředí
 python3 -m venv .venv
 source .venv/bin/activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Nainstaluj závislosti
+pip install -r src/requirements.txt
 ```
 
-## API keys
+## API klíče
 
-Set keys for the providers you want to test. Keys are never committed to git.
+Klíče se načítají z `.env` souboru v kořeni projektu (nebo z proměnných prostředí).
+Nikdy se necommitují do gitu.
 
 ```bash
-export OPENAI_API_KEY="sk-..."          # Required for gpt-4o-mini
-export GOOGLE_API_KEY="AI..."           # Optional — Gemini (free tier available)
-export ANTHROPIC_API_KEY="sk-ant-..."   # Optional — Claude Haiku/Sonnet
+# .env v kořeni projektu (viz .env.example):
+OPENAI_API_KEY="sk-..."          # Povinný pro gpt-4o-mini a další OpenAI modely
+GOOGLE_API_KEY="AI..."           # Volitelný — Gemini (free tier dostupný)
+ANTHROPIC_API_KEY="sk-ant-..."   # Volitelný — Claude modely
 ```
 
-Models skipped silently if their key is absent.
-
-### Where to get each key
-
-| Provider | URL | Free tier? |
-|----------|-----|-----------|
-| OpenAI | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) | No — needs billing ($5 credit lasts ~5 000 runs) |
-| Google | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) | Yes — Gemini Flash is free with rate limits |
-| Anthropic | [console.anthropic.com](https://console.anthropic.com) | No — needs billing |
+| Poskytovatel | URL | Free tier? |
+|---|---|---|
+| OpenAI | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) | Ne — nutné dobití |
+| Google | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) | Ano — Gemini Flash zdarma |
+| Anthropic | [console.anthropic.com](https://console.anthropic.com) | Ne — nutné dobití |
 
 ---
 
-## Prompt files
-
-Prompts live in `prompts/prompts-v<VERSION>.json`. Both the generator and judge prompt
-are in one file (they belong together). To iterate on prompts, create a new version file —
-never edit an existing one.
+## Spuštění (pipeline.py — ALG1)
 
 ```bash
-# List available prompt versions
-python eval.py --list-prompts
+# Generování příkladů modelem M1
+python src/pipeline.py gen --model gpt-4o-mini
 
-# Create a new prompt version by copying the latest:
-cp prompts/prompts-v1.0.0.json prompts/prompts-v1.1.0.json
-# ... edit prompts-v1.1.0.json ...
-# Next run will auto-select v1.1.0 as the highest version
+# Hodnocení výstupu M1 modelem M2
+python src/pipeline.py eval --gen-model gpt-4o-mini --eval-model gpt-4o
+
+# Vygenerování HTML reportu (tabulka M1 × M2)
+python src/pipeline.py report
+
+# Výpis dostupných modelů a jejich stavu
+python src/pipeline.py models
+
+# Výpis nalezených gen/eval souborů
+python src/pipeline.py list
 ```
 
-Each run output directory contains a **copy** of the prompt file used, so results
-are always reproducible even after the prompt file changes.
+Aktivní run se nastavuje konstantou `_RUN_NAME` v `src/pipeline.py` (výchozí: `v1-plain`).
 
-## Usage
+## Spuštění (eval.py — průběžné testování)
 
 ```bash
-# Minimal: GPT-4o-mini only, 2 variants per bias, English output (uses latest prompts)
-python eval.py
+# Základní spuštění: gpt-4o-mini, 2 varianty na zkreslení, anglicky
+python src/eval.py
 
-# Compare two models, 3 variants, Czech output
-python eval.py --models gpt-4o-mini,gemini-2.0-flash --variants 3 --lang cs
+# Porovnání dvou modelů, 3 varianty, česky
+python src/eval.py --models gpt-4o-mini,gemini-2.0-flash --variants 3 --lang cs
 
-# Quick test: one bias type, one variant
-python eval.py --bias anchoring --variants 1
+# Rychlý test: jedno zkreslení, jedna varianta
+python src/eval.py --bias anchoring --variants 1
 
-# Use a specific prompt version
-python eval.py --prompt-version 1.0.0
-
-# All options
-python eval.py --help
+# Všechny volby
+python src/eval.py --help
 ```
+
+Výstupy `eval.py` se ukládají do `data/eval-runs/<YYYYMMDD_HHMMSS>_<git-hash>/`.
 
 ---
 
-## Output structure
+## Bodovací rubrika (manuální přepsání)
 
-Each run creates a directory:
+Po přečtení `report.md` lze do `summary.json` ručně doplnit `human_score`:
 
-```
-data/prompt-eval/
-└── 20260510_143022_a1b2c3d/      ← YYYYMMDD_HHMMSS_<git-hash>
-    ├── run_meta.json              ← models, bias types, git state, prompt version
-    ├── prompts-v1.0.0.json        ← copy of the prompt file used (reproducibility)
-    ├── raw/
-    │   ├── gpt-4o-mini/
-    │   │   ├── anchoring_v0_gen.json    ← raw API response for generation
-    │   │   ├── anchoring_v0_judge.json  ← raw API response for judge
-    │   │   ├── anchoring_v1_gen.json
-    │   │   └── ...
-    │   └── gemini-2.0-flash/
-    │       └── ...
-    ├── report.md                  ← human-readable case-by-case comparison
-    └── summary.json               ← scores + costs only (for cross-run comparison)
-```
-
-`data/` is committed to git — results are preserved as part of the repository.
+| Skóre | Význam |
+|---|---|
+| 1.0 | Perfektní — lze použít přímo v produkci |
+| 0.8 | Dobré — drobná úprava formulace |
+| 0.6 | Hraničně — použitelné, ale suboptimální |
+| 0.4 | Slabé — vyžaduje přepracování |
+| 0.0–0.3 | Zamítnout — špatné zkreslení nebo zavádějící |
 
 ---
 
-## How to read the report
+## Odhadované náklady
 
-`report.md` contains one section per bias type, with each model/variant rendered as:
-
-```
-### `gpt-4o-mini` | variant 1  ✅  score=0.88
-
-**The salary anchoring trap**
-
-> Your manager mentions the team's average salary is 65 000 Kč/month before
-> your review. You feel your request for 72 000 Kč is bold, even though market
-> data suggests 80 000 Kč. What should you do?
-
-- **A**: Accept 72 000 Kč as a fair compromise
-- **B**: Ignore the stated average and research market rates independently  ✅
-- **C**: Ask for 65 000 Kč to avoid conflict
-- **D**: Postpone the discussion to next quarter
-
-*Explanation:* The manager's stated average is an anchor that distorts your
-perception of a fair salary. Researching independent market data removes the
-anchor's influence and lets you negotiate based on actual value.
-
-**Judge:** Strong anchoring scenario; all distractors believable; explanation clear.
-**Cost:** $0.00042
-```
+| Scénář | API volání | Odhadované náklady |
+|---|---|---|
+| 1 model, 5 zkreslení, 2 varianty | 20 | ~$0.01 |
+| 2 modely, 5 zkreslení, 3 varianty | 60 | ~$0.03 |
+| 3 modely, 5 zkreslení, 3 varianty | 90 | ~$0.04 |
 
 ---
 
-## Scoring rubric (manual override)
+## Kritéria rozhodnutí (kdy finalizovat ADR-003)
 
-After reviewing `report.md`, add a `human_score` column to `summary.json` manually
-if the judge score does not match your assessment. Use this to detect systematic
-over/under-scoring by the judge prompt itself.
+Po otestování ≥ 3 variant na zkreslení na model:
 
-| Score | Meaning |
-|-------|---------|
-| 1.0 | Perfect — would use this Case as-is in production |
-| 0.8 | Good — minor rewording needed |
-| 0.6 | Borderline — usable but clearly suboptimal |
-| 0.4 | Weak — would need significant rework |
-| 0.0–0.3 | Reject — wrong bias or misleading |
+- **judge_pass ≥ 80 %** → model je přijatelný
+- **Průměrné judge_score ≥ 0.75** → kvalita je dobrá
+- **Subjektivní hodnocení** kvality češtiny (spusť s `--lang cs`)
 
----
-
-## Estimated costs
-
-| Scenario | API calls | Estimated cost |
-|----------|-----------|---------------|
-| 1 model, 5 biases, 2 variants | 20 | ~$0.01 |
-| 2 models, 5 biases, 3 variants | 60 | ~$0.03 |
-| 3 models, 5 biases, 3 variants | 90 | ~$0.04 |
-
----
-
-## Decision criteria (when to finalize ADR-003)
-
-After testing ≥ 3 variants per bias per model:
-
-- **judge_pass rate ≥ 80 %** → model is acceptable
-- **Average judge_score ≥ 0.75** → model quality is good
-- **Your subjective assessment** of Czech language quality (run with `--lang cs`)
-
-Document the winning model choice in `doc/architecture/decisions/ADR-003-llm-provider.md`
-(E030 T010) and proceed with Epic E030.
+Výsledek zapiš do `doc/architecture/decisions/ADR-003-llm-provider.md`
+(Epic E030, task T010).

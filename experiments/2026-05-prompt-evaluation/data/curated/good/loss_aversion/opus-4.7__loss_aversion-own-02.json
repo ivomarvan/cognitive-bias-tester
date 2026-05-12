@@ -1,0 +1,58 @@
+{
+  "example": {
+    "id": "loss_aversion-own-02",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "sport",
+    "difficulty": 2,
+    "question": "Sportovní klub nabízí dvě varianty smlouvy na sezónu: A) pevný plat 50 000 €, B) 60% pravděpodobnost příjmu 80 000 € a 40% pravděpodobnost 35 000 €. Co je výhodnější?",
+    "options": [
+      {
+        "answer": "Variantu B, průměrný očekávaný příjem 62 000 € převyšuje 50 000 € pevného platu.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu varianty B (0,6·80 000 + 0,4·35 000)."
+      },
+      {
+        "answer": "Variantu A — jistých 50 000 € je lepší než riziko propadu na 35 000 €.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě silnějšího strachu ze sníženého příjmu než z lákadla vyššího průměrného výdělku. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Variantu A přijmout, dokud klub nedoloží svou bonusovou historii.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímým projevem zkreslení, ale rozhodnutí podmiňuje informacemi mimo nabídku a nepoužívá uvedená čísla k vyhodnocení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Sportovní smlouva: jistý 50K vs EV 62K (0,6×80+0,4×35). Přirozený profesionální scénář.",
+      "strengths": [
+        "EV=62000 € je explicitní a přesný.",
+        "Biased odpověď (strach z 35K) je psychologicky věrná."
+      ],
+      "weaknesses": [
+        "Difficulty 2 odpovídá spíše 3."
+      ],
+      "suggested_fix": null
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}
