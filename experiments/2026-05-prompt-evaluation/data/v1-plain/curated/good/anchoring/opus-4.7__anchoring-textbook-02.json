@@ -1,0 +1,82 @@
+{
+  "example": {
+    "id": "anchoring-textbook-02",
+    "bias": "anchoring",
+    "source": "textbook",
+    "domain": "matematika",
+    "difficulty": 4,
+    "question": "Máte pět sekund na intuitivní odhad, bez papíru a bez kalkulačky. Spočítejte zhruba: 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = ? Vyberte odhad, který je nejblíže pravdě.",
+    "options": [
+      {
+        "answer": "Přibližně 500.",
+        "verdict": "neutral",
+        "explanation": "Tato volba podceňuje rychlý růst součinu osmi čísel; není projevem racionálního výpočtu ani typickým podlehnutím danému zkreslení."
+      },
+      {
+        "answer": "Přibližně 2 250.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě prvních pár vysokých čísel (8, 7, 6) a podceňujete celkový součin. Jedná se o typ zkreslení: ukotvení."
+      },
+      {
+        "answer": "Přibližně 40 000.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože se blíží přesné hodnotě 8! = 40 320, kterou vede strukturovaná úvaha přes řád velikosti."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "8! faktoriál jako intuitivní anchoring — výjimečně originální a silná past. Prvních pár čísel (8×7×6) táhne odhad k hodnotám kolem 2 000, reálná hodnota je 40 320.",
+      "strengths": [
+        "Mimořádně originální textbookový příklad s perfektní kognitivní pastí.",
+        "Biased hodnota (2 250) odpovídá typické intuitivní chybě; rational (40 000) je blízko 40 320.",
+        "Silná subtilita — vypadá jako matematický úkol, ne test."
+      ],
+      "weaknesses": [
+        "Difficulty 4 je správná, ale pro kompletní verifikaci by bylo vhodné uvést 8! = 40 320 v racionálním explanaci (jen přibližně zmíněno)."
+      ],
+      "suggested_fix": null,
+      "suggestion": {
+        "options": [
+          {
+            "answer": "Přibližně 500.",
+            "verdict": "neutral",
+            "explanation": "Tato volba hrubě podhodnocuje výsledek, ale neukazuje typické ukotvení na prvních číslech (8×7), které by vedlo k vyššímu odhadu než 500."
+          },
+          {
+            "answer": "Přibližně 2 250.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě prvních velkých čísel (8×7×6), která vytvoří nízkou kotvu pro celkový součin. Jedná se o typ zkreslení: ukotvení."
+          },
+          {
+            "answer": "Přibližně 40 000.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože přesný výpočet 8 faktoriál (8!) je 40 320, a tato možnost je matematicky nejblíže pravdě."
+          }
+        ]
+      },
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

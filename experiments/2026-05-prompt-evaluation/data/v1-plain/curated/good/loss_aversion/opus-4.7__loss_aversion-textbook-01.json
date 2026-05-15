@@ -1,0 +1,65 @@
+{
+  "example": {
+    "id": "loss_aversion-textbook-01",
+    "bias": "loss_aversion",
+    "source": "textbook",
+    "domain": "hra",
+    "difficulty": 3,
+    "question": "Dostanete nabídku na jednorázovou sázku: hodí se obyčejnou mincí. Když padne panna, vyhrajete 150 €. Když ale padne orel, 100 € prohrajete. Jaké rozhodnutí dává největší smysl?",
+    "options": [
+      {
+        "answer": "Sázku odmítnout — ztráta 100 € by mrzela víc než potěšila výhra 150 €.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože subjektivní váha ztráty 100 € převáží nad ziskem 150 €, přestože očekávaná hodnota sázky je kladná: 0,5·150 − 0,5·100 = +25 €. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Sázku přijmout — průměrně tato hra vydělá.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o kladnou očekávanou hodnotu nabídky: 0,5·150 − 0,5·100 = +25 €."
+      },
+      {
+        "answer": "Pokusit se vyjednat snížení sázky na poloviční hodnoty před přijetím.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímým projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením. Snížením sázky na polovinu (panna +75 €, orel −50 €) klesne i očekávaný zisk na +12,50 €. Kladná EV zůstane zachována, ale rozhodnutí obcházejí jádro — tato sázka jako taková stojí za přijetí (EV = +25 €)."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Mince: panna +150€, orel −100€, EV=+25€. Klasický příklad s explicitním výpočtem. Difficulty 2 mírně podhodnocena.",
+      "strengths": [
+        "EV výpočet (0,5×150−0,5×100=+25€) je explicitní a ověřitelný.",
+        "Biased odpověď (odmítnutí kvůli bolesti ztráty) je psychologicky autentická."
+      ],
+      "weaknesses": [
+        "Difficulty 2 odpovídá spíše 3 — výpočet EV vyžaduje vědomou analýzu."
+      ],
+      "suggested_fix": "Zvážit navýšení difficulty na 3.",
+      "suggestion": {
+        "difficulty": 3
+      },
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

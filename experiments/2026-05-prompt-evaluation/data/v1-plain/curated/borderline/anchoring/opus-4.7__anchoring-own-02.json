@@ -1,0 +1,85 @@
+{
+  "example": {
+    "id": "anchoring-own-02",
+    "bias": "anchoring",
+    "source": "own",
+    "domain": "pracovní pohovor",
+    "difficulty": 2,
+    "question": "Při přípravě na pohovor narazíte na pracovním portálu na inzerát podobně znějící pozice, ale pro seniory s 8+ lety zkušeností — uvedené rozmezí je 90–100 000 Kč. Vy nastupujete s dvěma lety praxe a z platových přehledů víte, že tržní průměr pro váš level je kolem 65 000 Kč. Na pohovoru se vás personalista zeptá na platové očekávání. Jak zareagujete?",
+    "global_explanation": "Tržní průměr pro juniorní pozici s dvěma lety praxe je ~65 000 Kč. Inzerát pro seniory (90–100 000 Kč) popisuje zcela jinou senioritní skupinu a pro vaše rozhodnutí je irelevantní. Zkušený vyjednávač si může říct o mírně více než 65 000 Kč, aby si ponechal prostor k ústupku — to je vědomé a racionální použití kotvy ve vlastní prospěch. Tento příklad ale testuje opak: zda vás číslo z irelevantního inzerátu vtáhne nevědomě a posune váš odhad výrazně nad tržní hodnotu.",
+    "options": [
+      {
+        "answer": "Řeknu si přibližně o 90 000 Kč.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě čísla z inzerátu pro seniory, které je pro váš level zcela irelevantní. Jedná se o typ zkreslení: ukotvení."
+      },
+      {
+        "answer": "Požádám o přibližně 65 000 Kč podle tržního průzkumu.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože vychází z objektivních platových dat pro danou roli a vaši úroveň zkušeností, nikoli z náhodně zaznamenaného čísla pro jinou senioritní skupinu."
+      },
+      {
+        "answer": "Nechám personalistu, ať udělá první konkrétní nabídku.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je legitimní vyjednávací strategií; sama o sobě neurčuje racionální tržní hodnotu ani neukazuje typické podlehnutí danému zkreslení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Pohovor: předchozí kandidát požadoval 95K, tržní průměr 65K. Přirozený anchor v realistickém dialogu.",
+      "strengths": [
+        "Anchor (95K) je přirozeně vložen do pracovního rozhovoru.",
+        "Racionální odpověď (65–72K dle průzkumu) je doložitelná."
+      ],
+      "weaknesses": [
+        "Difficulty 2 přesná, ale anchor mohl být ještě subtilnější — personalista ho uvádí docela explicitně."
+      ],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Ani originál ani Gemini verze nebyly použity — obě měly kotvu vloženou ústy personalisty, což vytváří strategickou ambiguitu (není jasné, co personalista záměrem sleduje). Příklad byl přeformulován od základu: kotva pochází z inzerátu pro seniory, personalista je neutrální. Viz formulation-insights pravidlo 12 (anchor musí být zjevně irelevantní)."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Na pohovoru se vás personalista zeptá na plat a dodá: „Mimochodem, kolega před vámi si řekl o 95 000 Kč." Vy jste si ale předem zjistili, že běžný plat na této pozici a pro vaši úroveň je zhruba 65 000 Kč. Jak zareagujete, když si máte říct o peníze?",
+        "options": [
+          {
+            "answer": "Řeknu si taky přibližně o 90 000 Kč.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě čísla z úst personalisty, místo abyste vycházeli z tržního průměru. Jedná se o typ zkreslení: ukotvení."
+          },
+          {
+            "answer": "Požádám o částku mezi 65 000 a 72 000 Kč podle toho, co říkají data z trhu.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože vychází z objektivních platových dat pro danou roli a úroveň zkušeností."
+          },
+          {
+            "answer": "Nechám personalistu, ať udělá první konkrétní nabídku on.",
+            "verdict": "neutral",
+            "explanation": "Tato volba je vyjednávací strategií; sama o sobě neurčuje racionální tržní hodnotu ani neukazuje typické podlehnutí danému zkreslení."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "borderline",
+    "source_model": "Claude Opus 4.7",
+    "note": "Přeformulováno: kotva přesunuta z úst personalisty (strategicky ambiguní) na inzerát pro senior level (zjevně irelevantní pro juniora). Číslo 72K odstraněno jako neodůvodněné. Přidáno global_explanation. Soubor zůstává v borderline/ — přesun do good/ rozhoduje člověk."
+  }
+}

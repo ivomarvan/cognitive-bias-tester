@@ -1,0 +1,84 @@
+{
+  "example": {
+    "id": "confirmation_bias-own-03",
+    "bias": "confirmation_bias",
+    "source": "own",
+    "domain": "pracovní pohovor",
+    "difficulty": 3,
+    "question": "Jako náborář/ka vedete strukturovaný pohovor s kandidátem na technickou pozici. První dojem z prvních dvou minut je výrazně pozitivní. Jak naložíte se zbytkem otázek, abyste se rozhodl/a co nejlépe?",
+    "options": [
+      {
+        "answer": "Zaměřit se na náročné otázky z oblastí, kde podle životopisu kandidát zatím neexceloval.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože cíleně testuje, zda dobrý dojem obstojí i ve slabších oblastech; výsledek může hypotézu o vhodnosti kandidáta vyvrátit."
+      },
+      {
+        "answer": "Klást především otázky, ve kterých má kandidát podle životopisu nejlepší šanci uspět.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě otázek, které mají první dojem dále upevnit, ne ho prověřit. Jedná se o typ zkreslení: konfirmační zkreslení."
+      },
+      {
+        "answer": "Klást standardní sadu otázek pro tuto pozici bez ohledu na první dojem.",
+        "verdict": "neutral",
+        "explanation": "Tato volba zachová formální férovost, ale necílí přímo na vyvrácení vašeho dojmu, takže informačně méně rozliší silné a slabé stránky kandidáta."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Pohovor: první dojem pozitivní — ptát se na silné nebo slabé stránky? Přirozený HR scénář.",
+      "strengths": [
+        "Biased (otázky kde kandidát uspěje) je typicky lákavá cesta.",
+        "Rational (náročné otázky ze slabých oblastí) je vědecky správné."
+      ],
+      "weaknesses": [
+        "Difficulty 3 přesná."
+      ],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Přirozené prostředí pohovoru místo formálního 'Jako náborář/ka vedete strukturovaný pohovor'. Vyhýbá se 'náborář/ka'. Poznámka: 'Zkusím na něj zatlačit' předpokládá mužský rod kandidáta."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Právě vedete pracovní pohovor. Kandidát vás během prvních dvou minut naprosto nadchnul a máte pocit, že by to mohl být ten pravý. Jak byste měli dál vést rozhovor, abyste si jeho přijetím byli opravdu jistí?",
+        "options": [
+          {
+            "answer": "Zkusím na něj zatlačit náročnými otázkami z těch oblastí, které v životopise vůbec nezmiňuje nebo je má slabší.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože cíleně testuje, zda dobrý dojem obstojí i ve slabších oblastech; výsledek může hypotézu o vhodnosti kandidáta vyvrátit."
+          },
+          {
+            "answer": "Budu se dál ptát hlavně na témata, ve kterých je podle životopisu silný, abych si ověřil jeho kvality.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě otázek, které mají první dojem dále upevnit, ne ho prověřit. Jedná se o typ zkreslení: konfirmační zkreslení."
+          },
+          {
+            "answer": "Vezmu si prostě svůj standardní seznam otázek pro tuhle pozici a odříkám ho bez ohledu na to, jaký na mě udělal dojem.",
+            "verdict": "neutral",
+            "explanation": "Tato volba zachová formální férovost, ale necílí přímo na vyvrácení vašeho dojmu, takže informačně méně rozliší silné a slabé stránky kandidáta."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "borderline",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je na hraně — oba hodnotitelé doporučují drobné úpravy. Vyžaduje ruční přeformulování."
+  }
+}

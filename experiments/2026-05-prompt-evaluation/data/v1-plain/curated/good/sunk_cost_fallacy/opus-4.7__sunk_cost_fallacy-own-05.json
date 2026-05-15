@@ -1,0 +1,83 @@
+{
+  "example": {
+    "id": "sunk_cost_fallacy-own-05",
+    "bias": "sunk_cost_fallacy",
+    "source": "own",
+    "domain": "podnikání",
+    "difficulty": 5,
+    "question": "Za tři roky jste do vývoje vlastní aplikace investovali 200 000 €. Pro uvedení na trh potřebujete dofinancovat dalších 80 000 €; očekávaný čistý výnos po uvedení je 70 000 €. Konkurence právě nabízí odkup rozpracovaného projektu za 50 000 €. Jak postupovat?",
+    "options": [
+      {
+        "answer": "Pokračovat ve vývoji, jinak by 200 000 € a tři roky práce přišly zcela vniveč.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již vynaložené investice (200 000 €), ne budoucí návratnosti. Budoucí srovnání: dokončit = −80 000 € náklad + 70 000 € výnos = čistá ztráta 10 000 €; prodat = +50 000 €. Jedná se o typ zkreslení: klam utopených nákladů."
+      },
+      {
+        "answer": "Přijmout odkup — dokončení projektu by vedlo k dalším ztrátám.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože porovnává jen budoucí toky a ignoruje utopených 200 000 €: dofinancování 80 000 € → výnos 70 000 € → čistá ztráta 10 000 €; odkup přináší +50 000 €."
+      },
+      {
+        "answer": "Vyjednávat s odkupcem o vyšší cenu a mezitím dál pokračovat ve vývoji.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není ani racionální, ani projevem zkreslení. Vyjednávání o lepší ceně může zlepšit výsledek (aktuální nabídka 50 000 € vs. budoucí ztráta 10 000 €), ale paralelní vývoj dál spaluje prostředky a prodlužuje dobu do rozhodnutí."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 91.5,
+      "recommendation": "use_as_is",
+      "feedback": "Aplikace: 200 000 € investováno, 80 000 € k dokončení, EV=70 000 €, nebo prodej za 50 000 €. Číselně nejtransparentnější příklad.",
+      "strengths": [
+        "EV analýza: pokračovat = −10 000 €, prodat = +50 000 € — explicitní v explanaci.",
+        "Biased odpověď (200K nesmí přijít vniveč) je silná a přirozená.",
+        "Difficulty 5 přesná — vyžaduje explicitní numerické srovnání alternativ."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Silná emocionální intenzita sunk-cost myšlení ('spláchnout do záchodu'). Racionální odpověď přirozeně prezentuje výpočet budoucích toků a zachovává všechna numerická data."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Poslední tři roky budujete vlastní startup s aplikací a utopili jste v něm už 200 000 EUR. Abyste ji konečně mohli vypustit do světa, potřebujete dofinancovat ještě dalších 80 000 EUR. Podle realistických odhadů pak po uvedení aplikace vydělá čistého asi 70 000 EUR. Jenže se vám teď ozvala konkurence a nabízí vám, že od vás rozpracovaný projekt odkoupí za 50 000 EUR. Co teď?",
+        "options": [
+          {
+            "answer": "Vývoj dokončím sám, jinak bych těch už investovaných 200 tisíc EUR a tři roky života mohl rovnou spláchnout do záchodu.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě snahy 'zachránit' nevratných 200 000 €, i když to znamená jistou budoucí finanční ztrátu. Jedná se o typ zkreslení: klam utopených nákladů."
+          },
+          {
+            "answer": "Nabídku na odkup vezmu; sice přijdu o peníze, ale kdybych do toho vrazil těch dalších 80 tisíc, jen abych vydělal 70, budu ve finále ještě o dalších 10 tisíc v minusu.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože ignoruje utopených 200 000 € a správně porovnává pouze budoucí alternativy: jistý příjem 50 000 € oproti budoucí ztrátě 10 000 € (70k výnos - 80k náklad)."
+          },
+          {
+            "answer": "Zkusím z nich vytáhnout víc peněz a mezitím budu na aplikaci dál dělat.",
+            "verdict": "neutral",
+            "explanation": "Tato volba je taktické vyjednávání s cílem vylepšit nabízenou cenu; nevyřešila dilema ohledně samotného dofinancování ztrátového projektu. Ztráta je 10 000 € (70k výnos - 80k náklad)"
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

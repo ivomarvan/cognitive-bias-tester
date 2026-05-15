@@ -1,0 +1,83 @@
+{
+  "example": {
+    "id": "anchoring-own-01",
+    "bias": "anchoring",
+    "source": "own",
+    "domain": "nákup",
+    "difficulty": 1,
+    "question": "V kamenném obchodě jsou bezdrátová sluchátka označená cenovkou „Původní cena 7 990 Kč, nyní 3 990 Kč“. Rychlé hledání na internetu ukazuje, že stejný model nabízejí jiní prodejci standardně za 3 200 Kč. Je třeba rozhodnout o nákupu.",
+    "options": [
+      {
+        "answer": "Koupit u jiného prodejce za 3 200 Kč.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože vychází z aktuální tržní ceny a šetří 790 Kč proti zlevněné nabídce v obchodě."
+      },
+      {
+        "answer": "Koupit zde, sleva 50 % je výjimečná.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nadsazené původní ceny 7 990 Kč, ne podle reálné tržní ceny. Jedná se o typ zkreslení: ukotvení."
+      },
+      {
+        "answer": "Odložit nákup, sluchátka teď nepotřebujete.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je odložením rozhodnutí; není projevem racionální cenové analýzy ani typickým podlehnutím danému zkreslení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Sluchátka 7990 Kč přeškrtnuto → 3990 Kč, tržní cena 3200 Kč. Vzorový retailový anchoring s konkrétními čísly.",
+      "strengths": [
+        "Anchor (7990 Kč) je přirozený, tržní srovnání dostupné.",
+        "Biased volba (sleva 50 % je výjimečná) je intuitivně silná.",
+        "Difficulty 1 přesná."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Vivid scene ('procházení elektrem', 'to je pecka') vs. strojené 'Je třeba rozhodnout o nákupu'. Gemini výrazně přirozenější bez ztráty přesnosti."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Procházíte elektro a vidíte bezdrátová sluchátka, na kterých křičí cedulka: „Původní cena 7 990 Kč, nyní v obří slevě jen za 3 990 Kč!“. Schválně se podíváte do mobilu a zjistíte, že na jiných e-shopech se dají úplně běžně koupit za 3 200 Kč. Jak nakoupíte?",
+        "options": [
+          {
+            "answer": "Koupím je někde jinde na internetu za těch 3 200 Kč.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože ignoruje umělou slevu v obchodě a řídí se skutečnou tržní cenou nejlepší dostupné alternativy."
+          },
+          {
+            "answer": "Vezmu je hned tady v obchodě, padla na ně padesátiprocentní sleva, to je pecka.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě přeškrtnuté vysoké ceny (kotvy) a fiktivní slevy, přestože absolutní cena je stále nevýhodná. Jedná se o typ zkreslení: ukotvení."
+          },
+          {
+            "answer": "Teď nákup odložím, vlastně tahle sluchátka zrovna nutně nepotřebuji.",
+            "verdict": "neutral",
+            "explanation": "Tato volba zpochybňuje samotnou potřebu nákupu; nevypovídá o tom, jak by jedinec zpracoval cenovou nabídku, pokud by produkt koupit musel."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

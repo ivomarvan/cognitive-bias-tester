@@ -1,0 +1,75 @@
+{
+  "example": {
+    "id": "anchoring-textbook-01",
+    "bias": "anchoring",
+    "source": "textbook",
+    "domain": "geografie",
+    "difficulty": 3,
+    "question": "Před zahájením úkolu se před vámi zatočilo kolo štěstí a zastavilo se na čísle 65. Po této úvodní hře je třeba odhadnout: jaké procento členských států Organizace spojených národů tvoří africké země?",
+    "options": [
+      {
+        "answer": "Přibližně 60 % zemí v OSN je afrických.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě bezvýznamného čísla z kola štěstí. Jedná se o typ zkreslení: ukotvení."
+      },
+      {
+        "answer": "Přibližně 28 % zemí v OSN je afrických.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože odpovídá faktům: z 193 členů OSN je 54 afrických zemí, tedy zhruba 28 %."
+      },
+      {
+        "answer": "Bez dat to nelze odhadnout.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je defenzivní vyhnutí se odhadu; nedemonstruje racionální použití dostupných znalostí ani podlehnutí danému zkreslení."
+      }
+    ],
+    "ui_hint": {
+      "case_type": "interactive",
+      "component": "WheelOfFortune",
+      "variant": "A",
+      "anchor_value": 65,
+      "anchor_range_low": [10, 25],
+      "anchor_range_high": [60, 80],
+      "randomize_anchor": true,
+      "description": "Uživatel vidí kolo štěstí s viditelnou škálou čísel (malé 10–25, velké 60–80). Klikne na tlačítko 'Zatočit', proběhne CSS animace zpomalující z plné rychlosti, kolo se zastaví na 65 (nebo pseudonáhodně z high range). Číslo zůstane zobrazené a teprve pak se zobrazí otázka. Po odpovědi revelation ukáže distribuci odpovědí skupiny ukotvené na 15 vs. skupiny ukotvené na 65 — uživatel vidí svou odpověď na grafu. To je pedagogický vrchol příkladu: uživatel si uvědomí, jak číslo ovlivnilo jeho vlastní odhad.",
+      "post_answer_reveal": "Lidé, kteří zatočili a padlo jim číslo ~15, odhadovali průměrně 25 %. Lidé s číslem ~65 odhadovali průměrně 45 %. Správná odpověď je 28 %. Náhodné číslo z kola ovlivnilo váš odhad — to je ukotvení.",
+      "implementation_notes": "Vue komponenta <WheelOfFortune> přijímá props: anchor (number), segments (array of display values). CSS @keyframes pro rotaci s cubic-bezier zpomalením. Kolo není opravdu náhodné — vždy zastaví na anchor_value nebo pseudonáhodně z anchor_range_high pro autentičtější zážitek. Viz ADR-004."
+    }
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Kolo štěstí a africké země v OSN — vzorový klasický anchoring příklad. Racionální odpověď je fakticky přesně doložená (54/193 ≈ 28 %).",
+      "strengths": [
+        "Strukturní požadavek anchoring (číslo 65 před otázkou) zcela splněn.",
+        "Racionální odpověď s přesným výpočtem 54/193 je gold standard.",
+        "Tři možnosti s neutrální volbou elegantně pokrývají spektrum odpovědí."
+      ],
+      "weaknesses": [
+        "Text-only verze popisuje kotvu, ale nevyvolává ji. Bez interaktivního kola uživatel čte '65' jako informaci a může vědomě kompenzovat — čímž pedagogický efekt slábne."
+      ],
+      "suggested_fix": "Implementovat jako interactive case s WheelOfFortune komponentou. Viz ui_hint.",
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Příklad přesunut do curated/interactive/ — text-only verze podprůměrně vyvolává kotvu. Gemini nenavrhl textový přepis, protože problém je strukturní, ne formulační."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "interactive",
+    "source_model": "Claude Opus 4.7",
+    "note": "Přesunut z good/ do interactive/. Příklad je excelentní, ale vyžaduje interaktivní kolo štěstí pro plný pedagogický efekt. Použít až při implementaci interactive case_type (ADR-004). Text-only verze by fungovala jako fallback pro prostředí bez JS."
+  }
+}

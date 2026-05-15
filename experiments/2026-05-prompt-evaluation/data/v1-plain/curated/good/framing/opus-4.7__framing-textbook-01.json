@@ -1,0 +1,61 @@
+{
+  "example": {
+    "id": "framing-textbook-01",
+    "bias": "framing",
+    "source": "textbook",
+    "domain": "zdraví",
+    "difficulty": 3,
+    "question": "Ve zprávách čtete dvě tisková sdělení vlády o dvou programech (A a B) proti epidemii ohrožující 600 osob. 1. zpráva: „Program A zachrání 200 osob." 2. zpráva: „Při programu B zemře 400 osob." Který program byste spíše podpořili?",
+    "options": [
+      {
+        "answer": "Program A — zachrání 200 lidí, to je výsledek, pro který bych hlasoval/a.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože programy A a B jsou číselně identické: „zachrání 200 z 600" znamená, že zbývajících 400 zemře; „zemře 400 z 600" znamená, že 200 přežije. Preferujete A pouze proto, jak je popsán, ne proto, co skutečně přináší. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Program B nepodpořím — zpráva o stovkách mrtvých je nepřijatelná.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože odmítáte program B na základě negativního zarámování. Přitom oba programy popisují číselně totožný výsledek: program A → 400 zemřou (600 − 200); program B → 200 přežijí (600 − 400). Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Abych se mohl/a rozhodnout, potřebuji znát podrobnosti obou programů — tato tisková sdělení vlády nestačí.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální: tiskové zprávy uvádějí pouze jedno číslo každá a mohou být tendenčně zarámovány. Kdyby uživatel čísla porovnal, zjistil by, že „zachrání 200 z 600" a „zemře 400 z 600" jsou číselně totožná (200 + 400 = 600) — a vládní sdělení tak říkají to samé. Žádat o podrobnosti je správný epistemický postoj, byť zde stačí prostý přepočet."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Epidemie 600 osob: dvě tisková sdělení (200 zachráněno vs 400 zemře). Unikátní design se dvěma biased opcemi — demonstruje obě strany framingového efektu.",
+      "strengths": [
+        "Dvě biased odpovědi ukazují framing z pozitivní i negativní strany — edukačně výjimečné.",
+        "Strukturní požadavek framing plně splněn.",
+        "Difficulty 3 přesná."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "example": {
+    "id": "anchoring-own-05",
+    "bias": "anchoring",
+    "source": "own",
+    "domain": "finance",
+    "difficulty": 5,
+    "question": "Akcie společnosti dosáhla před dvěma lety historického maxima 1 250 Kč. Současná tržní cena je 480 Kč. Tři nezávislí analytici odhadují vnitřní hodnotu firmy na základě cash flow přibližně na 290 Kč na akcii. Společnost letos snížila čistý zisk o 22 %. Je třeba se rozhodnout.",
+    "options": [
+      {
+        "answer": "Investovat do širokého akciového indexu místo jednotlivé akcie.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je obecnou diverzifikační strategií; obchází specifické ohodnocení této akcie a není ani racionální analýzou této investice, ani typickým podlehnutím danému zkreslení."
+      },
+      {
+        "answer": "Nakoupit, proti maximu 1 250 Kč je dnešní cena 480 Kč výrazně nižší.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě historického maxima, ne podle aktuální vnitřní hodnoty 290 Kč a klesajícího zisku. Jedná se o typ zkreslení: ukotvení."
+      },
+      {
+        "answer": "Nenakupovat, cena 480 Kč je stále výše než odhadovaná hodnota 290 Kč.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože vychází z fundamentální hodnoty a klesající ziskovosti; tržní cena je nad odhadem vnitřní hodnoty o 65 %."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Akcie: historické max 1250 Kč, nyní 480 Kč, analytici odhadují vnitřní hodnotu 290 Kč, zisk −22 %. Výborný investiční příklad difficulty 5.",
+      "strengths": [
+        "Anchor (historické max 1250 Kč) je přirozeně přítomen v investičním kontextu.",
+        "Racionální odpověď (480 > 290, nekupovat) je doložena fundamentální analýzou.",
+        "Difficulty 5 přesná — vyžaduje explicitní porovnání ceny s vnitřní hodnotou."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "original",
+        "reason": "Gemini vypustil klíčový údaj o poklesu zisku o 22 %, který racionální volbu (nekoupit) opravňuje. Ztráta přesnosti snižuje edukační hodnotu příkladu difficulty-5."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Uvažujete o koupi akcií jedné firmy. Ještě před dvěma lety stála jedna akcie neskutečných 1 250 Kč. Teď se propadla na 480 Kč. Když se ale podíváte na názory nezávislých analytiků, ti odhadují skutečnou hodnotu firmy spíše někam ke 290 Kč za akcii, protože firmě docela klesl zisk. Jak se zachováte?",
+        "options": [
+          {
+            "answer": "Vyhnu se nákupu jednotlivých akcií a hodím peníze raději do nějakého širokého indexového fondu.",
+            "verdict": "neutral",
+            "explanation": "Tato volba je projevem obecné averze k riziku při stock-pickingu, neukazuje ani podlehnutí, ani racionální zpracování nabídnuté ceny vůči valuaci."
+          },
+          {
+            "answer": "Koupím je, když si vezmu, že to stálo 1 250 Kč, tak je dnešních 480 Kč brutální sleva.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě historického maxima jako kotvy, nikoli na základě fundamentální hodnoty aktiva. Jedná se o typ zkreslení: ukotvení."
+          },
+          {
+            "answer": "Nekoupím je, těch 480 Kč je pořád mnohem víc, než na kolik vychází reálná hodnota 290 Kč.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože ignoruje nerelevantní historické maximum a porovnává aktuální cenu se střízlivým odhadem vnitřní hodnoty."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

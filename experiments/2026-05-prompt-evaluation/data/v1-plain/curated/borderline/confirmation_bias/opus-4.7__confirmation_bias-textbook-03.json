@@ -1,0 +1,84 @@
+{
+  "example": {
+    "id": "confirmation_bias-textbook-03",
+    "bias": "confirmation_bias",
+    "source": "textbook",
+    "domain": "psychologie / pohovor",
+    "difficulty": 3,
+    "question": "Máte za úkol během krátkého rozhovoru zjistit, zda je váš protějšek spíše extrovert. Kterou otázku položíte jako první?",
+    "options": [
+      {
+        "answer": "Co děláte na velké společenské akci, kde nikoho neznáte?",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě otázky vyzývající k aktivnímu sociálnímu chování; získáte hlavně zdánlivé důkazy pro extroverzi. Jedná se o typ zkreslení: konfirmační zkreslení."
+      },
+      {
+        "answer": "Popište, jak nejraději trávíte volný večer.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože otevřená otázka neorientuje odpověď a umožňuje stejně dobře projevit introverzi i extroverzi — hypotéza o extroverzi tak může být vyvrácena."
+      },
+      {
+        "answer": "Měl/a jste někdy potíže s navazováním nových kontaktů?",
+        "verdict": "neutral",
+        "explanation": "Tato volba získá dílčí informaci, ale nepokrývá obě strany škály symetricky. Není to projev daného zkreslení, ale ani plně diagnosticky vyvážená otázka."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Extrovert test: otázka pro extroverty vs otevřená otázka. Přirozený HR kontext.",
+      "strengths": [
+        "Biased otázka (velká akce = extravertní kontext) je subtilně lákavá.",
+        "Racionální otázka (otevřená) je vědecky správná disconfirmační volba."
+      ],
+      "weaknesses": [
+        "Difficulty 3 přesná."
+      ],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Večírkové prostředí ('Na večírku se dáte do řeči') výrazně přirozenější než formální 'Máte za úkol'. Sociální kontext dělá confirmation bias živějším."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Na večírku se dáte do řeči s neznámým člověkem a zajímá vás, jestli je od přírody spíš extrovert. Na co byste se ho hned na začátku zeptali?",
+        "options": [
+          {
+            "answer": "„Co obvykle děláte na nějaké obří společenské akci, když tam nikoho neznáte?“",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě otázky vyzývající k aktivnímu sociálnímu chování; získáte hlavně zdánlivé důkazy pro extroverzi. Jedná se o typ zkreslení: konfirmační zkreslení."
+          },
+          {
+            "answer": "„Když máte úplně volný večer, jak ho nejradši trávíte?“",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože otevřená otázka neorientuje odpověď a umožňuje stejně dobře projevit introverzi i extroverzi — hypotéza o extroverzi tak může být vyvrácena."
+          },
+          {
+            "answer": "„Míváte někdy problém se seznamováním s novými lidmi?“",
+            "verdict": "neutral",
+            "explanation": "Tato volba získá dílčí informaci, ale nepokrývá obě strany škály symetricky. Není to projev daného zkreslení, ale ani plně diagnosticky vyvážená otázka."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "borderline",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je na hraně — oba hodnotitelé doporučují drobné úpravy. Vyžaduje ruční přeformulování."
+  }
+}

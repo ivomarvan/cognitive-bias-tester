@@ -21,3 +21,11 @@ But we find it psychologically painful to "waste" past investments, so we stay o
 - **Focus only on future costs and benefits** — explicitly exclude prior investments from your analysis.
 - **Name it** — simply recognising "I'm about to commit the sunk cost fallacy" is often enough to interrupt the pattern.
 - **Separate identity from investment** — the decision to stop is not an admission of failure; it is a rational response to new information.
+
+## Theoretical foundation
+
+Decision theory gives the "ignore sunk costs" advice a solid mathematical grounding.
+
+Mathematician Richard Bellman formalised a principle that states: *the optimal decision at any point depends only on the current state and what is possible from here — never on the history of how you arrived.* In other words, past costs are simply not part of the correct equation.
+
+What can feel like emotionally cold advice is therefore provably the right stance. When you walk out of a bad film and write off the ticket, you are not wasting an investment — you are behaving exactly as an optimal decision-maker would.

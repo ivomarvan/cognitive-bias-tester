@@ -1,25 +1,25 @@
-# ADR-001: Use PostgreSQL for the primary database
+# ADR-001: PostgreSQL jako primární databáze
 
-**Status**: Accepted
+**Stav**: Přijato
 
-**Date**: 2026-05-08
+**Datum**: 2026-05-08
 
-## Context
+## Kontext
 
-The product stores user progress, Cases, LLM cache entries, ratings, and related metadata. The project specification (`doc/project-progress/spec.md`, **Key Technical Decisions** — row **3**, **Database**) commits to **PostgreSQL 16 in Docker** for development and production parity, with rationale including `JSONB` for flexible Case payload and optional full-text search.
+Produkt ukládá postup uživatelů, Cases, záznamy LLM cache, hodnocení a příslušná metadata. Projektová specifikace (`doc/project-progress/spec.md`, **Klíčová technická rozhodnutí** — řádek **3**, **Databáze**) se zavazuje k **PostgreSQL 16 v Dockeru** pro vývojové i produkční prostředí, s odůvodněním zahrnujícím `JSONB` pro flexibilní Case payload a volitelné fulltextové vyhledávání.
 
-We need concurrent access, durable ACID transactions, and a mature migration story as content and traffic grow. SQLite is attractive for local-only prototypes but becomes a bottleneck for multi-writer workloads and operational tooling shared across environments.
+Potřebujeme souběžný přístup, odolné ACID transakce a ověřenou migrační strategii, jak bude obsah a provoz růst. SQLite je lákavý pro lokální prototypy, ale stává se úzkým hrdlem při workloadech s více writery a pro operační nástroje sdílené mezi prostředími.
 
-## Decision
+## Rozhodnutí
 
-Use **PostgreSQL 16** as the primary database, run locally via **Docker Compose**, and target the same major version in production so schema and query behavior match across environments.
+Použít **PostgreSQL 16** jako primární databázi, spouštěnou lokálně přes **Docker Compose**, a cílit na stejnou major verzi v produkci, aby chování schématu a dotazů bylo konzistentní napříč prostředími.
 
-## Considered alternatives
+## Zvažované alternativy
 
-- **SQLite (file-backed)** — rejected for MVP: single-writer semantics and limited concurrency under web traffic; weaker fit for multi-instance API deployments and background workers. Acceptable for disposable experiments, not for the main application store cited in `spec.md` row 3.
-- **Managed MySQL/MariaDB** — viable, but the team standard and documented project decision center on PostgreSQL 16; switching would require revisiting JSON/query assumptions and training cost without clear benefit for this codebase.
+- **SQLite (file-backed)** — zamítnuto pro MVP: sémantika jednoho writera a omezená souběžnost při webovém provozu; slabší fit pro víceinstanční API a background workery. Přijatelné pro jednorázové experimenty, ne pro hlavní aplikační store uvedený v `spec.md` řádek 3.
+- **Managed MySQL/MariaDB** — životaschopné, ale týmový standard a zdokumentované projektové rozhodnutí se soustředí na PostgreSQL 16; přechod by vyžadoval přehodnocení JSON/query předpokladů a náklady na přizpůsobení bez zřejmého přínosu pro tuto codebase.
 
-## Consequences
+## Důsledky
 
-- **Positive:** Strong concurrency, rich SQL + `JSONB`, battle-tested migration tooling (e.g. Alembic), and alignment with `spec.md` / infrastructure choices.
-- **Negative:** Local developers must run Docker (or an equivalent Postgres instance), which is already mandated by project Docker policy for multi-service work.
+- **Pozitivní:** Silná souběžnost, bohaté SQL + `JSONB`, ověřené migrační nástroje (např. Alembic) a soulad s `spec.md` a infrastrukturními rozhodnutími.
+- **Negativní:** Lokální vývojáři musí spouštět Docker (nebo ekvivalentní Postgres instanci), což je projektovou Docker politikou pro víceslužbovou práci již vyžadováno.

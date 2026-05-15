@@ -1,0 +1,83 @@
+{
+  "example": {
+    "id": "anchoring-own-03",
+    "bias": "anchoring",
+    "source": "own",
+    "domain": "cestování",
+    "difficulty": 3,
+    "question": "Cestovní agentura nabízí týdenní pobyt v hotelu Atlas, který byl původně zalistován za 32 000 Kč; aktuální cena je 19 800 Kč. Hodnocení hostů je 6,4 z 10. Srovnatelný hotel ve stejné destinaci s hodnocením 8,2 z 10 stojí 17 500 Kč. Je třeba se rozhodnout.",
+    "options": [
+      {
+        "answer": "Vybrat konkurenční hotel za 17 500 Kč s lepším hodnocením.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože za nižší cenu získáte hotel s objektivně lepším hodnocením; rozhodujete se podle aktuálních dat, ne podle původní ceny."
+      },
+      {
+        "answer": "Zatím nerezervovat a počkat na blízkost termínu.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je odložením rozhodnutí; není projevem racionálního výběru podle aktuálních dat ani typického podlehnutí danému zkreslení."
+      },
+      {
+        "answer": "Rezervovat hotel Atlas, sleva 12 200 Kč je výrazná.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě fiktivní původní ceny 32 000 Kč, místo abyste srovnali poměr cena/hodnocení. Jedná se o typ zkreslení: ukotvení."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Cestovní agentura: hotel Atlas zlevněn 32K→19,8K, srovnatelný hotel 17,5K/lepší hodnocení 8,2 vs 6,4. Výborný příklad anchoring + srovnávací data.",
+      "strengths": [
+        "Anchor (32K) a srovnávací benchmark (17,5K / hodnocení 8,2) jsou v otázce.",
+        "Biased volba (sleva 12,2K je výrazná) je přirozeně lákavá.",
+        "Difficulty 3 přesná — vyžaduje vědomé srovnání obou hotelů."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Cestovní kontext a prohlížení webu ('letní dovolená', 'Hned vedle na webu') věrnější realitě. Biased volba přesvědčivější ('sleva přes dvanáct tisíc se přece neodmítá' vs. 'sleva 12 200 Kč je výrazná')."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Díváte se na letní dovolenou. Cestovka vám nabídne hotel Atlas – podle nich stál dřív 32 000 Kč, ale teď je v akci jen za 19 800 Kč. Lidé mu v recenzích dávají průměrných 6,4 bodů z 10. Hned vedle na webu ale vidíte velmi podobný hotel, který má parádní hodnocení 8,2 z 10 a stojí 17 500 Kč. Jakou variantu zvolíte?",
+        "options": [
+          {
+            "answer": "Vezmu ten konkurenční hotel za 17 500 Kč s lepším hodnocením.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože porovnává skutečné parametry (cena a hodnocení) konkurenčních nabídek a ignoruje falešnou slevu."
+          },
+          {
+            "answer": "Raději to teď nechám být a zkusím počkat, jestli s blížícím se termínem ceny ještě nespadnou.",
+            "verdict": "neutral",
+            "explanation": "Tato volba je vyčkávací strategií (timing trhu); neukazuje přímé porovnání nabídek ani podlehnutí slevové kotvě."
+          },
+          {
+            "answer": "Rezervuji si ten Atlas, sleva přes dvanáct tisíc se přece neodmítá.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě vysoké původní ceny (kotvy) a vnímáte slevu jako hodnotu samu o sobě, přestože je hotel objektivně horší a dražší než alternativa. Jedná se o typ zkreslení: ukotvení."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

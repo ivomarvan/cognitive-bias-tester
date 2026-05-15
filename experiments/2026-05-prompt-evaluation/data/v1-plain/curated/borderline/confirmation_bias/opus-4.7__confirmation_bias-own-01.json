@@ -1,0 +1,88 @@
+{
+  "example": {
+    "id": "confirmation_bias-own-01",
+    "bias": "confirmation_bias",
+    "source": "own",
+    "domain": "nákup",
+    "difficulty": 1,
+    "question": "Vybral/a jste si konkrétní model kávovaru a chcete využít online recenze. Jakou strategii čtení zvolíte, abyste získal/a co nejpravdivější obraz o produktu?",
+    "options": [
+      {
+        "answer": "Cíleně projít i kritické recenze (1–2 hvězdičky) a zvážit, zda jsou výhrady relevantní.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože aktivně vyhledáváte informaci, která by váš výběr mohla zpochybnit, a tak získáte vyvážený obraz produktu."
+      },
+      {
+        "answer": "Číst především recenze s pěti hvězdičkami, kde uživatelé produkt chválí.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě výběru zdrojů, které vaši preferenci podpoří, místo abyste hledal/a její slabiny. Jedná se o typ zkreslení: konfirmační zkreslení."
+      },
+      {
+        "answer": "Spolehnout se na první dojem v obchodě a recenze pominout.",
+        "verdict": "neutral",
+        "explanation": "Tato volba se analytickému rozhodování zcela vyhýbá; není projev daného zkreslení, ale ani racionální vyhledávání odporujících dat."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Kávovar: číst jen 5hvězdičkové recenze. Otázka explicitně klade cíl ('co nejpravdivější obraz'), což mírně signalizuje správnou odpověď.",
+      "strengths": [
+        "Biased (5hvězdičkové recenze) je přirozené spotřebitelské chování.",
+        "Racionální (kritické recenze 1–2 hvězdičky) je jasně disconfirmační."
+      ],
+      "weaknesses": [
+        "Formulace otázky ('co nejpravdivější obraz') lehce naznačuje racionální odpověď — snižuje subtilitu.",
+        "Difficulty 1 přesná, ale trap mohl být skrytější bez explicitního cíle."
+      ],
+      "suggested_fix": "Přeformulovat otázku bez explicitního cíle 'pravdivý obraz'; nechat uživatele zvolit dle vlastní motivace.",
+      "suggestion": {
+        "question": "Máte vyhlédnutý konkrétní model kávovaru a jdete se podívat, co o něm píšou lidé v recenzích. Jak budete tyto recenze procházet?"
+      },
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Přirozená scéna prohlížení recenzí. 'Schválně si vyfiltruji' živější než 'Cíleně projít'. Vyhýbá se neohrabanému 'Vybral/a jste si' originálu."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Máte vyhlédnutý konkrétní model kávovaru a jdete se podívat, co o něm píšou lidé v recenzích. Jak budete tyto recenze procházet?",
+        "options": [
+          {
+            "answer": "Schválně si vyfiltruji ty nejhorší recenze s jednou nebo dvěma hvězdičkami a zkusím zhodnotit, jestli jsou to pro mě reálné problémy.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože aktivně vyhledáváte informaci, která by váš výběr mohla zpochybnit, a tak získáte vyvážený obraz produktu."
+          },
+          {
+            "answer": "Budu číst hlavně ty pětihvězdičkové, abych viděl, co si na něm lidé nejvíc chválí.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě výběru zdrojů, které vaši preferenci podpoří, místo abyste hledal/a její slabiny. Jedná se o typ zkreslení: konfirmační zkreslení."
+          },
+          {
+            "answer": "Recenze nechám plavat, zajdu si do prodejny a rozhodnu se podle toho, jak na mě kávovar bude působit naživo.",
+            "verdict": "neutral",
+            "explanation": "Tato volba se analytickému rozhodování zcela vyhýbá; není projev daného zkreslení, ale ani racionální vyhledávání odporujících dat."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "borderline",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je na hraně — oba hodnotitelé doporučují drobné úpravy. Vyžaduje ruční přeformulování."
+  }
+}

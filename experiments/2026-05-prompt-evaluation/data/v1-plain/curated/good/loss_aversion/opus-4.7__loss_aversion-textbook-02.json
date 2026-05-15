@@ -1,0 +1,82 @@
+{
+  "example": {
+    "id": "loss_aversion-textbook-02",
+    "bias": "loss_aversion",
+    "source": "textbook",
+    "domain": "obchod",
+    "difficulty": 3,
+    "question": "V experimentu vám výzkumník právě daroval keramický hrnek, který se v běžných obchodech prodává za 8 €. Vzápětí přichází zájemce a ptá se, za jakou minimální cenu jste ochotni hrnek prodat. Co je nejlépe odůvodněná odpověď?",
+    "options": [
+      {
+        "answer": "Přibližně 8 €, což odpovídá běžné tržní ceně předmětu.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože vychází z objektivně dohledatelné tržní hodnoty hrnku."
+      },
+      {
+        "answer": "Hrnek raději neprodávat za žádnou cenu, někdy se může hodit.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není přímým projevem zkreslení, ale rozhodnutí odsouvá na neurčito a opomíjí možnost okamžitého zisku z prodeje za tržní cenu."
+      },
+      {
+        "answer": "Minimálně 14 €, hrnek je nyní můj a o cennou věc nechci přijít.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě nadhodnocení vlastněného předmětu, jakmile jste jej získal/a. Jedná se o typ zkreslení: averze ke ztrátě."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Hrnek 8 €: endowment effect. Minimální prodejní cena 14 € vs tržní hodnota 8 €. Přirozený, elegantní.",
+      "strengths": [
+        "Tržní hodnota (8 €) je explicitně dostupná pro srovnání.",
+        "Biased odpověď (14 €) odpovídá typickému endowment efektu."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Autentičtější vnitřní hlas ('přece se nevzdám své vlastní věci jen tak lacino'). Explanace explicitně pojmenovává efekt vlastnictví. Slabina: Gemini předpokládá mužský rod ('Řekl bych si')."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Během psychologického pokusu vám výzkumník věnoval úplně nový keramický hrnek. Víte, že v obchodě by normálně stál 8 EUR. Za chvíli se za vámi zastaví jiný účastník a ptá se vás, za jakou minimální částku byste mu ten hrnek byli ochotni hned prodat. Jaká odpověď by dávala největší smysl?",
+        "options": [
+          {
+            "answer": "Asi za 8 EUR, to je tak reálná cena, za kterou se to normálně prodává.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože ohodnocuje předmět jeho objektivní tržní cenou, nezávisle na tom, zda jej vlastníte či nikoliv."
+          },
+          {
+            "answer": "Ten hrnek si radši nechám, peníze nepotřebuju a může se mi hodit.",
+            "verdict": "neutral",
+            "explanation": "Tato volba se vyhýbá nacenění předmětu a vyjadřuje prostou preferenci vlastnit věc spíše než peníze."
+          },
+          {
+            "answer": "Řekl bych si minimálně o 14 EUR, přece se nevzdám své vlastní věci jen tak lacino.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete požadovat za vzdání se předmětu (ztrátu) mnohem vyšší částku, než je jeho reálná tržní cena, jen proto, že už je 'váš'. Jedná se o typ zkreslení: efekt vlastnictví (projev averze ke ztrátě)."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

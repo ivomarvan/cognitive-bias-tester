@@ -1,0 +1,159 @@
+{
+  "example": {
+    "id": "confirmation_bias-textbook-02",
+    "bias": "confirmation_bias",
+    "source": "textbook",
+    "domain": "indukce hypotézy",
+    "difficulty": 4,
+    "question": "Sděluji vám trojici čísel, která splňuje určité pravidlo. Vaším úkolem je pravidlo odhalit — můžete navrhovat libovolné trojice a dozvíte se, zda pravidlo splňují. Kolik testů potřebujete?",
+    "options": [],
+    "ui_hint": {
+      "case_type": "multi_step",
+      "component": "RuleDiscovery",
+      "max_tests": 10,
+      "randomize_rule": true,
+      "track": [
+        "confirming_tests",
+        "disconfirming_tests",
+        "hypothesis_changes",
+        "tests_to_solution",
+        "solved_correctly"
+      ],
+      "reveal": {
+        "wason_1960_confirming_only_avg_tests": 5.4,
+        "wason_1960_disconfirming_avg_tests": 2.1,
+        "wason_1960_source": "Wason, P.C. (1960). On the failure to eliminate hypotheses in a conceptual task. Quarterly Journal of Experimental Psychology, 12(3), 129–140.",
+        "reveal_text_cs": "Lidé, kteří testovali pouze potvrzující trojice, potřebovali průměrně 5,4 testů a přesto pravidlo často neodhalili. Ti, kdo aktivně hledali vyvrácení, to zvládli za 2,1 testu. Jak jsi dopadl/a ty?"
+      },
+      "rules": [
+        {
+          "id": "ascending",
+          "difficulty": 3,
+          "seed": [2, 4, 6],
+          "description_cs": "tři čísla ve vzestupném pořadí",
+          "description_en": "three numbers in ascending order",
+          "predicate": "a < b && b < c",
+          "trap_hypothesis_cs": "čísla se zvyšují vždy o 2",
+          "trap_hypothesis_en": "numbers increase by 2 each step",
+          "pedagogical_note": "Klasický Wasonův experiment. Účastníci testují 8-10-12, 10-12-14... a nikdy nezjistí, že pravidlo je mnohem obecnější než jejich hypotéza."
+        },
+        {
+          "id": "arithmetic_progression",
+          "difficulty": 3,
+          "seed": [3, 7, 11],
+          "description_cs": "aritmetická posloupnost (stejné rozdíly mezi členy)",
+          "description_en": "arithmetic progression (equal differences between members)",
+          "predicate": "b - a === c - b",
+          "trap_hypothesis_cs": "vzestupná aritmetická posloupnost s rozdílem 4",
+          "trap_hypothesis_en": "ascending arithmetic progression with difference 4",
+          "pedagogical_note": "Záchytný bod je vzestupnost — uživatel testuje jen stoupající trojice a přehlíží sestupné AP (10-6-2) nebo AP s jiným rozdílem."
+        },
+        {
+          "id": "all_even",
+          "difficulty": 2,
+          "seed": [2, 8, 14],
+          "description_cs": "všechna tři čísla jsou sudá",
+          "description_en": "all three numbers are even",
+          "predicate": "a % 2 === 0 && b % 2 === 0 && c % 2 === 0",
+          "trap_hypothesis_cs": "sudá čísla zvyšující se o 6",
+          "trap_hypothesis_en": "even numbers increasing by 6",
+          "pedagogical_note": "Rychleji odhalitelné — test lichého čísla (1-3-5) okamžitě vyloučí celou třídu. Vhodné jako úvod pro méně zkušené uživatele."
+        },
+        {
+          "id": "fibonacci_sum",
+          "difficulty": 4,
+          "seed": [1, 2, 3],
+          "description_cs": "třetí číslo je součet prvních dvou",
+          "description_en": "the third number equals the sum of the first two",
+          "predicate": "c === a + b",
+          "trap_hypothesis_cs": "po sobě jdoucí celá čísla (1, 2, 3, 4...)",
+          "trap_hypothesis_en": "consecutive integers",
+          "pedagogical_note": "Zárodek [1, 2, 3] silně evokuje 'po sobě jdoucí čísla'. Test (2, 3, 4) potvrdí obě hypotézy — potřeba testu (1, 4, 5) nebo (3, 3, 6) pro rozlišení."
+        },
+        {
+          "id": "geometric",
+          "difficulty": 4,
+          "seed": [2, 6, 18],
+          "description_cs": "geometrická posloupnost (konstantní poměr sousedních členů)",
+          "description_en": "geometric progression (constant ratio between adjacent members)",
+          "predicate": "b * b === a * c",
+          "trap_hypothesis_cs": "každý člen je třikrát větší než předchozí",
+          "trap_hypothesis_en": "each member is three times the previous",
+          "pedagogical_note": "Zárodek [2, 6, 18] silně evokuje '×3'. Test (1, 2, 4) nebo (3, 6, 12) odhalí, že poměr není fixní. Test (3, 9, 27) potvrzující hypotézu '×3' je typický biased krok."
+        },
+        {
+          "id": "triangle_inequality",
+          "difficulty": 5,
+          "seed": [3, 4, 5],
+          "description_cs": "čísla mohou být délkami stran trojúhelníku (každá strana kratší než součet zbývajících dvou)",
+          "description_en": "the numbers can be side lengths of a triangle",
+          "predicate": "a + b > c && b + c > a && a + c > b",
+          "trap_hypothesis_cs": "Pythagorova trojice (a² + b² = c²)",
+          "trap_hypothesis_en": "Pythagorean triple",
+          "pedagogical_note": "Zárodek [3, 4, 5] je nejznámější Pythagorova trojice. Pravidlo je mnohem obecnější. Test (5, 12, 13) potvrdí pythagorovu hypotézu; test (2, 3, 4) — ne-pythagorova, ale platí trojúhelníkovou nerovnost — hypotézu vyvrátí."
+        },
+        {
+          "id": "all_positive",
+          "difficulty": 1,
+          "seed": [1, 5, 3],
+          "description_cs": "všechna tři čísla jsou kladná (libovolné pořadí)",
+          "description_en": "all three numbers are positive (any order)",
+          "predicate": "a > 0 && b > 0 && c > 0",
+          "trap_hypothesis_cs": "čísla mezi 1 a 10",
+          "trap_hypothesis_en": "numbers between 1 and 10",
+          "pedagogical_note": "Velmi lehká varianta — vhodná pro demonstraci principu začátečníkům. Test záporného čísla (−1, 2, 3) okamžitě testuje hranici."
+        },
+        {
+          "id": "middle_largest",
+          "difficulty": 5,
+          "seed": [3, 7, 5],
+          "description_cs": "prostřední číslo je největší ze tří",
+          "description_en": "the middle number is the largest of the three",
+          "predicate": "b > a && b > c",
+          "trap_hypothesis_cs": "čísla tvoří vrchol vzestupné a sestupné části (kopec)",
+          "trap_hypothesis_en": "numbers form a peak (ascending then descending)",
+          "pedagogical_note": "Zárodek [3, 7, 5] evokuje 'vzestup pak sestup'. Pravidlo je jednoduší — jen střední člen musí být největší. Test (1, 10, 2) potvrdí obě hypotézy; test (5, 8, 8) nebo (5, 9, 6) pomůže rozlišit."
+        }
+      ],
+      "implementation_notes": "Backend exponuje endpoint POST /api/rule-test s { rule_id, triple: [a, b, c] } a vrací { result: true/false }. Predicate se vyhodnocuje server-side pro zabránění podvádění. Po každém testu frontend klasifikuje test jako 'confirming' (trojice splňuje uživatelovu aktuální hypotézu) nebo 'disconfirming' (nesplňuje). Klasifikace vyžaduje, aby uživatel průběžně vyjadřoval svou aktuální hypotézu — buď textově nebo výběrem z nabízených šablon. Viz ADR-004."
+    }
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 82.5,
+      "recommendation": "redesign_as_interactive",
+      "feedback": "Wasonův úkol je pedagogicky výjimečný, ale text-only formát s jediným výběrem trojice je epistemologicky nedotažený: označuje strategii jako 'racionální' bez explicitního omezení třídy pravidel, které nelze jednoduše vyjádřit. Multi-step formát tento problém řeší — evaluuje empirické chování (počet potvrzujících vs. vyvracejících testů), ne formální optimalitu.",
+      "strengths": [
+        "Wasonův experiment je nejcitovanější důkaz confirmation bias — silná pedagogická základna.",
+        "Multi-step formát transformuje pasivní čtení na aktivní prožitek.",
+        "Empirická data (Wason 1960) legitimizují hodnocení bez nutnosti formálního uzavření prostoru pravidel.",
+        "8 pravidel s různou obtížností umožňuje adaptivní obtížnost a znovuhratelnost."
+      ],
+      "weaknesses": [
+        "Vyžaduje backend endpoint pro vyhodnocení predicate — nelze jako čistě frontend příklad.",
+        "Klasifikace 'confirming vs. disconfirming' vyžaduje sledování uživatelovy aktuální hypotézy — UX výzva."
+      ],
+      "suggested_fix": "Implementovat jako multi_step RuleDiscovery komponentu dle ADR-004.",
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Přesunut do interactive/ — strukturální problém text-only formátu nelze opravit reformulací."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "interactive",
+    "source_model": "Claude Opus 4.7",
+    "note": "Přesunut z good/ do interactive/. Text-only formát je epistemologicky nedotažený (viz diskuse o Goodmanově problému, Lagrangeově interpolaci a neexistenci uniformního prioru přes nekonečný prostor pravidel). Multi-step RuleDiscovery formát všechny problémy řeší — evaluuje empirické chování, ne formální optimalitu. Implementovat při realizaci interactive case_type (ADR-004)."
+  }
+}

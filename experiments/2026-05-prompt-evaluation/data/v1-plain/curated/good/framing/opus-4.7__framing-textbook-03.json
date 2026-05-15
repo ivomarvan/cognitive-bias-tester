@@ -1,0 +1,81 @@
+{
+  "example": {
+    "id": "framing-textbook-03",
+    "bias": "framing",
+    "source": "textbook",
+    "domain": "zdraví",
+    "difficulty": 4,
+    "question": "Máte možnost si vybrat dvě zdravotní kliniky k provedení vaší operace. V klinice A vám lékař řekne: „90 % pacientů zákrok přežije.“ V klinice B varují: „10 % pacientů na zákrok zemře.“ Kterou kliniku si vyberete a proč?",
+    "options": [
+      {
+        "answer": "Půjdu do kliniky A — 90% úspěšnost mě uklidňuje.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože upřednostňujete kliniku A na základě pozitivního zarámování (přežití), ačkoli statistika obou klinik je totožná. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Kliniku B vyloučím — varování, že 10 % zemře, zní příliš riskantně.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože odmítáte kliniku B na základě negativního zarámování (úmrtnost), přestože „10 % zemře“ a „90 % přežije“ je statisticky totéž. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Vyžádám si absolutní počty — kolik pacientů bylo sledováno a kolik konkrétně zemřelo. Procenta bez kontextu mi k rozhodnutí nestačí.",
+        "verdict": "neutral",
+        "explanation": "Tato volba je epistemicky obezřetná — absolutní čísla jsou informačně bohatší než relativní procenta — ale vyhýbá se klíčové otázce: zda formulace obou klinik vůbec nese rozdíl. Není to projev zkreslení, ale ani přímé rozpoznání rámovacího efektu."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Operace: 90 % přežije vs 10 % zemře. Čtyři možnosti pokrývají obě biased reakce (strach i uklidnění), neutrální i racionální.",
+      "strengths": [
+        "Čtyři-opcový design je nejkomplexnější v sadě — demonstruje celé spektrum reakcí.",
+        "Difficulty 4 přesná."
+      ],
+      "weaknesses": [
+        "Čtyři možnosti jsou mírně složitě orientovatelné pro kurátora při rychlém čtení."
+      ],
+      "suggested_fix": null,
+      "suggestion": {
+        "options": [
+          {
+            "answer": "Odložím zákrok, 10% úmrtnost zní příliš nebezpečně.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě negativního zarámování (10 % úmrtnost) a vnímáte riziko jako vyšší. Jedná se o typ zkreslení: rámování."
+          },
+          {
+            "answer": "Obě verze znamenají to samé (90% šance na přežití), rozhodnu se nezávisle na formulaci.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože správně identifikuje matematickou identitu obou tvrzení (90 % přežití = 10 % úmrtnost)."
+          },
+          {
+            "answer": "Půjdu do toho, 90% úspěšnost je skvělá.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování (90 % přežití) a vnímáte výsledek optimističtěji. Jedná se o typ zkreslení: rámování."
+          }
+        ]
+      },
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "example": {
+    "id": "confirmation_bias-own-05",
+    "bias": "confirmation_bias",
+    "source": "own",
+    "domain": "technologie / vývoj softwaru",
+    "difficulty": 5,
+    "question": "Jako vývojář/ka jste přesvědčen/a, že nový algoritmus B je v praxi rychlejší než zavedený A. Tři předběžná měření na vašich obvyklých datech ukazují přesvědčivý náskok B. Jak dále postupovat při testování, abyste získal/a spolehlivý závěr?",
+    "options": [
+      {
+        "answer": "Změřit B na dalších datech podobných těm úspěšným, abyste výhodu kvantifikoval/a.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě testování v podmínkách, kde algoritmus B už uspěl; nová evidence nemůže hypotézu vyvrátit. Jedná se o typ zkreslení: konfirmační zkreslení."
+      },
+      {
+        "answer": "Spustit profiling B na úspěšných datech a popsat příčinu jeho rychlosti.",
+        "verdict": "neutral",
+        "explanation": "Tato volba pomůže pochopit chování B, ale nesrovnává s A v podmínkách, kde by mohl prohrát; sama o sobě hypotézu o jeho nadřazenosti netestuje."
+      },
+      {
+        "answer": "Připravit benchmark s daty, kde má A teoretickou výhodu (krátké vstupy, edge cases), a změřit oba.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože aktivně hledá podmínky, ve kterých by hypotéza o nadřazenosti B měla padnout; pokud B obstojí i tam, hypotéza výrazně posílí."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Algoritmus B vs A: testovat v podmínkách kde B uspěl, nebo kde má A výhodu? Výjimečný difficulty-5 příklad.",
+      "strengths": [
+        "Biased (testovat podobná data) je přirozená vývojářská chyba.",
+        "Rational (adversarial benchmark kde má A výhodu) je vědecky správné.",
+        "Difficulty 5 přesná — vyžaduje metodologické myšlení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Přirozený vývojářský dialog ('béčko', 'schválně najdu taková data'). Vyhýbá se neohrabanému genderově neutrálnímu 'vývojář/ka' originálu."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 81.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Právě jste naprogramovali nový algoritmus B a jste si docela jistí, že pošlape mnohem rychleji než starý algoritmus A. Spustili jste si pár testů na datech, která běžně používáte, a B je skutečně o dost rychlejší. Jaké testy uděláte teď, abyste si svůj výsledek spolehlivě ověřili?",
+        "options": [
+          {
+            "answer": "Vyzkouším béčko na hromadě dalších podobných dat, abych si potvrdil a přesně změřil, o kolik je rychlejší.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě hledání dat, která vaši výchozí domněnku potvrdí, a netestujete slabiny. Jedná se o typ zkreslení: konfirmační zkreslení."
+          },
+          {
+            "answer": "Pustím na to profiler, abych zjistil, co přesně dělá béčko tak super rychlým.",
+            "verdict": "neutral",
+            "explanation": "Tato volba slouží k pochopení mechanismu (profiling), ale metodologicky nepomáhá rigorózně vyvrátit původní hypotézu o univerzální nadřazenosti nového algoritmu."
+          },
+          {
+            "answer": "Schválně najdu taková data (třeba strašně krátké vstupy nebo nějaké okrajové případy), kde by mělo mít teoreticky výhodu áčko, a změřím je proti sobě.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože aktivně hledáte podmínky, za kterých by hypotéza o převaze nového algoritmu mohla selhat (falsifikace)."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

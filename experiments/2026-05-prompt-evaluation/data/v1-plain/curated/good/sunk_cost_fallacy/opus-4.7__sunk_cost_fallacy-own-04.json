@@ -1,0 +1,84 @@
+{
+  "example": {
+    "id": "sunk_cost_fallacy-own-04",
+    "bias": "sunk_cost_fallacy",
+    "source": "own",
+    "domain": "kariéra",
+    "difficulty": 4,
+    "question": "Pět let pracujete na doktorátu v oboru, který vás přestává naplňovat. Soukromá firma vám právě nabízí dobře placenou pozici plně odpovídající vaší vysněné profesní dráze. Doktorát by vyžadoval ještě dva roky práce. Náboráři ve vašem cílovém odvětví vám potvrdili, že Ph.D. jejich hodnocení kandidátů neovlivní — obor staví na praxi, ne na titulech. K akademické kariéře se vracet nechcete. Jak se rozhodnete?",
+    "options": [
+      {
+        "answer": "Přijmout nabídku, ale ponechat si zápis na škole pro případ návratu.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není ani racionální, ani projevem zkreslení; udržuje formální zápis bez aktivní práce a slouží spíše jako psychologická pojistka."
+      },
+      {
+        "answer": "Přijmout nabídku, dva další roky práce na nepotřebné kvalifikaci nepřinesou očekávaný užitek.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože hodnotí jen budoucí přínos vůči vysněné dráze a ignoruje již vynaložený čas, který nelze vrátit."
+      },
+      {
+        "answer": "Doktorát dokončit, pět let úsilí přece nemůže přijít vniveč kvůli pracovní nabídce.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě let už věnovaných studiu, nikoli budoucího přínosu. Jedná se o typ zkreslení: klam utopených nákladů."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Doktorát: 5 let práce, zbývají 2 roky, přijata nabídka vysněné pozice. Emocionálně nejsilnější past v sadě.",
+      "strengths": [
+        "Pět let práce s dvěma zbývajícími je extrémně silná sunk cost past.",
+        "Biased odpověď (pět let nemůže přijít vniveč) je intuitivně přesvědčivá.",
+        "Racionální odpověď (2 roky bez přínosu pro cílovou dráhu) je objektivně doložitelná.",
+        "Difficulty 4 přesná."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Výjimečně autentická past ('pět let dřiny', 'z korporátu'). Racionální hlas je rozhodný ('Práci beru. Dělat další dva roky na titulu, který nevyužiju, mi absolutně nedává smysl')."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Už pět let děláte doktorát a poslední dobou vás to docela štve. Zrovna se vám ozvala super firma a nabídla vám vysněnou práci s parádním platem. Váš doktorát by ale zabral ještě minimálně dva roky práce, a upřímně – na té nové pozici by vám byl prakticky k ničemu. Co s tím uděláte?",
+        "options": [
+          {
+            "answer": "Vezmu tu práci, ale zkusím si na škole nechat zapsané studium, kdybych se náhodou chtěl někdy vrátit.",
+            "verdict": "neutral",
+            "explanation": "Tato volba je defenzivní averzí k riziku (ponechání si zadních vrátek), nejedná se o čisté rozhodnutí mezi utopeným časem a novou příležitostí."
+          },
+          {
+            "answer": "Práci beru. Dělat další dva roky na titulu, který nevyužiju, mi absolutně nedává smysl.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože bere pětileté úsilí jako utopený náklad a rozhoduje se pouze podle budoucího užitku (práce snů vs. další dva roky frustrace bez odměny)."
+          },
+          {
+            "answer": "Doktorát radši dodělám, přece nezahodím pět let dřiny kvůli jedné nabídce z korporátu.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete dokončit studium (a trpět další dva roky) jen kvůli tomu, abyste ospravedlnili již obětovaný čas a úsilí. Jedná se o typ zkreslení: klam utopených nákladů."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

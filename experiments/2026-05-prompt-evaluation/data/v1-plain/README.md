@@ -13,10 +13,10 @@ Baseline pro porovnání s budoucími verzemi promptů.
 
 ## Použité modely
 
-| Role | Modely |
-|---|---|
+| Role            | Modely                                                             |
+| --------------- | ------------------------------------------------------------------ |
 | M1 (generování) | gpt-4o-mini, gpt-4o, gpt-5.5, gemini-3.1-pro, opus-4.7, sonnet-4.6 |
-| M2 (hodnocení) | sonnet-4.6, gemini-3.1-pro |
+| M2 (hodnocení)  | sonnet-4.6, gemini-3.1-pro                                         |
 
 ## Závěry
 
@@ -58,5 +58,5 @@ v1-plain/
 Nejlepší příklady z tohoto experimentu (generované Opus 4.7) byly ručně vybrány
 a uloženy do `data/curated/` jako few-shot materiál pro experiment v2.
 
-- `data/curated/good/` — příklady připravené k použití
-- `data/curated/borderline/` — příklady vyžadující úpravu
+- `./curated/good/` — příklady připravené k použití
+- `./curated/borderline/` — příklady vyžadující úpravu

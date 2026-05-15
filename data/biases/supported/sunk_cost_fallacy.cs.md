@@ -21,3 +21,11 @@ Psychologicky nám však přijde bolestivé minulé investice „zahodit," a tak
 - **Soustřeďte se pouze na budoucí náklady a přínosy** — explicitně vylučte minulé investice ze svého uvažování.
 - **Pojmenujte ho** — pouhé uvědomění si „právě chystám udělat klam utopených nákladů" bývá dost na přerušení vzorce.
 - **Oddělte identitu od investice** — rozhodnutí přestat není přiznáním neúspěchu; je to racionální reakce na nové informace.
+
+## Teoretický základ
+
+Radě „ignoruj minulé náklady" dává matematická teorie rozhodování pevný základ.
+
+Matematik Richard Bellman formuloval princip, který říká: *optimální rozhodnutí v jakémkoli okamžiku závisí výhradně na aktuálním stavu a na tom, co je od teď možné — nikdy na historii, která k tomuto stavu vedla.* Jinými slovy: minulé náklady prostě nejsou součástí správné rovnice.
+
+To, co se může zdát jako emocionálně chladná rada, je tedy matematicky prokazatelně správný postoj. Když zahodíte lístek na špatný film a odejdete, neplýtváte investicí — chováte se přesně tak, jak by se choval optimální rozhodovatel.

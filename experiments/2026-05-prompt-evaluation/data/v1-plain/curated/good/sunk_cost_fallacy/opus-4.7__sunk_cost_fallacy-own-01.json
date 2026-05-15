@@ -1,0 +1,83 @@
+{
+  "example": {
+    "id": "sunk_cost_fallacy-own-01",
+    "bias": "sunk_cost_fallacy",
+    "source": "own",
+    "domain": "stravování",
+    "difficulty": 1,
+    "question": "V hotelu jste zaplatili pevnou cenu za neomezený přístup ke snídaňovému bufetu. Po prvním talíři pociťujete plnost a další jídlo by vám bylo nepříjemné. Personál právě donáší další chody. Jak se rozhodnete?",
+    "options": [
+      {
+        "answer": "Přestat jíst, plnost a budoucí nepohodlí převažují nad cenou paušálu.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože paušál je již zaplacen bez ohledu na množství jídla a další porce přinášejí jen nepohodlí."
+      },
+      {
+        "answer": "Vzít si malý kousek ovoce, který chuťově skutečně láká.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není ani racionální, ani projevem zkreslení — sleduje skutečnou chuť, ne ospravedlnění zaplacenou částkou."
+      },
+      {
+        "answer": "Donutit se sníst další porce, aby zaplacený paušál »odpovídal hodnotě«.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě již zaplacené částky, kterou další porce nesníží. Jedná se o typ zkreslení: klam utopených nákladů."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Hotelový bufet: zaplacen paušál, plnost po prvním talíři. Difficulty 1 přesná, scénář velmi přirozený.",
+      "strengths": [
+        "Sunk cost (zaplacený paušál) explicitní v otázce.",
+        "Biased odpověď (donutit se jíst) je přirozená a relatable.",
+        "Neutrální možnost (malý kousek ovoce) elegantně přidává třetí variantu."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "gemini",
+        "reason": "Konkrétní pokušení ('čerstvé, lákavé vafle' vs. generické 'další chody'). Tělesná konkrétnost ('pocit nacpání a těžkého břicha') je silnější past pro difficulty-1."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 84.0,
+      "recommendation": "needs_minor_edit",
+      "feedback": "Příklad má drobnou rezervu ve formulaci nebo mírně strojený tón.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [
+        "Mírně strojený tón."
+      ],
+      "suggested_fix": "Zkuste mírně upravit formulaci pro vyšší uvěřitelnost.",
+      "suggestion": {
+        "question": "Na dovolené jste si dopřáli dražší hotel, kde máte snídani formou neomezeného bufetu zahrnutou v ceně. Sníte první obrovský talíř a cítíte se naprosto plní, další jídlo byste do sebe už tlačili silou. Jenže personál zrovna přináší čerstvé, lákavé vafle. Co uděláte?",
+        "options": [
+          {
+            "answer": "Skončím se snídaní, ten pocit nacpání a těžkého břicha mi za to nestojí.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože správně váží budoucí disutility (nepohodlí) vůči marginálnímu užitku z dalšího jídla, přičemž cenu bufetu považuje za utopenou."
+          },
+          {
+            "answer": "Vezmu si aspoň kousek melounu nebo ovoce, na to mám ještě fakt trochu chuť.",
+            "verdict": "neutral",
+            "explanation": "Tato volba je kompromisem na základě aktuální chuťové preference, nikoli kalkulací nad zaplacenou částkou."
+          },
+          {
+            "answer": "Ještě se přinutím a něco si vezmu, ať se mi ten drahý vstup aspoň trochu vyplatí.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete sníst další jídlo (což povede k nepohodlí) jen proto, abyste ospravedlnili zaplacenou částku. Jedná se o typ zkreslení: klam utopených nákladů."
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

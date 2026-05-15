@@ -134,6 +134,99 @@ Po přečtení `report.md` lze do `summary.json` ručně doplnit `human_score`:
 
 ---
 
+## Fáze 2: Roadmap k produkčním datům
+
+Navazuje na dokončení ruční revize v `data/v1-plain/curated/human evaluation.md`.
+
+### Krok 1 — Extrakce `selected/`
+
+Ze souborů v `curated/good/` a `curated/borderline/` (dle pokynů v `human evaluation.md`)
+vytvoříme soubory v `data/selected/` obsahující pouze aplikačně relevantní data:
+`id`, `bias`, `source`, `domain`, `difficulty`, `question`, `options`.
+Metadata hodnocení (`evaluation`, `selection`) se vynechají — jejich účel byl vyčerpán.
+Soubory z `curated/interactive/` se do `selected/` nekopírují — čekají na implementaci UI.
+
+### Krok 1.5 — Finalizace schématu: pole `global_explanation`
+
+Před překladem se ustálí finální tvar JSON příkladu přidáním pole `global_explanation`.
+
+**Proč teď:** databáze ani GUI ještě neexistují; v2 prompt bude generovat příklady přímo
+do finálního schématu a zpětná migrace stovek souborů bude zbytečná.
+
+**Obsah pole:**
+- Sdílený kontext, výpočet nebo logická premisa platná pro všechny options (EV, ekvivalence rámce, klíčová podmínka…)
+- Smí být `null` / prázdný řetězec pro příklady bez sdíleného výpočtu (typicky sunk cost, kvalitativní scénáře)
+- Zobrazí se uživateli jako část reveal screenu — před nebo vedle option-specific explanation
+
+**Výsledné schéma příkladu v `selected/`:**
+```json
+{
+  "id": "loss_aversion-own-02",
+  "bias": "loss_aversion",
+  "domain": "sport",
+  "difficulty": 3,
+  "question": "...",
+  "global_explanation": "Očekávaná hodnota varianty B: 0,6·80 000 + 0,4·35 000 = 62 000 €. Pevná varianta A: 50 000 €.",
+  "options": [
+    { "answer": "Variantu B — statisticky výhodnější.", "verdict": "rational",
+      "explanation": "Volba respektuje vyšší EV varianty B." },
+    { "answer": "Variantu A — jistých 50 000 € je bezpečnější.", "verdict": "biased",
+      "explanation": "Strach z propadu na 35 000 € psychologicky převáží vyšší průměr. Jedná se o typ zkreslení: averze ke ztrátě." },
+    { "answer": "Variantu A, dokud klub nedoloží historii.", "verdict": "neutral",
+      "explanation": "Podmínění dodatečnými informacemi obchází dostupná čísla." }
+  ]
+}
+```
+
+**Postup migrace (automatický skript):**
+1. Přidat `global_explanation: null` do všech souborů v `selected/`
+2. LLM průchod (Composer 2): vyplnit `global_explanation` z existujících `explanation` textů, extrahovat sdílený výpočet
+3. Ruční kontrola a zkrácení option-specific `explanation` (odebrat opakující se výpočet)
+
+### Krok 2 — `selected_with_context.cs`
+
+Kopie `selected/` rozšířená o lokalizační kontext pro češtinu:
+instrukce pro překlad (formát čísel, měny, typografické konvence),
+metadata o cílových jazycích a poznámky k obtížným případům.
+
+### Krok 3 — `selected_with_context.gen_en`
+
+Automaticky generovaná anglická verze ze `selected_with_context.cs`.
+LLM přeloží příklady dle pravidel z kroku 2.
+Tento adresář je artefakt — nepíše se ručně.
+
+### Krok 4 — Zpětná validace překladů
+
+Přeložené anglické příklady se kontrolně přeloží zpět do češtiny a porovnají s originálem.
+Instrukce z kroku 2 se iterativně ladí, dokud zpětný překlad nedrží pedagogický záměr.
+
+### Krok 5 — Nové prompty v2
+
+Anglicky, few-shot příklady z kroku 4 jako ilustrace standardu.
+Dva prompty: generování (zobecnění `prompt_for_examples.md`) a validace (zobecnění `prompt_for_evaluating_generated_examples.md`).
+Oba prompty obsahují požadavek na odhad tokenů a zohledňují zkušenosti z formulace
+příkladů — viz `data/formulation-insights.md`.
+Výstup: `data/v2-fewshot/prompts/`.
+
+### Krok 6 — Experiment v2-fewshot
+
+Nové příklady generované v2 prompty s více modely.
+Hodnocení kombinací generátor × hodnotitel.
+Hypotéza: few-shot příklady + zohledněné zkušenosti umožní i slabším modelům generovat
+příklady v produkční kvalitě. Výsledek ověříme.
+
+### Krok 7 — Finální zlatá sada
+
+Všechny příklady s hodnocením ≥ threshold z v1 i v2 se sloučí do `data/selected/`.
+Tato sada je vstupní data pro vývoj aplikace (Epic E040+).
+
+### Krok 8 — Archivace promptů
+
+Odladěné v2 prompty se uloží jako základ offline nástroje pro průběžné generování
+nových příkladů při rozšiřování zkreslení (E200, E210).
+
+---
+
 ## Kritéria rozhodnutí (kdy finalizovat ADR-003)
 
 Po otestování ≥ 3 variant na zkreslení na model:

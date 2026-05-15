@@ -1,0 +1,62 @@
+{
+  "example": {
+    "id": "loss_aversion-own-01",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "nákup",
+    "difficulty": 2,
+    "question": "V obchodním centru probíhá zábavná akce: za poplatek 5 € si můžete koupit los. S pravděpodobností 50 % vyhrajete 20 €, jinak nic. Co je racionálnější?",
+    "options": [
+      {
+        "answer": "Akce se nezúčastnit, abych zbytečně neztratil/a 5 € poplatku.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože jistá ztráta 5 € psychologicky převáží pravděpodobný zisk, i když očekávaná hodnota hry je kladná (0,5·20 − 5 = +5 €). Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Účastnit se losování — hodnota hry za to stojí.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o kladnou očekávanou hodnotu: 0,5·20 − 5 = +5 €. Každá hra s kladnou očekávanou hodnotou je z pohledu teorie rozhodování výhodná, i při jediné účasti."
+      },
+      {
+        "answer": "Účastnit se pouze v případě, že lze akci opakovat několikrát.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením. Opakování sice snižuje rozptyl výsledků, kladná očekávaná hodnota (0,5·20 − 5 = +5 €) však platí již od první účasti. Navíc: děláte-li v životě podobná rozhodnutí opakovaně, jejich výsledky se sčítají — jako byste hru hrál/a vícekrát."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Losování: poplatek 5 €, 50% šance 20 € v hotovosti, EV=+5 €. Těsná marže záměrně zvyšuje efekt averze ke ztrátě.",
+      "strengths": [
+        "EV=0,5×20−5=+5 € je uveden v explanaci všech tří odpovědí.",
+        "Biased odpověď (nezúčastnit se, aby neztratil/a 5 €) je autentická.",
+        "Hotovostní výhra (ne dárek) odstraňuje nejistotu subjektivní hodnoty odměny."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "suggestion": null,
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

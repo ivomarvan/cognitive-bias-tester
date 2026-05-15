@@ -1,0 +1,65 @@
+{
+  "example": {
+    "id": "loss_aversion-textbook-03",
+    "bias": "loss_aversion",
+    "source": "textbook",
+    "domain": "finance",
+    "difficulty": 4,
+    "question": "Před vámi jsou dvě varianty: A) jistý zisk 800 €, B) 85% pravděpodobnost zisku 1 000 € a 15% pravděpodobnost nezískat nic. Která volba je racionálně lepší?",
+    "options": [
+      {
+        "answer": "Variantu B — statisticky výhodnější volba.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou hodnotu nabídky B: 0,85·1 000 = 850 € > 800 €."
+      },
+      {
+        "answer": "Variantu A — jistých 800 € je bezpečnější než riziko skončit bez ničeho.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože odpor ke scénáři nulového výsledku (15%) psychologicky převáží nad tím, že B má vyšší očekávanou hodnotu: 0,85·1 000 = 850 € > 800 €. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Rozhodnutí odložit, bez znalosti dalších možností nelze zvolit.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není projevem zkreslení, ale ani jednoznačně racionálním vyhodnocením. Obě varianty jsou plně specifikované: EV(B) = 0,85·1 000 = 850 € > 800 €. Odkládání rozhodnutí zde není opodstatněné."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 85.5,
+      "recommendation": "use_as_is",
+      "feedback": "Jistý zisk 800 € vs 85% šance 1000 €, EV=850 €. Klasický gain domain example s explicitním výpočtem.",
+      "strengths": [
+        "EV=0,85×1000=850 € je explicitní, přesný a ověřitelný.",
+        "Biased odpověď (jistota 800 €) je intuitivně silná."
+      ],
+      "weaknesses": [
+        "Abstraktní finanční scénář snižuje subtilitu."
+      ],
+      "suggested_fix": null,
+      "suggestion": {
+        "question": "V herní soutěži máte na výběr dvě možnosti: A) Vzít si rovnou jistých 800 €, B) Zatočit kolem štěstí, kde máte 85% šanci vyhrát 1 000 € a 15% šanci nevyhrát nic. Kterou volbu byste měli racionálně upřednostnit?"
+      },
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

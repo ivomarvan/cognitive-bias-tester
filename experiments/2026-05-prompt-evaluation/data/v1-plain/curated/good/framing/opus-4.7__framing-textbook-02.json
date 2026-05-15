@@ -1,0 +1,61 @@
+{
+  "example": {
+    "id": "framing-textbook-02",
+    "bias": "framing",
+    "source": "textbook",
+    "domain": "nákup",
+    "difficulty": 2,
+    "question": "V supermarketu vidíte dvě balení mletého hovězího stejné značky, hmotnosti i ceny. První je označeno '95 % libového masa', druhé 'obsahuje 5 % tuku'. Jde vám o zdravé dietnější jídlo. Které balení vložíte do košíku?",
+    "options": [
+      {
+        "answer": "Balení '95 % libového' — působí jako kvalitnější a zdravější produkt.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete na základě pozitivního zarámování (libové maso), přestože obě etikety popisují stejné složení. 95 % libového a 5 % tuku jsou aritmetické doplňky: 95 + 5 = 100. Jedná se o typ zkreslení: rámování."
+      },
+      {
+        "answer": "Přečtu si výživové hodnoty na zadní straně — přední etiketa mi k dietnímu rozhodnutí nestačí.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální: správný postup při dietním rozhodování je ověřit skutečné výživové hodnoty, ne se řídit marketingovým označením. Kdybychom to udělali, zjistili bychom, že obě balení jsou identická — 95 % libového a 5 % tuku jsou aritmetické doplňky téhož složení (95 + 5 = 100)."
+      },
+      {
+        "answer": "Balení '5 % tuku' — explicitní zmínka o tuku vypadá upřímněji než vágní reklama na libové maso.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení v opačném směru: negativní zarámování (tuk) působí dojmem větší transparentnosti, ačkoli obě balení popisují identické složení. 5 % tuku = 95 % libového (5 + 95 = 100). Jedná se o typ zkreslení: rámování."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Mleté maso: 95 % libového vs 5 % tuku. Tři možnosti pokrývají obě strany framingového efektu + racionální střed.",
+      "strengths": [
+        "Tři-opcový design je vzorový — obě biased varianty + rational.",
+        "Přesná ekvivalence 95+5=100.",
+        "Difficulty 2 přesná, scénář velmi přirozený."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 90.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

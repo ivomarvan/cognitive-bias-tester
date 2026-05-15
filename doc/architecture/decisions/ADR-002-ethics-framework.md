@@ -1,44 +1,44 @@
-# ADR-002: Ethics framework for commercial use
+# ADR-002: Etický rámec pro komerční využití
 
-**Status**: Accepted
+**Stav**: Přijato
 
-**Date**: 2026-05-08
+**Datum**: 2026-05-08
 
-## Context
+## Kontext
 
-“Cognitive Bias Tester” educates users to **recognize and resist** manipulation and biased reasoning. That mission is incompatible with customers who would reuse our tooling **to manipulate** people at scale. The project specification (`doc/project-progress/spec.md`, **Key Technical Decisions** — row **15**, **Ethics framework**) calls for an explicit ADR in Epic E010 defining B2B segments we refuse so ethics and legal posture stay clear as we grow.
+„Cognitive Bias Tester" vzdělává uživatele v tom, jak **rozpoznávat a odolávat** manipulaci a zkreslenému uvažování. Toto poslání je neslučitelné se zákazníky, kteří by naše nástroje využívali k **manipulaci** s lidmi ve velkém měřítku. Projektová specifikace (`doc/project-progress/spec.md`, **Klíčová technická rozhodnutí** — řádek **15**, **Etický rámec**) požaduje v Epicu E010 explicitní ADR definující B2B segmenty, které odmítáme, aby etická a právní pozice zůstala zřetelná s tím, jak rosteme.
 
-## Decision
+## Rozhodnutí
 
-We adopt a public ethics stance for **who we sell to** and **who we do not**, aligned with teaching resistance to manipulation—not enabling it.
+Přijímáme veřejný etický postoj k tomu, **komu prodáváme** a **komu neprodáváme**, v souladu s výukou obrany před manipulací — nikoli jejím umožňováním.
 
-### Mission alignment
+### Soulad s posláním
 
-We build training that helps users notice framing, anchoring, sunk-cost pressure, and similar patterns **defensively**. Products, integrations, or custom content that turn this into **offensive manipulation** (deceiving or unduly pressuring audiences) are out of scope and unsupported.
+Budujeme výcvik, který uživatelům pomáhá **defenzivně** rozpoznávat framing, ukotvení, tlak nevratných nákladů a podobné vzorce. Produkty, integrace nebo vlastní obsah, které by z toho vytvářely **ofenzivní manipulaci** (klamání nebo nepřiměřené ovlivňování publika), jsou mimo rozsah a nejsou podporovány.
 
-## We will not sell to
+## Neprodáváme
 
-- **Manipulative marketing agencies** — campaigns optimised to exploit cognitive biases against consumer interests.
-- **Dark-pattern designers** — teams shipping deceptive UX intended to trick users into harmful or unwanted actions.
-- **Political microtargeting firms** — operations using psychographic segmentation to manipulate voters or suppress turnout.
-- **Gambling operators** — businesses whose revenue depends on reinforcing loss-chasing and impulsive betting.
+- **Manipulativním marketingovým agenturám** — kampaně optimalizované k využívání kognitivních zkreslení proti zájmům spotřebitelů.
+- **Designérům dark patterns** — týmy nasazující klamavé UX záměrně navržené k tomu, aby uživatele přiměly k škodlivým nebo nechtěným akcím.
+- **Firmám pro politický microtargeting** — operace využívající psychografickou segmentaci k manipulaci s voliči nebo potlačování volební účasti.
+- **Provozovatelům hazardních her** — podniky, jejichž příjmy závisejí na posilování honby za ztrátami a impulzivního sázení.
 
-(Expand or refine categories only via a **new ADR that amends this record**—see **Amendment process** below.)
+(Kategorie rozšiřujte nebo upřesňujte pouze prostřednictvím **nového ADR, které tento záznam pozměňuje** — viz **Proces změn** níže.)
 
-## We are open to
+## Jsme otevřeni
 
-- **HR / Learning & Development** — training employees on ethical decision-making and bias awareness.
-- **Financial advisors** — education that helps clients recognise sales pressure and biased framing.
-- **Healthcare informed-decision tooling** — patient or clinician education that improves understanding without coercion (subject to regulation and clinical governance where applicable).
-- **Judiciary and legal training** — bias-awareness curricula for fair proceedings.
-- **Education sector** — schools and universities teaching critical thinking and debiasing.
+- **HR / Learning & Development** — vzdělávání zaměstnanců v etickém rozhodování a uvědomování si zkreslení.
+- **Finančním poradcům** — vzdělávání, které klientům pomáhá rozpoznat prodejní tlak a zkreslený framing.
+- **Nástrojům pro informované rozhodování ve zdravotnictví** — vzdělávání pacientů nebo klinických pracovníků, které zlepšuje porozumění bez nátlaku (s výhradou příslušné regulace a klinické správy).
+- **Soudnictví a právnímu školení** — vzdělávací osnovy pro uvědomování si zkreslení ve spravedlivých řízeních.
+- **Vzdělávacímu sektoru** — školy a univerzity vyučující kritické myšlení a debiasingové techniky.
 
-## Amendment process
+## Proces změn
 
-- **No silent edits** to this list: adding or removing a category requires a **follow-up ADR** (e.g. `ADR-0NN-amend-ethics-framework.md`) that references ADR-002, states the change, rationale, and effective date.
-- **Versioning:** keep accepted ADRs immutable; use amend/replace ADRs for substantive policy changes.
+- **Žádné tiché úpravy** tohoto seznamu: přidání nebo odebrání kategorie vyžaduje **navazující ADR** (např. `ADR-0NN-amend-ethics-framework.md`), které odkazuje na ADR-002, uvádí změnu, zdůvodnění a datum účinnosti.
+- **Verzování:** přijaté ADR ponechejte neměnné; pro podstatné změny politik používejte ADR typu amend/replace.
 
-## Consequences
+## Důsledky
 
-- **Positive:** Clear external message; easier sales qualification; groundwork for contractual “acceptable use” language.
-- **Negative:** Some revenue opportunities will be declined; edge-case customers may require legal review to classify.
+- **Pozitivní:** Jasné veřejné sdělení; snazší kvalifikace prodeje; základ pro smluvní formulaci „přijatelného použití".
+- **Negativní:** Některé obchodní příležitosti budou odmítnuty; hraniční zákazníci mohou vyžadovat právní přezkum pro zařazení.

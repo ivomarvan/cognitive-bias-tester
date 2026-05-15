@@ -1,0 +1,62 @@
+{
+  "example": {
+    "id": "loss_aversion-own-03",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "kariéra",
+    "difficulty": 3,
+    "question": "Dostali jste dvě pracovní nabídky na srovnatelné pozice. Firma A: pevný plat 3 500 € měsíčně. Firma B: základní plat 3 000 € měsíčně — v první půlroce bez odměn, ve druhé půlroce s pravděpodobností 70 % měsíční odměna 2 500 €. Výplata měsíčně v obou případech. Která nabídka je výhodnější?",
+    "options": [
+      {
+        "answer": "Firma B — celkový očekávaný roční příjem je vyšší.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože opírá rozhodnutí o vyšší očekávanou roční hodnotu Firmy B: H1 = 6×3 000 = 18 000 €; H2 = 0,7×(6×5 500) + 0,3×(6×3 000) = 23 100 + 5 400 = 28 500 €; celkem 46 500 € > 42 000 € (Firma A)."
+      },
+      {
+        "answer": "Firma A — v první půlroce budu dostávat méně a ve druhé půlroce odměna nemusí přijít.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože garantovaný měsíční úbytek 500 € v H1 a 30% riziko slabé H2 (36 000 € ročně — o 6 000 € méně než Firma A) psychologicky převáží EV výhodu Firmy B: 0,7×51 000 + 0,3×36 000 = 46 500 € > 42 000 €. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Potřebuji vědět, jak se odvozují odměny — podle čeho a kdo o nich rozhoduje.",
+        "verdict": "neutral",
+        "explanation": "Tato volba není projevem zkreslení, ale odkládá rozhodnutí kvůli procesní informaci. Dostupná čísla k porovnání postačují: EV Firmy B (46 500 €) > Firma A (42 000 €) bez ohledu na mechanismus odměňování."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Dvě nové nabídky: Firma A jistých 42 000 €/rok vs. Firma B s EV 46 500 €. Dvouvrstvá past: H1 garantovaný pokles + H2 nejistá odměna.",
+      "strengths": [
+        "Volba mezi dvěma novými nabídkami odstraňuje konfundující faktory přechodu ze stávající práce.",
+        "Dvě složky averze ke ztrátě: okamžitý H1 pokles (−500 €/m) + 30% riziko slabé H2.",
+        "Výplata měsíčně v obou případech — žádná ambiguita o načasování plateb.",
+        "EV výhoda 4 500 € je zřetelná, ale ne samozřejmá. Difficulty 3 přesná."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null,
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}

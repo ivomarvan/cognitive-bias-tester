@@ -1,0 +1,82 @@
+{
+  "example": {
+    "id": "loss_aversion-own-05",
+    "bias": "loss_aversion",
+    "source": "own",
+    "domain": "cestování",
+    "difficulty": 5,
+    "question": "Plánujete dovolenou v hodnotě 1 500 €. Cestovní agentura nabízí pojištění proti zrušení (pravděpodobnost zrušení 5 %) za 120 €. Při zrušení byste přišli o nevratnou zálohu 750 € a předem zaplacené nákupy 150 €. Pojistka pokrývá 90 % takové ztráty. Co je racionálně nejvýhodnější?",
+    "options": [
+      {
+        "answer": "Koupím si pojištění — jistota, že v případě zrušení nezaplatím skoro 900 €, mi za těch 120 € stojí.",
+        "verdict": "biased",
+        "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože platíte 120 € za ochranu před průměrnou očekávanou ztrátou, která je matematicky výrazně nižší: celková ztráta při zrušení = 750 + 150 = 900 €; pojistka kryje 90 % → 810 €; EV krytí = 5 % × 810 = 40,50 €. Jedná se o typ zkreslení: averze ke ztrátě."
+      },
+      {
+        "answer": "Pojištění si nekoupím, raději si těch 120 € schovám — i kdyby se něco stalo, zaplatím to ze svého.",
+        "verdict": "rational",
+        "explanation": "Tato volba je racionální, protože porovnává jistý náklad pojistky (120 €) s průměrnou očekávanou hodnotou pojistné události: celková ztráta při zrušení = 750 + 150 = 900 €; pojistka kryje 90 % → 810 €; EV krytí = 5 % × 810 = 40,50 €. Platit 120 € za ochranu v průměrné hodnotě 40,50 € je matematicky nevýhodné."
+      },
+      {
+        "answer": "Vyhledám si recenze na spolehlivost dané cestovní agentury, než se rozhodnu.",
+        "verdict": "neutral",
+        "explanation": "Tato volba odkládá rozhodnutí na základě snahy upřesnit pravděpodobnost zrušení. Dostupná čísla k rozhodnutí postačují: 750 + 150 = 900 €; krytí 90 % → 810 €; EV = 5 % × 810 = 40,50 € vs. pojistné 120 €. Zpřesnění pravděpodobnosti je legitimní, ale i při 2× vyšším riziku (10 %) by EV krytí (81 €) stále nedosáhlo ceny pojistky."
+      }
+    ]
+  },
+  "evaluation": {
+    "sonnet4.6": {
+      "weighted_score": 88.5,
+      "recommendation": "use_as_is",
+      "feedback": "Dovolená 1500 €: pojistka 120 €, zrušení 5%, nevratné náklady 900 €, pojistka kryje 90 %. EV krytí ≈ 45 € < 120 €.",
+      "strengths": [
+        "EV výpočet je v explanaci explicitní (0,05×900=45 €).",
+        "Biased odpověď (strach ze ztráty 900 €) je emotivně velmi silná.",
+        "Difficulty 5 přesná — výpočet s probabilities a krytím je genuinně komplexní."
+      ],
+      "weaknesses": [
+        "Drobná nepřesnost: s 90% krytím je EV=0,05×810=40,5 €, nikoli 45 €. Závěr (< 120 €) je správný, ale přesnost by mohla být vyšší."
+      ],
+      "suggested_fix": null,
+      "suggestion": {
+        "options": [
+          {
+            "answer": "Koupím si pojištění. Jistota, že v případě poškození nezaplatím skoro 900 €, mi za těch 120 € navíc rozhodně stojí.",
+            "verdict": "biased",
+            "explanation": "Tato volba ukazuje podlehnutí zkreslení, protože se rozhodujete zaplatit 120 € za ochranu před očekávanou ztrátou, která je matematicky mnohem nižší (5 % z 810 € = 40,5 €). Jedná se o typ zkreslení: averze ke ztrátě."
+          },
+          {
+            "answer": "Pojištění si nekoupím, raději si těch 120 € schovám. I kdyby se něco stalo, zaplatím to ze svého.",
+            "verdict": "rational",
+            "explanation": "Tato volba je racionální, protože porovnává jistý náklad 120 € s očekávanou ztrátou při poškození, která činí pouze 40,5 € (5 % riziko × 900 € krytí). Je matematicky výhodnější riskovat."
+          },
+          {
+            "answer": "Vyhledám si recenze na spolehlivost dané letecké společnosti, než se rozhodnu.",
+            "verdict": "neutral",
+            "explanation": "Tato volba odkládá rozhodnutí na základě snahy získat další informace o reálné pravděpodobnosti."
+          }
+        ]
+      },
+      "eval_comparation": {
+        "prefered": "n/a",
+        "reason": "Gemini nenavrhl alternativu — příklad hodnotil jako dostatečně kvalitní."
+      }
+    },
+    "gemini3.1pro": {
+      "weighted_score": 87.0,
+      "recommendation": "use_as_is",
+      "feedback": "Příklad je solidně vystavěný a funguje podle očekávání.",
+      "strengths": [
+        "Jasná a pochopitelná past.",
+        "Dobře ukotvené racionální řešení."
+      ],
+      "weaknesses": [],
+      "suggested_fix": null
+    }
+  },
+  "selection": {
+    "tier": "good",
+    "source_model": "Claude Opus 4.7",
+    "note": "Příklad je použitelný — aspoň jeden hodnotitel doporučil use_as_is nebo oba skóre ≥ 84."
+  }
+}
